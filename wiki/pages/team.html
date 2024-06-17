@@ -1,34 +1,119 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Description</title>
+    <link rel="stylesheet" href="Members_style.css">
+</head>
+<body>
+<section>
+    <div class="Header">Members</div>
+    <hr class="separator_Members_PI">
+</section>
+<section>
+    <div class="PI">PI</div>
+    <hr class="separator_PI_img">
+    <img class='Image_PI' src="Sample.jpg">
+    <p class="PI_para">Dr. Debnath Pal is a distinguished professor in the Center for Computational and Data Science at the Indian Institute of Science, Bangalore. His expertise lies in bioinformatics, with a primary focus on computational biology, protein structure prediction, and the development of algorithms for genomic data analysis. He has been our PI since 2010, and his guidance and technological support have been invaluable to our research efforts this year, as always.</p>
+</section>
+<section>
+    <div class="TL">Team Leaders</div>
+    <hr class="separator_TeamLead_img">
+    <div class="team-leaders-container">
+        <div class="team-leader">
+            <img class="TL1" src="Sample.jpg" alt="Team Leader 1">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-leader">
+            <img class="TL2" src="Sample.jpg" alt="Team Leader 2">
+            <p class="name">XYZ</p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="TeamMembers">Members</div>
+    <hr class="separator_TeamLead_img">
+    <div class="team-members-grid">
+        <!-- Repeat this block 20 times -->
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <div class="team-member">
+            <img src="Sample.jpg" alt="Team Member">
+            <p class="name">ABC</p>
+        </div>
+        <!-- Repeat until here -->
+    </div>
+</section>
+</body>
 
-{% block title %}Team{% endblock %}
-{% block lead %}On this page you can introduce your team members, instructors, and advisors.{% endblock %}
-
-{% block page_content %}
-
-<div class="row">
-  <div class="col-8">
-    <h2>What should this page contain?</h2>
-    <hr>
-    <ul>
-      <li>Include pictures of your teammates, don't forget instructors and advisors!</li>
-      <li>You can add a small biography or a few words from each team member, to tell us what you like, and what motivated you to participate in iGEM.</li>
-      <li>Take team pictures! Show us your school, your lab and little bit of your city.</li>
-      <li>Remember that image galleries can help you showcase many pictures while saving space.</li>
-    </ul>
-    <div class="bd-callout bd-callout-info"><strong>Important:</strong> Your wiki pages will be archived at the end of the iGEM season and this content will remain online. Please keep this in mind as you post photos and personal information on this page.</div>
-  </div>
-  <div class="col-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2019.igem.org/Team:CU/Team">2019 CU</a></li>
-      <li><a href="https://2019.igem.org/Team:UANL/Team">2019 UANL</a></li>
-      <li><a href="https://2019.igem.org/Team:William_and_Mary/Team">2019 William and Mary</a></li>
-      <li><a href="https://2020.igem.org/Team:BOKU-Vienna/Team">2020 BOKU Vienna </a></li>
-      <li><a href="https://2020.igem.org/Team:CAU_China/Team_Member">2020 CAU China</a></li>
-      <li><a href="https://2020.igem.org/Team:Lethbridge/Members">2020 Lethbridge</a></li>
-    </ul>
-  </div>
-</div>
-
-{% endblock %}
+</html>
