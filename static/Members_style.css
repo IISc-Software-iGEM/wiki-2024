@@ -3,7 +3,7 @@ body {
     background-color: black;
     color: white;
     font-family: Ubuntu sans, sans-serif;
-    background-image: url("static.igem.wiki/leaves.jpg");
+    background-image: url("https://tools.igem.org/uploads/teams/5346/leaves.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
