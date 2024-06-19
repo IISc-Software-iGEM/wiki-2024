@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Handlee&family=Honk&family=Shadows+Into+Light&display=swap');
+body {
+    background-color: black;
+    color: white;
+    font-family: Ubuntu sans, sans-serif;
+    background-image: url("image/Leaves.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.Header {
+    text-align: center;
+    font-size: 150px;
+    font-family: "Honk", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 30px;
+}
+
+.PI ,.TL ,.TeamMembers {
+    text-align: center;
+    font-size: 50px;
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 60px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Image_PI {
+    min-height: 200px;
+    max-width: 200px;
+}
+.separator_PI_img, .separator_TeamLead_img ,.se{
+    width: 50%;
+    border: 0;
+    border-top: 2px solid white;
+    margin: 20px auto;
+}
+.separator_Members_PI{
+    width: 80%;
+    border: 0;
+    border-top: 2px solid white;
+    margin: 20px auto;
+}
+.PI_para{
+    text-align: center;
+    max-width: 70%;
+    font-family: 'Comic Neue';
+    font-size: 20px;
+    background-color: white;
+    color:black;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: black;
+    padding: 20px 50px;
+}
+
+.team-leaders-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 30px;
+}
+
+.team-leader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TL1, .TL2 {
+    min-height: 200px;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+.name {
+    margin-top: 10px;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 75px;
+    margin-top: 20px;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-member img {
+    min-height: 200px;
+    max-width: 200px;
+    object-fit: contain;
+}
