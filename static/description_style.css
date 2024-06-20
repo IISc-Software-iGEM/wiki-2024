@@ -34,16 +34,14 @@ a {
 /* Side Navigation styles */
 .side-nav {
     position: fixed;
-    top: 80%; /* Adjust as needed */
+    top: 70%; /* Adjust as needed */
     transform: translateY(-50%);
     left: 0;
     width: 15%; /* Adjust as needed */
-    background-color: lightgray;
     padding: 10px;
     z-index: 1;
-    transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* Smooth transition for side nav */
-    border: 1px solid #000; /* Add border to separate side nav from content */
-    border-radius: 9px;
+    transition: opacity 1s ease, visibility 1s ease; /* Smooth transition for side nav */
+    border-radius: 7px;
     opacity: 0; /* Initially transparent */
     visibility: hidden; /* Initially hidden */
 }
@@ -53,23 +51,48 @@ a {
     visibility: visible; /* Visible when shown */
 }
 
+.side-nav.hide-nav {
+    opacity: 0; /* Fully transparent when hidden */
+    visibility: hidden; /* Hidden when not shown */
+}
+
 .side-nav ul li {
     margin-bottom: 10px;
     text-align: center;
 }
 
-.side-nav ul li a {
-    display: block;
-    padding: 10px;
-    border-radius: 9px;
-    transition: background-color 0.3s ease;
+.side-nav ul li a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.side-nav ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 9px;
+.side-nav ul li a.button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: lawngreen;
+    transition: width 0.5s ease;
+}
+
+.side-nav ul li a.button:hover::after {
+    width: 100%;
+}
+
+.side-nav ul li a.button:hover {
+    background-color: black;
     color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header styles */
@@ -112,39 +135,44 @@ a {
     margin-bottom: 20px;
 }
 
-.flowchart{
+.flowchart {
     max-width: 80%;
     height: 70vh;
     margin: 0 auto;
     display: block;
     margin-top: 30px;
 }
-.flowchart img{
+
+.flowchart img {
     width: 100%;
     height: 100%;
     margin: 0 auto;
     display: block;
 }
-.process_img_1{
+
+.process_img_1 {
     max-width: 80%;
     height: 70vh;
     margin: 0 auto;
     display: block;
     margin-bottom: 20px;
 }
-.process_img_1 img{
+
+.process_img_1 img {
     width: 100%;
     height: 100%;
     margin: 0 auto;
     display: block;
 }
-.process_img_2{
+
+.process_img_2 {
     max-width: 80%;
     height: 50vh;
     margin: 0 auto;
     display: block;
 }
-.process_img_2 img{
+
+.process_img_2 img {
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -167,7 +195,6 @@ a {
     transition: transform 2s ease, opacity 2s ease;
 }
 
-
 .image {
     flex: 1;
     text-align: center;
@@ -184,4 +211,3 @@ a {
     display: block;
     margin: 0 auto;
 }
-
