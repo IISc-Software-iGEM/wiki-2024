@@ -3,7 +3,7 @@ body {
     background-color: black;
     color: white;
     font-family: Ubuntu sans, sans-serif;
-    background-image: url("static.igem.wiki/teams/5346/leaves.jpg");
+    background-image: url("{{ url_for('static', filename = 'leaves.jpg') }}");
     background-attachment: fixed;
     background-size: cover;
 }
