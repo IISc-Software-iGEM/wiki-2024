@@ -1,57 +1,99 @@
-{% extends "layout.html" %}
-  
-{% block title %}Project Description{% endblock %}
-{% block lead %}Describe how and why you chose your iGEM project.{% endblock %}
-
-{% block page_content %}
-
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Bronze Medal Criterion #3</h4>
-      <p>Describe how and why you chose your iGEM project.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2024 Medals Page</a> for more information.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Description Page</title>
+    <link rel="stylesheet" href="static/description_style.css">
+    <script src="description.js" defer></script>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <h1 class="Description">Description</h1>
     </div>
-  </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>What should this page contain?</h2>
-    <hr>
+<div class="side-nav" id="sideNav">
     <ul>
-      <li>Computational Biology.</li>
-      <li>A detailed explanation of why your team chose to work on this particular project.</li>
-      <li>References and sources to document your research.</li>
-      <li>Use illustrations and other visual resources to explain your project.</li>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#inspiration">Inspiration</a></li>
+        <li><a href="#references">References</a></li>
     </ul>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2022.igem.wiki/dtu-denmark/description">2022 DTU-Denmark</a></li>
-      <li><a href="https://2019.igem.org/Team:ITESO_Guadalajara/Description">2019 ITESO Guadalajara</a></li>
-      <li><a href="https://2020.igem.org/Team:Technion-Israel/Description">2020 Technion Israel</a></li>
-      <li><a href="https://2020.igem.org/Team:Botchan_Lab_Tokyo/Description">2020 Botchan Lab Tokyo</a></li>
-      <li><a href="https://2020.igem.org/Team:St_Andrews/Description">2020 St Andrews</a></li>
-      <li><a href="https://2020.igem.org/Team:MIT/Description">2020 MIT</a></li>
-    </ul>
-  </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Some advice</h2>
-    <hr>
-    <p>We encourage you to put up a lot of information and content on your wiki, but we also encourage you to include summaries as much as possible. If you think of the sections in your project description as the sections in a publication, you should try to be concise, accurate, and unambiguous in your achievements. Your Project Description should include more information than your project abstract.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>References</h2>
-    <hr>
-    <p>iGEM teams are encouraged to record references you use during the course of your research. They should be posted somewhere on your wiki so that judges and other visitors can see how you thought about your project and what works inspired you.</p>
-  </div>
-</div>
+<section id="abstract">
+    <div class="container">
+        <div class="content">
+            <div class="text">
+                <h2>Abstract</h2>
+                <br>
+                <p>The Integrative Modeling Platform (IMP) utilizes Bayesian inference to determine the structure of macromolecular assemblies by integrating experimental data, statistical analyses, and physical principles. It frames model construction as an optimization problem, using restraints to ensure models align with available information. The Distance Restraint and Energy Assisted Modeling (DREAM) algorithm enhances IMP by employing a bottom-up strategy, providing faster and scalable modeling of complex assemblies. This approach promises improved accuracy and precision, facilitating a comprehensive understanding of biological systems.</p>
+                <br>
+            </div>
+        </div>
+        <div class="flowchart">
+            <img src="image/flowchart.jpg" alt="flowchart">
+        </div>
+    </div>
+</section>
 
-{% endblock %}
+<section id="background">
+    <div class="container">
+        <div class="content">
+            <div class="text">
+                <h2>Background</h2>
+                <br>
+                <p>The Integrative Modeling Platform (IMP) is a computational approach designed to determine the structure of macromolecular assemblies. Using Bayesian inference, IMP models biomolecular systems ranging from small peptides to large macromolecular complexes by integrating data from experiments, statistical analyses, physical principles, and prior models. IMP frames the construction of structural models as a computational optimization problem, where information about the assembly is encoded into a scoring function that evaluates candidate models.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="approach">
+    <div class="container">
+        <div class="content">
+            <div class="text">
+                <h2>Approach</h2>
+                <br>
+                <p>IMP is a powerful tool for modeling macromolecular assemblies, but several challenges must be addressed to enhance its accuracy and broaden its applications. These challenges include optimizing model representation, expanding the variety of computable models, and incorporating diverse types of data. Additionally, there is a need for improved methods to score models, sample models, and analyze and interpret results. Currently, IMP employs Markov Chain Monte Carlo (MCMC) sampling to explore the space of possible models, which can be computationally expensive and slow.</p>
+            </div>
+        </div>
+        <div class="process_img_1">
+            <img src="image/process1.png" alt="process_img_1">
+        </div>
+        <div class="process_img_2">
+            <img src="image/process2.png" alt="process_img_2">
+        </div>
+    </div>
+</section>
+
+<section id="inspiration">
+    <div class="container">
+        <div class="content">
+            <div class="text">
+                <h2>Inspiration</h2>
+                <br>
+                <p>Proteins are the driving forces behind cellular processes, participating in various biological functions such as signal transduction, gene regulation, and cell division. They do not act in isolation but collaborate with other proteins to form macromolecular assemblies. These assemblies are crucial for the cell’s proper functioning, performing complex tasks that no single protein can accomplish alone. Understanding the structure and dynamics of these assemblies is key to comprehending biological systems.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="references">
+    <div class="container">
+        <div class="content">
+            <div class="text">
+                <h2>References</h2>
+                <p>[1] <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244" target="_blank">Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al. (2012) Putting the Pieces Together: Integrative Modeling Platform Software for Structure Determination of Macromolecular Assemblies. PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a></p>
+                <p>[2] <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank">Andrej Sali, From integrative structural biology to cell biology, Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN 0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a></p>
+                <p>[3] <a href="https://arxiv.org/abs/2401.17894v4" target="_blank">https://arxiv.org/abs/2401.17894v4</a></p>
+                <p>[4] <a href="https://doi.org/10.1002/pmic.202300379" target="_blank">Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr. 2024, doi:10.1002/pmic.202300379</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
