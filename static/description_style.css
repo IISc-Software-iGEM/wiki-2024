@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 /* Reset styles */
 * {
@@ -115,7 +116,7 @@ a {
 }
 
 .header .Description {
-    font-family: 'Anton', serif;
+    font-family: 'Varela Round', serif;
     font-size: 6em;
     margin-right: 20%;
 }
@@ -136,8 +137,8 @@ a {
 }
 
 .flowchart {
-    max-width: 80%;
-    height: 70vh;
+    max-width: 90%;
+    height: 120vh;
     margin: 0 auto;
     display: block;
     margin-top: 30px;
@@ -149,7 +150,10 @@ a {
     margin: 0 auto;
     display: block;
 }
-
+.caption{
+    text-align: center;
+    font-size: 1.5em;
+}
 .process_img_1 {
     max-width: 80%;
     height: 70vh;
