@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sideNav = document.getElementById('sideNav');
-    const threshold = window.innerHeight * 0.4; // 40% of the viewport height
+    const threshold = window.innerHeight * 0.8; // 80% of the viewport height
 
     window.addEventListener('scroll', function () {
         if (window.scrollY < threshold) {
