@@ -35,7 +35,7 @@ a {
 /* Side Navigation styles */
 .side-nav {
     position: fixed;
-    top: 67%; /* Adjust as needed */
+    top: 55%; /* Adjust as needed */
     transform: translateY(-50%);
     left: 0;
     width: 15%; /* Adjust as needed */
