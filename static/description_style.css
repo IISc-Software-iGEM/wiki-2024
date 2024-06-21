@@ -35,7 +35,7 @@ a {
 /* Side Navigation styles */
 .side-nav {
     position: fixed;
-    top: 70%; /* Adjust as needed */
+    top: 67%; /* Adjust as needed */
     transform: translateY(-50%);
     left: 0;
     width: 15%; /* Adjust as needed */
@@ -137,8 +137,8 @@ a {
 }
 
 .graphical_abstract {
-    max-width: 80%;
-    height: 100vh;
+    max-width: 90%;
+    height: 120vh;
     margin: 0 auto;
     display: block;
     margin-top: 30px;
@@ -154,34 +154,7 @@ a {
     text-align: center;
     font-size: 1.5em;
 }
-.process_img_1 {
-    max-width: 80%;
-    height: 70vh;
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 20px;
-}
 
-.process_img_1 img {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    display: block;
-}
-
-.process_img_2 {
-    max-width: 80%;
-    height: 50vh;
-    margin: 0 auto;
-    display: block;
-}
-
-.process_img_2 img {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    display: block;
-}
 
 .content {
     display: flex;
@@ -215,3 +188,9 @@ a {
     display: block;
     margin: 0 auto;
 }
+
+.mail{
+    color: white;
+    margin-right: 40px;
+}
+
