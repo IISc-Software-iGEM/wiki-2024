@@ -1,106 +1,201 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Handlee&family=Honk&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500&display=swap');
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
 body {
-    background-color: black;
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    background-color: darkblue;
+    color: black;
+}
+
+/* Header styles */
+.header {
+    background-image: linear-gradient(blue, darkblue);
     color: white;
-    font-family: Ubuntu sans, sans-serif;
-    background-image: url("{{ url_for('static', filename = 'leaves.jpg') }}");
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-.Header {
+    padding: 20px 0;
     text-align: center;
-    font-size: 150px;
-    font-family: "Honk", cursive;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 30px;
-}
-
-.PI ,.TL ,.TeamMembers {
-    text-align: center;
-    font-size: 50px;
-    font-family: "Handlee", cursive;
-    font-weight: 400;
-    font-style: normal;
-    margin-top: 60px;
-}
-
-section {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
-}
-
-.Image_PI {
-    min-height: 200px;
-    max-width: 200px;
-}
-.separator_PI_img, .separator_TeamLead_img ,.se{
-    width: 50%;
-    border: 0;
-    border-top: 2px solid white;
-    margin: 20px auto;
-}
-.separator_Members_PI{
-    width: 80%;
-    border: 0;
-    border-top: 2px solid white;
-    margin: 20px auto;
-}
-.PI_para{
-    text-align: center;
-    max-width: 70%;
-    font-family: 'Comic Neue';
-    font-size: 20px;
-    background-color: white;
-    color:black;
-    border-radius: 5px;
-    border-width: 3px;
-    border-color: black;
-    padding: 20px 50px;
-}
-
-.team-leaders-container {
-    display: flex;
     justify-content: center;
-    gap: 80px;
-    margin-top: 30px;
+    height: 100vh; /* Ensure the header takes the full height of the viewport */
+    border-bottom: 2px solid #000; /* Add border below the header */
 }
 
-.team-leader {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.header .Team {
+    font-family: 'Varela Round', serif;
+    font-size: 6em;
+    margin-right: 20%;
 }
 
-.TL1, .TL2 {
-    min-height: 200px;
-    max-width: 200px;
-    object-fit: contain;
-}
-
-.name {
-    margin-top: 10px;
-    font-family: 'Comic Neue', sans-serif;
-    font-size: 20px;
+.pri_PI, .sec_PI, .Team, .Advisor {
     color: white;
+    text-align: center;
+    font-size: 4em;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
 }
+
+.PI_img_container {
+    position: relative;
+    text-align: center;
+}
+
+.Instructor{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.Image_pi {
+    max-width: 50%;
+    height: 55vh;
+    margin: 10px auto;
+    display: block;
+    margin-top: 30px;
+    border-width: 10px;
+    border-color: white;
+    border-radius: 20px;
+    border-right: 6px solid white;
+    border-left: 6px solid white;
+    border-top: 6px solid white;
+    border-bottom: 50px solid white;
+}
+
+.image_caption {
+    position: absolute;
+    bottom: 7px; /* Adjust this value if needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    font-family: "Ubuntu", sans-serif;
+}
+
+/* Add styles for Secondary PI */
+.sec_PI {
+    color: white;
+    text-align: center;
+    font-size: 4em;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+}
+
+.Sec_PI_img_container {
+    position: relative;
+    text-align: center;
+    margin-top: 30px; /* Add margin to space it out appropriately */
+}
+
+.Image_sec_pi {
+    max-width: 50%;
+    height: 55vh;
+    margin: 10px auto;
+    display: block;
+    margin-top: 30px;
+    border-width: 10px;
+    border-color: white;
+    border-radius: 20px;
+    border-right: 6px solid white;
+    border-left: 6px solid white;
+    border-top: 6px solid white;
+    border-bottom: 50px solid white;
+}
+
+.image_caption_sec_pi {
+    position: absolute;
+    bottom: 7px; /* Adjust this value if needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.pi_description {
+    background-color: white;
+    width: 60%;
+    color: black;
+    padding:20px 40px;
+    left: 0;  /* Remove the left property */
+    display: flex; /* Assuming you want the content to be centered within the box */
+    border-radius: 10px;
+    justify-content: center;
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 40px;
+    font-family: 'Ubuntu', serif;
+    font-size: 1.2em;
+    margin-bottom: 5%;
+}
+
+/* Team Members Grid */
 .team-members-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 75px;
-    margin-top: 20px;
+    grid-template-columns: repeat(6, 1fr); /* Five columns */
+    gap: 20px; /* Gap between grid items */
+    padding: 20px;
 }
 
 .team-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 .team-member img {
-    min-height: 200px;
-    max-width: 200px;
-    object-fit: contain;
+    width: 100%;
+    border-radius: 40px;
+    border: 10px solid white;
+    border-bottom: 50px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member .name {
+    margin-top: -50px;
+    font-size: 1.2em;
+    color: Black;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* Footer */
+.mail {
+    color: white;
+    margin-right: 40px;
+}
+
+.links {
+    position: relative;
+    color: inherit; /* Inherit text color from parent */
+    text-decoration: none; /* Remove default underline */
+}
+
+.links::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Adjust the height of the underline */
+    bottom: 0;
+    left: 50%;
+    background-color: lawngreen;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+
+.links:hover::after {
+    width: 100%;
+    left: 0;
 }
