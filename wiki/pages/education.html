@@ -1,35 +1,64 @@
-{% extends "layout.html" %}
-  
-{% block title %}Education{% endblock %}
-{% block lead %}Innovative educational tools and outreach activities have the ability to establish a two-way dialogue with new communities by discussing public values and the science behind synthetic biology.{% endblock %}
 
-{% block page_content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="Education.css">
+</head>
+<body>
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Education</h4>
-      <p>How have you developed new opportunities to include more people in shaping synthetic biology? Innovative educational tools and outreach activities have the ability to establish a two-way dialogue with new communities by discussing public values and the science behind synthetic biology. Document your approach and what was learned by everyone involved to compete for this award.</p>
-      <p>To compete for the Best Education prize, select the prize on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a> and describe your work on this page.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2024 Awards Page</a> for more information.</p>
+
+<div class="header">
+    <div class="container">
+        <h1 class="Education">Education</h1>
     </div>
-  </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2020.igem.org/Team:CCA_San_Diego/Education">2020 CCA San Diego</a></li>
-      <li><a href="https://2020.igem.org/Team:Lambert_GA/Education">2020 Lambert GA</a></li>
-      <li><a href="https://2020.igem.org/Team:Stanford/Education">2020 Stanford</a></li>
-      <li><a href="https://2020.igem.org/Team:Waseda/Education">2020 Waseda</a></li>
-      <li><a href="https://2020.igem.org/Team:Fudan/Education">2020 Fudan</a></li>
-      <li><a href="https://2020.igem.org/Team:Toulouse_INSA-UPS/Education">2020 Toulouse INSA UPS</a></li>
-    </ul>
-  </div>
+<div class="content-container">
+    <h5 class="SchoolVisit">School Visit</h5>
+    <p class="text">We visited National Public School Rajajinagar to introduce high school students to synthetic biology and the
+        role of computational tools in advancing the field. We began with an overview of DNA and proteins, followed
+        by a hands-on DNA extraction experiment from papaya to reinforce their understanding. A quiz on molecular
+        biology concepts further deepened their grasp of synthetic biology. We then demonstrated how scientists use
+        software like PyMOL to visualize protein structures, DNA, and other biomolecules. Tailoring our explanations
+        to a 10th-grade level, we discussed biomolecular segments and relevant biophysical concepts.
+        <br>
+        <br>
+        Demonstration of DNA<br>
+        During the DNA extraction, we showed the students a real DNA structure, 1BNA (1bna.pdb from the Protein Data Bank), which consists of a single DNA helix. We explained DNA’s structure, base pairs, and used PyMOL to visualize the chemical structure of the compound, helping them better understand DNA’s molecular composition.
+        <br>
+        <br>
+        Demonstration of Proteins<br>
+        We introduced the students to protein structures, focusing on Keratin and Haemoglobin.
+        <br>
+        Keratin: We explained that Keratin is a structural protein found in hair, nails, and skin. We discussed how the structure of keratin differs in hair and nails, emphasizing the role of alpha-keratin in hair and beta-keratin in nails. We also addressed why vertical lines appear in nails, linking this to the arrangement of beta-keratin.
+        <br>
+        Haemoglobin: We explained that Haemoglobin is responsible for carrying oxygen in the blood. Using the 1a3n.pdb file, we showed its tetrameric structure, consisting of four subunits, and highlighted how iron in haemoglobin binds to oxygen. We also demonstrated how its structure changes when binding to oxygen and how it releases oxygen when reaching tissues. PyMOL helped illustrate the oxygen-binding sites, providing a clearer understanding of this crucial protein.
+        <br>
+        These demonstrations enhanced the students' understanding of common proteins in the body and the significance of molecular structures in synthetic biology.<br>
+
 </div>
 
-{% endblock %}
+
+
+<footer style="padding: 10px; background-color: black; color: white;margin:0;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center;">
+            <img src="image/igem-logo.png" alt="iGEM Logo" style="height: 50px; margin-right: 20px;">
+            <img src="image/IISc-logo.png" alt="IISc Logo" style="height: 50px; margin-right: 20px;">
+            <img src="image/Kotak-IISc-B.png" alt="Kotak" style="height: 50px; margin-right: 20px; border-radius: 5px; border-width: 2px; border-color: grey; border-style: solid;">
+        </div>
+        <div>
+            <p>Contact us: <a class="mail" href="mailto:igemsoftware.ug@iisc.ac.in" style="color: white;">igemsoftware.ug@iisc.ac.in</a></p>
+        </div>
+    </div>
+    <hr class="separator" style="width: 100%; border: 1px solid grey; margin: 10px 0;">
+    <div class="license" style="display:block;text-align: center;">
+        <p>Content on this site is licensed under a <a class="links" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a></p>
+        <p>The repository used to create this website is available at <a class="links" href="https://gitlab.igem.org/2024/iisc-software">gitlab.igem.org/2024/iisc-software</a></p>
+    </div>
+</footer>
+</body>
+</html>
