@@ -1,42 +1,98 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safety</title>
     <link rel="stylesheet" href="static/Safety.css">
+    <title>Safety</title>
 </head>
 <body>
+<!-- Navigation Bar -->
+<header class="header">
+    <div class="logo-container">
+        <img src="https://static.igem.wiki/teams/5346/headerimg/igem-logo.png" alt="iGEM Logo" class="logo">
+        <img src="https://static.igem.wiki/teams/5346/headerimg/iisc-logo.png" alt="IISc Logo" class="logo">
+    </div>
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Team</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Members</a></li>
+                    <li><a href="#">Attributions</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Project</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Description</a></li>
+                    <li><a href="#">Engineering</a></li>
+                    <li><a href="#">Contribution</a></li>
+                    <li><a href="#">Notebook</a></li>
+                    <li><a href="#">Proof of Concept</a></li>
+                    <li><a href="#">Implementation</a></li>
+                    <li><a href="#">Safety</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Software</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Experiments</a></li>
+                    <li><a href="#">Results</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Wet Lab</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Experiments</a></li>
+                    <li><a href="#">Results</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link">Human Practices</a></li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Awards</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Model</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">iHP</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-<div class="header">
-    <div class="container">
+<!-- Content below the Nav Bar -->
+<main class="main-content">
+    <div class="header-content">
         <h1 class="Safety">Safety</h1>
     </div>
-</div>
 
-<div class="content-container">
-    <h5 class="Introduction">Introduction</h5>
-    <p class="text">Safety is not an experiment for iGEM Software. It is a commitment.<br>
-        Safety in a laboratory setting is of paramount importance because it includes procedures and policies designed to protect scientists' health , avoid accidents, and preserve the validity of experiments and research. Thus, safety was a priority during all our lab procedures.</p>
-</div>
+    <div class="content-container">
+        <h5 class="Introduction">Introduction</h5>
+        <p class="text">Safety is not an experiment for iGEM Software. It is a commitment.<br>
+            Safety in a laboratory setting is of paramount importance because it includes procedures and policies designed to protect scientists' health, avoid accidents, and preserve the validity of experiments and research. Thus, safety was a priority during all our lab procedures.</p>
+    </div>
+</main>
 
-<footer style="padding: 10px; background-color: black; color: white;margin:0;">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div style="display: flex; align-items: center;">
-            <img src="https://static.igem.wiki/teams/5346/igem-logo.png" alt="iGEM Logo" style="height: 50px; margin-right: 20px;">
-            <img src="https://static.igem.wiki/teams/5346/iisc-logo.png" alt="IISc Logo" style="height: 50px; margin-right: 20px;">
-            <img src="https://static.igem.wiki/teams/5346/kotak-iisc-b.png" alt="Kotak" style="height: 50px; margin-right: 20px; border-radius: 5px; border-width: 2px; border-color: grey; border-style: solid;">
+<footer>
+    <div class="footer-content">
+        <div class="footer-logos">
+            <img src="https://static.igem.wiki/teams/5346/igem-logo.png" alt="iGEM Logo" class="logo">
+            <img src="https://static.igem.wiki/teams/5346/iisc-logo.png" alt="IISc Logo" class="logo">
+            <img src="https://static.igem.wiki/teams/5346/kotak-iisc-b.png" alt="Kotak" class="logo">
         </div>
         <div>
-            <p>Contact us: <a class="mail" href="mailto:igemsoftware.ug@iisc.ac.in" style="color: white;">igemsoftware.ug@iisc.ac.in</a></p>
+            <p>Contact us: <a class="mail" href="mailto:igemsoftware.ug@iisc.ac.in">igemsoftware.ug@iisc.ac.in</a></p>
         </div>
     </div>
-    <hr class="separator" style="width: 100%; border: 1px solid grey; margin: 10px 0;">
-    <div class="license" style="display:block;text-align: center;">
+    <hr class="separator">
+    <div class="license">
         <p>Content on this site is licensed under a <a class="links" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a></p>
         <p>The repository used to create this website is available at <a class="links" href="https://gitlab.igem.org/2024/iisc-software">gitlab.igem.org/2024/iisc-software</a></p>
     </div>
 </footer>
+
+<script src="static/safety.js"></script>
 </body>
 </html>
