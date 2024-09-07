@@ -1,50 +1,42 @@
-{% extends "layout.html" %}
-  
-{% block title %}Safety{% endblock %}
-{% block lead %}Describe all the safety issues of your project.{% endblock %}
 
-{% block page_content %}
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Safety and Security Award</h4>
-      <p>Synthetic biology will need to be used safely and securely if local people are to solve local problems all around the world. The Safety and Security Committee is challenging teams to apply biological engineering approaches to manage risks associated with synthetic biology. Can you take the next step in incremental progress towards knowledge, understanding, and tools that will make the use of synthetic biology safer and more secure?</p>
-      <p>To compete for the Safety and Security award, please describe your work on this page and also fill out the description on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a>.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2024 Awards Page</a> for more information.</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety</title>
+    <link rel="stylesheet" href="static/Safety.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <h1 class="Safety">Safety</h1>
     </div>
-  </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col">
-    <h2>What should this page contain?</h2>
-    <hr>
-    <p>On this page of your wiki, you should write about how you are addressing any safety issues in your project. The wiki is a place where you can go beyond the questions on the safety forms, and write about whatever safety topics are most interesting in your project. (You do not need to copy your safety forms onto this wiki page.)</p>
-    <div class="bd-callout bd-callout-info">
-      <p>Please visit the <a href="https://responsibility.igem.org/safety-policies/introduction">Safety Policies page</a> to find this year's safety requirements & deadlines, and to learn about safe & responsible research in iGEM.</p>
+<div class="content-container">
+    <h5 class="Introduction">Introduction</h5>
+    <p class="text">Safety is not an experiment for iGEM Software. It is a commitment.<br>
+        Safety in a laboratory setting is of paramount importance because it includes procedures and policies designed to protect scientists' health , avoid accidents, and preserve the validity of experiments and research. Thus, safety was a priority during all our lab procedures.</p>
+</div>
+
+<footer style="padding: 10px; background-color: black; color: white;margin:0;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center;">
+            <img src="https://static.igem.wiki/teams/5346/igem-logo.png" alt="iGEM Logo" style="height: 50px; margin-right: 20px;">
+            <img src="https://static.igem.wiki/teams/5346/iisc-logo.png" alt="IISc Logo" style="height: 50px; margin-right: 20px;">
+            <img src="https://static.igem.wiki/teams/5346/kotak-iisc-b.png" alt="Kotak" style="height: 50px; margin-right: 20px; border-radius: 5px; border-width: 2px; border-color: grey; border-style: solid;">
+        </div>
+        <div>
+            <p>Contact us: <a class="mail" href="mailto:igemsoftware.ug@iisc.ac.in" style="color: white;">igemsoftware.ug@iisc.ac.in</a></p>
+        </div>
     </div>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Safe Project Design</h2>
-    <hr>
-    <p>Does your project include any safety features? Have you made certain decisions about the design to reduce risks? Write about them here! For example:</p>
-    <ul>
-      <li>Choosing a non-pathogenic chassis</li>
-      <li>Choosing parts that will not harm humans / animals / plants</li>
-      <li>Substituting safer materials for dangerous materials in a proof-of-concept experiment</li>
-      <li>Including an "induced lethality" or "kill-switch" device</li>
-    </ul>
-  </div>
-  <div class="col-lg-4">
-    <h2>Safe Lab Work</h2>
-    <hr>
-    <p>What safety procedures do you use every day in the lab? Did you perform any unusual experiments, or face any unusual safety issues? Write about them here!</p>
-  </div>
-</div>
-
-{% endblock %}
+    <hr class="separator" style="width: 100%; border: 1px solid grey; margin: 10px 0;">
+    <div class="license" style="display:block;text-align: center;">
+        <p>Content on this site is licensed under a <a class="links" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a></p>
+        <p>The repository used to create this website is available at <a class="links" href="https://gitlab.igem.org/2024/iisc-software">gitlab.igem.org/2024/iisc-software</a></p>
+    </div>
+</footer>
+</body>
+</html>
