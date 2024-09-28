@@ -1,18 +1,202 @@
-body { padding-top: 56px; }
-.left-aligned { margin-left: auto; }
-.bg-dark { background-color: #343a40 !important; }
-.bg-hero { background-color: #45b06cff; }
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap");
+
+body {
+  overflow-x: hidden;
+}
+
+.left-aligned {
+  margin-left: auto;
+}
+.bg-dark {
+  background-color: #000 !important;
+}
+.bg-hero {
+  height: 100vh;
+  text-align: center;
+  font-family: "Varela Round", sans-serif;
+}
+.bg-hero h1 {
+  font-weight: 700;
+  z-index: 1;
+  position: relative;
+}
+.bg-hero .floats {
+  height: min(80vh, 50vw);
+  width: min(80vh, 50vw);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  opacity: 0.2;
+  /* add a wobble effect */
+  animation: wobble 10s infinite;
+}
+.bg-hero #float1 {
+  top: 56px;
+  left: 0;
+}
+.bg-hero #float2 {
+  bottom: 0;
+  right: 0;
+  animation: wobble-reverse 10s infinite;
+}
+
+@keyframes wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes wobble-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 /* CALLOUT */
-.bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }
-.bd-callout h4 { margin-bottom:.25rem }
-.bd-callout p:last-child { margin-bottom:0 }
-.bd-callout code { border-radius:.25rem }
-.bd-callout+.bd-callout { margin-top:-.25rem }
-.bd-callout-info { border-left-color:#5bc0de }
-.bd-callout-warning { border-left-color:#f0ad4e }
-.bd-callout-danger { border-left-color:#d9534f }
+.bd-callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e9ecef;
+  border-left-width: 0.25rem;
+  border-radius: 0.25rem;
+}
+.bd-callout h4 {
+  margin-bottom: 0.25rem;
+}
+.bd-callout p:last-child {
+  margin-bottom: 0;
+}
+.bd-callout code {
+  border-radius: 0.25rem;
+}
+.bd-callout + .bd-callout {
+  margin-top: -0.25rem;
+}
+.bd-callout-info {
+  border-left-color: #5bc0de;
+}
+.bd-callout-warning {
+  border-left-color: #f0ad4e;
+}
+.bd-callout-danger {
+  border-left-color: #d9534f;
+}
 
 /* footer */
-footer a { color: white; font-weight: bold; text-decoration: none; }
-footer a:hover { color: white; text-decoration: underline; }
+footer a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  color: inherit; /* Inherit text color from parent */
+  text-decoration: none; /* Remove default underline */
+}
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+footer a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px; /* Adjust the height of the underline */
+  bottom: 0;
+  left: 50%;
+  background-color: lawngreen;
+  transition: width 0.2s ease, left 0.2s ease;
+}
+footer a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+footer .project-logo {
+  height: 40px;
+}
+footer .sponsors {
+  margin: 20px 0;
+}
+footer .kiac-logo {
+  height: 70px;
+  border: 5px solid #fff;
+}
+
+/* navbar */
+.navbar {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.nav-link {
+  color: #fff !important;
+}
+.nav-link:hover {
+  color: #c32475 !important;
+  transition: 0.3s;
+  /* background-image: linear-gradient(to right, #7f70b3, #c32475, #cc9704, #b35005, #20b387); */
+}
+.dropdown-toggle::after {
+  color: white !important;
+}
+
+/* for screens smaller than 1200px, reduce the font size */
+@media (max-width: 1200px) {
+  .navbar {
+    font-size: 14px;
+  }
+}
+
+.navbar-brand > img {
+  height: 40px;
+}
+
+/* Content */
+.content {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.content img {
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+.sidebar {
+    height: 100%;
+    position: sticky;
+    top: 56px;
+    padding-top: 40px;
+}
+.anchor:before { content: ''; display: block; position: relative; width: 0; height: 65px; margin-top: -65px }
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
