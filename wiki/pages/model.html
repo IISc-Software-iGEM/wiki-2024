@@ -1,41 +1,195 @@
-{% extends "layout.html" %}
-  
-{% block title %}Model{% endblock %}
-{% block lead %}Explain your model's assumptions, data, parameters, and results in a way that anyone could understand.{% endblock %}
+{% extends "layout.html" %} {% block title %}Project Description{% endblock %}
+{% block lead %}{% endblock %} {% block page_content %}
 
-{% block page_content %}
+<style>
+  body {
+    background-image: linear-gradient(
+      to bottom,
+      #ff8177 0%,
+      #ff867a 20%,
+      #ff8c7f 40%,
+      #f99185 60%,
+      #cf556c 100%
+    );
+  }
+  #float1 {
+    background-image: url("https://static.igem.wiki/teams/5346/doodle/inspection.png");
+  }
+  #float2 {
+    background-image: url("https://static.igem.wiki/teams/5346/doodle/pitch.png");
+  }
+</style>
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Model</h4>
-      <p>Models and computer simulations can help us understand the function and operation of BioBrick Parts and Devices. Simulation and modeling are critical engineering skills that can contribute to project design or provide a better understanding of the modeled process. These processes are even more useful and/or informative when real world data are included in the model. This award is for teams who build a model of their system and use it to inform system design or simulate expected behavior before, or in conjunction with, experiments in the wetlab.</p>
-      <p>To compete for the Best Model prize, select the prize on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a> and describe your work on this page.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2024 Awards Page</a> for more information.</p>
-    </div>
-  </div>
+<div class="col-md-3 sidebar">
+  <ul>
+    <li><a href="#background" class="button">Background</a></li>
+    <li><a href="#approach" class="button">Approach</a></li>
+    <li><a href="#inspiration" class="button">Motivation</a></li>
+    <li><a href="#references" class="button">References</a></li>
+  </ul>
 </div>
+<div class="col-md-9 content">
+  <section id="abstract">
+    <div class="text">
+      <h2>
+        Scalable Modeling of Macromolecular Assemblies using Novel Distance
+        Geometry Approaches
+      </h2>
+    </div>
+    <div class="graphical_abstract">
+      <img
+        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
+        alt="graphical_abstract"
+      />
+      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
+    </div>
+  </section>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Overview</h2>
-    <hr>
-    <p>Mathematical models and computer simulations provide a great way to describe the function and operation of Parts and Devices. Synthetic Biology is an engineering discipline, and part of engineering is simulation and modeling to determine the behavior of your design before you build it. Designing and simulating can be iterated many times in a computer before moving to the lab.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="http://2018.igem.org/Team:GreatBay_China/Model">2018 GreatBay China</a></li>
-      <li><a href="http://2018.igem.org/Team:Leiden/Model">2018 Leiden</a></li>
-      <li><a href="https://2019.igem.org/Team:IISER_Kolkata/Model">2019 IISER Kolkata</a></li>
-      <li><a href="https://2019.igem.org/Team:Exeter/Model">2019 Exeter</a></li>
-      <li><a href="https://2019.igem.org/Team:Mingdao/Model">2019 Mingdao</a></li>
-      <li><a href="https://2020.igem.org/Team:Harvard/Model">2020 Harvard</a></li>
-      <li><a href="https://2020.igem.org/Team:Leiden/Model">2020 Leiden</a></li>
-    </ul>
-  </div>
+  <section id="background" class="anchor">
+    <div class="text">
+      <h2>Background</h2>
+      <br />
+      <p>
+        The Integrative Modeling Platform (IMP) provides a computational
+        approach designed to model the structure of macromolecular assemblies.
+        Using Bayesian inference, IMP models biomolecular systems ranging from
+        small peptides to large macromolecular complexes by integrating data
+        from experiments, statistical analyses, physical principles, and prior
+        models.<br /><br />
+        IMP frames the construction of structural models as a computational
+        optimization problem, where information about the assembly is encoded
+        into a scoring function that evaluates candidate models. These scoring
+        functions comprise terms known as restraints, which measure how well a
+        model aligns with the information from which the restraint was derived.
+        The restraints incorporate both general structural knowledge and
+        specific details about the target structure. Consequently, a candidate
+        model that scores well is consistent with all available information. The
+        precision and accuracy of the resulting model improve with the amount
+        and quality of information encoded in the restraints. Integrative
+        modeling facilitates the incorporation of new and varied information,
+        low ering the barrier for using incremental data that is typically not
+        applied to structural characterization. Even when individual data types
+        are relatively uninformative, the inte gration of multiple types can
+        provide a comprehensive and accurate picture of an assembly. This
+        approach often results in more precise and complete models than those
+        based on single data sources.<br /><br />
+        Additionally, IMP offers a framework for both static and dynamic
+        modeling, enhancing its utility across a range of biomolecular systems.
+      </p>
+    </div>
+  </section>
+
+  <section id="approach" class="anchor">
+    <div class="text">
+      <h2>Approach</h2>
+      <br />
+      <p>
+        IMP is a powerful tool for modeling macromolecular assemblies, but
+        several challenges must be addressed to enhance its accuracy and extend
+        the scope of its applications. These challenges include optimizing model
+        representation, expanding the variety of computable models, and
+        incorporating diverse types of data. Additionally, there is a need for
+        improved methods to score models, sample models, and analyze and
+        interpret results. Currently, IMP employs Markov Chain Monte Carlo
+        (MCMC) sampling to explore the space of possible models, which can be
+        computationally expensive and slow. To address this, we propose
+        developing an IMP-based software tool that models the structure of
+        macromolecular assemblies using a bottom-up approach.
+        <br />
+        <br />
+        Ourapproach will utilize the Distance Restraint and Energy Assisted
+        Modeling (DREAM) algorithm, a novel method for modeling the structure of
+        macromolecular assemblies. This algorithm follows a bottom-up strategy,
+        building smaller substructures for regions with a high concentration of
+        experimental data and consolidating them before modeling the rest of the
+        protein-complex structure. This method improves structure conformance in
+        the final models, ensuring higher compliance with experimental data. It
+        provides a faster and scalable approach to modeling macromolecular
+        assemblies by using a parallel-processed single-step assembly of
+        complexes, as opposed to the conventional iterative assembly.
+      </p>
+    </div>
+  </section>
+
+  <section id="inspiration" class="anchor">
+    <div class="text">
+      <h2>Motivation</h2>
+      <br />
+      <p>
+        Proteins are the driving forces behind cellular processes, participating
+        in various biological functions such as signal transduction, gene
+        regulation, and cell division. They do not act in isolation but
+        collaborate with other proteins to form macromolecular assemblies. These
+        assemblies are crucial for the cell’s proper functioning, performing
+        complex tasks that no single protein can accomplish alone. Understanding
+        the structure and dynamics of these assemblies is key to comprehending
+        biological systems.<br /><br />
+        However, the inability to determine the structure of macromolecular
+        assemblies has been a significant obstacle in structural biology.
+        Initially, NMR problems were addressed using distance geometry, but its
+        lack of scalability limited its utility. This led to a focus on
+        molecular dynamics, MCMC, and other methods, which are computationally
+        intensive. Modeling the structure and dynamics of macromolecular
+        assemblies can provide in sights into the workings, evolution, control,
+        and design of biological systems. Our iGEM project aims to use
+        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
+        models of macromolecular assemblies using a bottom-up approach,
+        overcoming existing bottlenecks.
+      </p>
+    </div>
+  </section>
+
+  <section id="references" class="anchor">
+    <div class="text">
+      <h2>References</h2>
+      <p>
+        [1]
+        <a
+          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
+          target="_blank"
+          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
+          (2012) Putting the Pieces Together: Integrative Modeling Platform
+          Software for Structure Determination of Macromolecular Assemblies.
+          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
+        >
+      </p>
+      <p>
+        [2]
+        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
+          >Andrej Sali, From integrative structural biology to cell biology,
+          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
+          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
+        >
+      </p>
+      <p>
+        [3]
+        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
+          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
+          methods from statistical inference and machine learning to improve
+          integrative modeling of macromolecular assemblies." arXiv preprint
+          arXiv:2401.17894 (2024).</a
+        >
+      </p>
+      <p>
+        [4]
+        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
+          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
+          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
+          2024, doi:10.1002/pmic.202300379</a
+        >
+      </p>
+      <p>
+        [5]
+        <a
+          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
+          target="_blank"
+          >Improved NMR-data-compliant protein structure modeling captures
+          context-dependent variations and expands the scope of functional
+          inference</a
+        >
+      </p>
+    </div>
+  </section>
 </div>
 
 {% endblock %}
