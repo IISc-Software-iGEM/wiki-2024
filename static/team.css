@@ -1,0 +1,36 @@
+.bg-hero {
+    background-image: url(https://static.igem.wiki/teams/5346/people/team-pic.jpg);
+    background-size: cover;
+    background-position: center bottom;
+}
+.content {
+    background: transparent;
+    box-shadow: none;
+}
+.people-img {
+    width: 150px;
+    background: #fff;
+    padding: 0;
+    margin: 5px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.people-img img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    margin: 0;
+    max-width: none;
+}
+.people-img figcaption {
+    width: 150px;
+    margin: 0;
+    height: 55px;
+    font-weight: 700;
+    display: table-cell;
+    vertical-align: middle;
+}
+.content {
+    text-align: center;
+}
