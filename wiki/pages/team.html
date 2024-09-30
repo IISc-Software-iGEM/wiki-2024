@@ -10,196 +10,63 @@
         #da88dc 60%,
         #fe89d8 100%);
   }
-
-  #float1 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/inspection.png");
-  }
-
-  #float2 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/pitch.png");
-  }
-  .people-img {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 50vh;
-    width: 30vw;
-  }
 </style>
+<link rel="stylesheet" href="{{ url_for('static', filename='team.css') }}">
 
-<div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Team Members
-      </h2>
-    </div>
+<div class="col-12 content">
+    <h1>Team Members</h1>
     <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/aditya-arsh.jpg" alt="aditya-arsh" />
-      <figcaption class="caption">aditya-arsh</figcaption>
+      <figcaption class="caption">Aditya Arsh</figcaption>
     </div>
     <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/akshita.jpg" alt="akshita" />
-      <figcaption class="caption">Akshita</figcaption>
+      <figcaption class="caption">Akshita Sansugu Palaniswami</figcaption>
     </div>
     <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/anirudh-gupta.jpg" alt="anirudh-gupta" />
-      <figcaption class="caption">Anirudh-gupta</figcaption>
+      <figcaption class="caption">Anirudh Gupta</figcaption>
     </div>
     <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/ayush-raina.jpg" alt="ayush-raina" />
-      <figcaption class="caption">Ayush-raina</figcaption>
+      <figcaption class="caption">Ayush Raina</figcaption>
     </div>
     <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/balaji.jpg" alt="balaji" />
-      <figcaption class="caption">Balaji</figcaption>
+      <figcaption class="caption">Balaji R</figcaption>
     </div>
-    <div class="people-img"></div>
+    <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/kuldeep-jatav.jpg" alt="kuldeep-jatav" />
-      <figcaption class="caption">Kuldeep jatav</figcaption>
+      <figcaption class="caption">Kuldeep Jatav</figcaption>
     </div>
-    <div class="people-img"></div>
+    <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/mrigank-pawagi.jpg" alt="mrigank-pawagi" />
-      <figcaption class="caption">Mrigank pawagi</figcaption>
+      <figcaption class="caption">Mrigank Pawagi</figcaption>
     </div>
-    <div class="people-img"></div>
+    <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/naveen-maurya.jpg" alt="naveen-maurya" />
-      <figcaption class="caption">Naveen maurya</figcaption>
+      <figcaption class="caption">Naveen Maurya</figcaption>
     </div>
-    <div class="people-img"></div>
+    <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/rahul-chavan.jpg" alt="rahul-chavan" />
-      <figcaption class="caption">Rahul chavan</figcaption>
+      <figcaption class="caption">Rahul Chavan</figcaption>
     </div>
-    <div class="people-img"></div>
+    <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/saksham-maitri.jpg" alt="saksham-maitri" />
-      <figcaption class="caption">Saksham maitri</figcaption>
+      <figcaption class="caption">Saksham Maitri</figcaption>
     </div>
-    <div class="people-img"></div>
+    <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/sushmit-roy.jpg" alt="sushmit-roy" />
-      <figcaption class="caption">Sushmit roy</figcaption>
+      <figcaption class="caption">Sushmit Roy</figcaption>
     </div>
-    <div class="people-img"></div>
+    <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/trishna.jpg" alt="trishna" />
-      <figcaption class="caption">Trishna</figcaption>
+      <figcaption class="caption">Trishna Kodamasingh</figcaption>
     </div>
-    <div class="people-img"></div>
+    <div class="people-img">
       <img src="https://static.igem.wiki/teams/5346/people/yash-kamble.jpg" alt="yash-kamble" />
-      <figcaption class="caption">yash-kamble</figcaption>
+      <figcaption class="caption">Yash Kamble</figcaption>
     </div>
-  </section>
-
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        HI
-      </p>
-    </div>
-  </section>
-
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
-
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
-
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244" target="_blank">Russel
-          D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a>
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank">Andrej Sali, From integrative structural
-          biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a>
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank">Arvindekar, Shreyas, Kartik Majila, and Shruthi
-          Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a>
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank">Das, Niladri Ranajan et al. “DREAMweb: An
-          online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a>
-      </p>
-      <p>
-        [5]
-        <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439" target="_blank">Improved
-          NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a>
-      </p>
-    </div>
-  </section>
 </div>
 
 {% endblock %}
