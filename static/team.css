@@ -30,6 +30,7 @@
     font-weight: 700;
     display: table-cell;
     vertical-align: middle;
+    padding: 0 10px;
 }
 .content {
     text-align: center;
