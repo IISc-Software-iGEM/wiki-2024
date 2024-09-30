@@ -184,14 +184,33 @@ footer .kiac-logo {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   font-family: 'Popins', sans-serif;
+  padding: 20px;
 }
 .content h1, .content h2, .content h3 {
   font-weight: 700;
 }
+.content h1 {
+  margin-top: 25px;
+}
+.content h2 {
+  margin-top: 20px;
+}
+.content h3 {
+  margin-top: 15px;
+}
+/* don't put margin on the first element */
+.content > *:first-child {
+  margin-top: 0;
+}
 .content img {
-  max-width: 90%;
+  max-width: 100%;
   display: block;
   margin: 0 auto;
+}
+.content figcaption {
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
 }
 .sidebar {
   height: 100%;
@@ -213,7 +232,7 @@ footer .kiac-logo {
   font-size: 16px;
   border-left: 2px solid #000;
   max-height: calc(100vh - 56px);
-  overflow: scroll;
+  overflow: auto;
   padding: 20px 15px 0 15px;
 }
 .sidebar ul a {
