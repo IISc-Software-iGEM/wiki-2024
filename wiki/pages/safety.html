@@ -3,6 +3,7 @@
 
 <style>
   body {
+<<<<<<< HEAD
     background-image: linear-gradient(
       to right,
       #8e9aaf 0%,
@@ -11,185 +12,142 @@
       #feeafa 60%,
       #dee2ff 100%
     );
+=======
+    background-image: linear-gradient(to right,
+        #F1F5D8 0%,
+        #D6FFC1 20%,
+        #B9FFAF 40%,
+        #97FA9A 60%,
+        #8AF0BF 100%);
+>>>>>>> 96458443093f1a684a57b575bfb5c9527d04aa40
   }
+
   #float1 {
     background-image: url("https://static.igem.wiki/teams/5346/doodle/225-overthinking.png");
   }
+
   #float2 {
     background-image: url("https://static.igem.wiki/teams/5346/doodle/181-nodes.pnghttps://static.igem.wiki/teams/5346/doodle/pitch.png");
   }
 </style>
 
 <div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#General-and-Fire-Safety" class="button">General and Fire Safety</a></li>
-    <li><a href="#Chemical-Safety" class="button">Chemical Safety</a></li>
-    <li><a href="#Biological Safety" class="button">Motivation</a></li>
-    <li><a href="#Electrical" class="button">References</a></li>
-  </ul>
+
 </div>
 <div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Scalable Modeling of Macromolecular Assemblies using Novel Distance
-        Geometry Approaches
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modeling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modeling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modeling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
+  <h1>General and Fire safety</h1>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+  <p>
+  <ul>
+    <li>Fire extinguishers and Safety equipment : The lab is equipped with multiple fire extinguishers, and each is
+      strategically located
+      near workstations and exits. The team members have received training on the proper use of fire extinguishers, and
+      inspections are routinely
+      conducted to ensure they are in working order. </li>
+    <li>Fire Alarm Systems: The lab is fitted with a well-maintained fire alarm system. In case of fire, audible alarms
+      provide
+      early warning, and members are trained to evacuate promptly along directed routes to safe assembly points.</li>
+    <li>Evacuation Plans and Routes: The lab complies with institutional evacuation procedures, and team members are
+      familiar
+      with escape routes. Fire drills are conducted periodically to reinforce these protocols.</li>
+    <li>Storage of Combustible Materials: Combustible materials are stored in designated fire-resistant storage units,
+      reducing the risk of accidental fires.</li>
+  </ul>
+  </p>
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
+  <h1>Chemical Safety </h1>
 
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
+  <p>
+  <ul>
+    <li>Chemical Fume Hood Usage: All experiments involving hazardous chemicals, including volatile and toxic
+      substances, were conducted within a chemical fume hood.
+      For our project, we were working with chemicals such as acetonitrile, dithiotreitol, iodoacetamide, trifluoro
+      acetic acid, formaldehyde, beta mercaptoethanol,
+      TEMED, acrylamide, and ammonium persulfate. These chemicals are known to be hazardous and can cause skin
+      irritation, respiratory problems, and other health issues.
+      The use of chemical fume hood ensured that chemical vapors, dust, and other contaminants were effectively vented
+      away from personnel and the lab environment.
+      The fume hood was routinely inspected to ensure airflow and filtration were working optimally.</li>
+    <li>MSDS Documentation: Material Safety Data Sheets (MSDS) for every chemical used in the lab were maintained and
+      easily accessible.
+      These data sheets provided critical information on safe handling procedures, potential hazards, and appropriate
+      emergency responses specific to
+      each chemical that was being used for our project</li>
+    <li>Chemical Segregation and Storage: In compliance with safety protocols, incompatible chemicals were stored in
+      separate, clearly labeled
+      cabinets to avoid hazardous reactions. Flammable chemicals were stored in fireproof cabinets, while corrosive
+      substances were secured in chemically resistant
+      containers.</li>
+    <li>Chemical Waste Management: Waste from chemical experiments was properly segregated and stored in designated
+      containers ( like organic and inorganic waste containers)
+      before being disposed of with the help of Indian Institute of Science's Biohazard and Chemical waste disposal
+      team.</li>
+  </ul>
+  </p>
+
+
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/safetypage/safety.png" alt="Safety Measures">
+    <figcaption>(1) Working in the lab, (2)Biosafety Cabinet, (3) Chemical Fume hood, (4) Lab safety plan,
+      (5) Lab safety plan and emergency details at the lab entrance, (6) First Aid kit
+      next to eye wash/ hand wash station </figcaption>
+  </figure>
+
+  <h1>Biological Safety </h1>
+
+  <p>
+  <ul>
+    <li>Work with Purified Proteins: All procedures involving purified proteins (LCN2 and MMP9), were performed in a
+      certified
+      Biosafety Level 2 (BSL-2) cabinet. This practice was done to ensure sample integrity, prevent contamination,
+      obtain
+      clean mass spectrometry results and also protect personnel from any harmful exposure. The BSL-2 cabinet provided a
+      controlled
+      environment where airflow was carefully managed to prevent contamination.</li>
+    <li>Biosafety Protocols: The lab followed strict biosafety protocols, including the proper handling and disposal of
+      biohazardous materials
+      such as used pipette tips, gloves, and biological reagents. The lab has provisions for autoclving all
+      biological waste before disposal to eliminate the risk of contamination.</li>
+    <li>PPE and Hygiene: Lab personnel were required to wear personal protective equipment (PPE), including gloves, lab
+      coats, and in some
+      cases, face shields, to prevent exposure to the samples. This was done in order to maintain sample purity as
+      keratin contamination
+      is a major problem during mass spectrometry experiment. In addition, handwashing and other hygiene protocols were
+      strictly enforced after each procedure.</li>
+    <li>Training on Biological Hazards: All students and personnel working with biological materials were trained in
+      biosafety practices,
+      decontamination procedures, and emergency spill responses.</li>
+  </ul>
+  </p>
+
+  <h1>Electrical Safety </h1>
+
+  <p>
+  <ul>
+    <li>Equipment Inspection and Certification: All electrical instruments, including speed vaccum dryer, centrifuges,
+      incubators, were inspected regularly for signs of wear and tear. Equipment was certified for use in a wet lab
+      environment, ensuring compliance with safety standards.</li>
+    <li>Grounding and Surge Protection: Electrical equipment was properly grounded to prevent surges, and surge
+      protectors
+      were used to safeguard sensitive equipment from electrical fluctuations.</li>
+    <li>Training in Electrical Hazards: Lab personnel received training on the safe use of electrical equipment and were
+      informed of emergency protocols in case of electrical malfunctions or fires.</li>
+  </ul>
+  </p>
+
+  <hr>
+
+  <p>
+    Our lab work strictly follows institutional safety protocols that align with iGEM's safety guidelines. Our
+    activities, which included the
+    cross-linking mass spectrometry work, were also in compliance with the guidelines set by institutional safety board
+    OLSEH.
+    IMPROVISeD prioritizes ethical research and environmental responsibility, ensuring data is handled with care and no
+    harm is
+    caused to the environment. Additionally, all safety measures were transparently reported to iGEM, meeting global
+    safety and ethical standards.
+  </p>
 </div>
 
 {% endblock %}
