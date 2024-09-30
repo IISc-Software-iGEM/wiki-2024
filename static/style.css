@@ -233,7 +233,11 @@ footer .kiac-logo {
   border-left: 2px solid #000;
   max-height: calc(100vh - 56px);
   overflow: auto;
-  padding: 20px 15px 0 15px;
+  padding-left: 15px;
+}
+.sidebar > ul {
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 .sidebar ul a {
   color: #000;
