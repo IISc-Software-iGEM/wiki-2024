@@ -1,115 +1,118 @@
-{% extends "layout.html" %}
-
-{% block title %} <img src="https://static.igem.wiki/teams/5346/logo/cropped-logo.png" class="cropped-logo" alt="Logo">{% endblock %}
-{% block lead %}Fast Data-Driven Scalable{% endblock %}
-
-{% block page_content %}
-<style>
-  .bg-hero {
-    position: relative;
-    background-image: url('https://static.igem.wiki/teams/5346/gif/gifprotein.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
-
-.bg-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* Adjusts the opacity */
-    z-index: 1;
-}
-
-.cropped-logo {
-    width: 65vw;
-    border-radius: 0%;
-    opacity: 1;
-    z-index: 2; /* Ensures the image is above the overlay */
-    position: relative;
-}
-</style>
-
+{% extends "layout.html" %} {% block title %}IMPROViSeD — Integrated Modeling of
+Protein-complexes Via Single-shot registration using DREAM{% endblock %} {%
+block lead %}Fast. Data-Driven. Scalable.{% endblock %} {% block page_content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}" />
 
 <div class="col-12 content">
-  <div>
-    <div class="comic">
-      <p class="speech left top">
-        Hey MMP9, I've heard you're quite the ECM disruptor. What's your
-        mission?
-      </p>
-      <div class="row">
-        <div class="col-6 character">
-          <img src="https://static.igem.wiki/teams/5346/comic/1.png" />
-        </div>
-        <div class="col-6 character">
-          <img src="https://static.igem.wiki/teams/5346/comic/5.png" />
-        </div>
+  <div class="comic">
+    <p class="speech left top">
+      Hey MMP9, I've heard you're quite the ECM disruptor. What's your mission?
+    </p>
+    <div class="row">
+      <div class="col-6 character">
+        <img src="https://static.igem.wiki/teams/5346/comic/1.png" />
       </div>
-      <p class="speech right bottom">
-        You heard right! I'm all about clearing paths by breaking down the
-        extracellular matrix. But I can't do it alone. What about you, LCN2?
-      </p>
-    </div>
-    <div class="comic">
-      <p class="speech left top">
-        I'm your partner in crime! I trap iron-loving molecules and help you stay active. When we team up, we can break through any barrier. But when we're unchecked, we contribute to something serious — cancer spread. 
-      </p>
-      <div class="row">
-        <div class="col-6 character">
-          <img src="https://static.igem.wiki/teams/5346/comic/2.png" />
-        </div>
-        <div class="col-6 character">
-          <img src="https://static.igem.wiki/teams/5346/comic/6.png" />
-        </div>
+      <div class="col-6 character">
+        <img src="https://static.igem.wiki/teams/5346/comic/5.png" />
       </div>
-      <p class="speech right bottom">
-        Right! That's why our interactions are so important to understand. Knowing how we work together can help design inhibitors to stop us from aiding metastasis.
-      </p>
     </div>
-    <div class="comic">
-      <p class="speech left top">
-        Exactly! With <b>IMPROViSeD</b>, scientists are visualizing our structure in detail. They're using real data to model how we connect.
-      </p>
-      <p class="speech right top">
-        So, they're creating a blueprint of our partnership?
-      </p>
-      <div class="row">
-        <div class="col-6 character">
-          <img src="https://static.igem.wiki/teams/5346/comic/3.png" />
-        </div>
-        <div class="col-6 character">
-          <img src="https://static.igem.wiki/teams/5346/comic/7.png" />
-        </div>
+    <p class="speech right bottom">
+      You heard right! I'm all about clearing paths by breaking down the
+      extracellular matrix. But I can't do it alone. What about you, LCN2?
+    </p>
+  </div>
+  <div class="comic">
+    <p class="speech left top">
+      I'm your partner in crime! I trap iron-loving molecules and help you stay
+      active. When we team up, we can break through any barrier. But when we're
+      unchecked, we contribute to something serious — cancer spread.
+    </p>
+    <div class="row">
+      <div class="col-6 character">
+        <img src="https://static.igem.wiki/teams/5346/comic/2.png" />
       </div>
-      <p class="speech left bottom">
-        Yes, and that blueprint could be the key to disrupting our dangerous dance. It's like turning our strengths against cancer!
-      </p>
+      <div class="col-6 character">
+        <img src="https://static.igem.wiki/teams/5346/comic/6.png" />
+      </div>
     </div>
-    <div class="comic">
-      <p class="speech center top">
-        Here's to science — revealing our secrets to save lives!
-      </p>
-      <div class="row">
-        <div class="col-6 character">
-          <img src="https://static.igem.wiki/teams/5346/comic/4.png" />
-        </div>
-        <div class="col-6 character">
-          <img src="https://static.igem.wiki/teams/5346/comic/8.png" />
-        </div>
+    <p class="speech right bottom">
+      Right! That's why our interactions are so important to understand. Knowing
+      how we work together can help design inhibitors to stop us from aiding
+      metastasis.
+    </p>
+  </div>
+  <div class="comic">
+    <p class="speech left top">
+      Exactly! With <b>IMPROViSeD</b>, scientists are visualizing our structure
+      in detail. They're using real data to model how we connect.
+    </p>
+    <p class="speech right top">
+      So, they're creating a blueprint of our partnership?
+    </p>
+    <div class="row">
+      <div class="col-6 character">
+        <img src="https://static.igem.wiki/teams/5346/comic/3.png" />
+      </div>
+      <div class="col-6 character">
+        <img src="https://static.igem.wiki/teams/5346/comic/7.png" />
+      </div>
+    </div>
+    <p class="speech left bottom">
+      Yes, and that blueprint could be the key to disrupting our dangerous
+      dance. It's like turning our strengths against cancer!
+    </p>
+  </div>
+  <div class="comic">
+    <p class="speech center top">
+      Here's to science — revealing our secrets to save lives!
+    </p>
+    <div class="row">
+      <div class="col-6 character">
+        <img src="https://static.igem.wiki/teams/5346/comic/4.png" />
+      </div>
+      <div class="col-6 character">
+        <img src="https://static.igem.wiki/teams/5346/comic/8.png" />
       </div>
     </div>
   </div>
+</div>
+
+<div class="col-12 content card">
+  <h1>Why Modeling Protein Complexes Matters</h1>
+  <p>
+    Biological functions depend on interactions between proteins, forming
+    complexes that serve essential roles in cellular activities like signaling,
+    transport, and metabolism. However, when these complexes misassemble, it can
+    lead to severe conditions, including cancer. Traditional methods of modeling
+    protein complexes rely on predictions or slow trial-and-error simulations,
+    which often lack accuracy.
+  </p>
+  <p>
+    To pave the way for more effective therapies, we need to see the
+    interactions at a molecular level, and that's where <b>IMPROViSeD</b> steps in. Our
+    platform integrates data from multiple experimental methods to create
+    accurate, scalable models.
+  </p>
+</div>
+
+<div class="col-12 content card">
+  <h1>The IMPROViSeD Advantage</h1>
+  <p>IMPROViSeD introduces a one-shot registration approach for protein complex modeling that revolutionizes the process by utilizing distance restraints derived directly from experimental data such as cryo-EM, X-ray crystallography, AFM, XLMS, and NMR. Unlike traditional methods that rely on random sampling and prediction-heavy algorithms, IMPROViSeD uses DREAM (Distance Restraints and Energy Assisted Modeling) to efficiently map out protein substructures with minimal computational overhead.</p>
+    <ul>
+      <li><b>Fast.</b>No Monte Carlo or Bayesian inference. Skips exhaustive, random sampling of possible configurations.</li>
+      <li><b>Data-Driven.</b>Provides a more reliable and accurate model using experimental data.</li>
+      <li><b>Scalable.</b>Suitable for modeling large and complex datasets with ease.</li>
+      </li>
+    </ul>
+    <p>
+      In comparison, traditional methods are time-consuming, prediction-based, and sampling-heavy. 
+    </p>
+</div>
+
+<div class="col-12 content card">
+  <h1>The Future of Disease Modeling</h1>
+  <p>IMPROVISeD is not just a leap forward in protein complex modeling—it's a shift in how we think about biological research. With accurate, scalable models, scientists can better understand diseases like cancer and design innovative therapies that target the problem at its source.</p>
+  <p>Whether you're a researcher looking to improve your understanding of protein structures, or you're interested in the therapeutic applications of this research, IMPROVISeD opens new avenues for exploration.</p>
 </div>
 
 {% endblock %}

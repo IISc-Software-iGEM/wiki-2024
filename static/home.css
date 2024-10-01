@@ -1,3 +1,49 @@
+body {
+    background-image: linear-gradient(to bottom, black 100vh, #444);
+}
+
+.bg-hero h1 {
+    font-size: 0;
+    background-image: url(https://static.igem.wiki/teams/5346/logo/cropped-logo.png);
+    height: 50vh;
+    width: 95%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 9;
+    position: relative;
+}
+.bg-hero p {
+    color: white !important;
+    font-size: 2em;
+    z-index: 9;
+    position: relative;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.bg-hero {
+    background-image: url('https://static.igem.wiki/teams/5346/lcn2-mmp9-5-compressed.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #000;
+}
+.bg-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjusts the opacity */
+    z-index: 1;
+}
+
 .comic {
   border: solid 2px #000;
   box-shadow: 0 6px 6px -6px #000;
@@ -64,7 +110,7 @@
   float: right;
 }
 
-.comic .speech:before {
+.comic .speech::before {
   border: solid 12px transparent;
   border-left: solid 12px #000;
   border-top: solid 12px #000;
@@ -73,32 +119,39 @@
   position: absolute;
   width: 0;
 }
-.comic .speech.left.top:before {
+.comic .speech.left.top::before {
   bottom: -24px;
   left: 24px;
   transform: skew(50deg);
 }
-.comic .speech.right.top:before {
+.comic .speech.right.top::before {
   bottom: -24px;
   right: 24px;
   transform: skew(-15deg);
 }
-.comic .speech.left.bottom:before {
+.comic .speech.left.bottom::before {
   top: -24px;
   left: 24px;
   transform: skew(-15deg) rotate(180deg);
 }
-.comic .speech.right.bottom:before {
+.comic .speech.right.bottom::before {
   top: -24px;
   right: 24px;
   transform: skew(50deg) rotate(180deg);
 }
+.comic .speech.center {
+    text-align: center;
+}
 .comic .speech.center.top {
     float: none;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.comic .speech.center.top::before {
+  display: none;
 }
 
-.comic .speech:after {
+.comic .speech::after {
   border: solid 10px transparent;
   border-left: solid 10px #fff;
   border-top: solid 10px #fff;
@@ -107,25 +160,28 @@
   position: absolute;
   width: 0;
 }
-.comic .speech.left.top:after {
+.comic .speech.left.top::after {
   bottom: -19px;
   left: 24px;
   transform: skew(50deg);
 }
-.comic .speech.right.top:after {
+.comic .speech.right.top::after {
   bottom: -19px;
   right: 25px;
   transform: skew(-15deg);
 }
-.comic .speech.left.bottom:after {
+.comic .speech.left.bottom::after {
   top: -19px;
   left: 25px;
   transform: skew(-15deg) rotate(180deg);
 }
-.comic .speech.right.bottom:after {
+.comic .speech.right.bottom::after {
   top: -19px;
   right: 23px;
   transform: skew(50deg) rotate(180deg);
+}
+.comic .speech.center.top::after {
+  display: none;
 }
 
 .comic .row {
@@ -135,4 +191,23 @@
   content: " ";
   clear: both;
   display: table;
+}
+
+.card {
+    margin-top: 20px;
+}
+.card h1 {
+    text-align: center;
+}
+.card:nth-child(3n+1) {
+    /* orange gradient */
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+.card:nth-child(3n+2) {
+    /* purple gradient */
+    background: linear-gradient(135deg, #c3cfe2 0%, #c07fc1 100%);
+}
+.card:nth-child(3n) {
+    /* green gradient */
+    background: linear-gradient(135deg, #52c234 0%, #10dbd9 100%);
 }
