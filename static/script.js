@@ -68,81 +68,102 @@ document
 
 document.querySelector(".sidebar").appendChild(toc);
 
-// Replace the iframe with PDF.js viewer
-function replaceIframeWithPDF(iframe, pdfContainer) {
-  const pdfUrl = iframe.src; // Get the PDF URL from iframe src
+// go over all iframe.presentation and wrap them in a div called presentation-container
+document.querySelectorAll("iframe.presentation").forEach((iframe) => {
+  const container = document.createElement("div");
+  container.classList.add("presentation-container");
+  iframe.parentNode.insertBefore(container, iframe);
+  container.appendChild(iframe);
+});
+
+var pdfIndex = 0;
+
+// go over all iframe.presentation and create a PDF.js
+document.querySelectorAll("iframe.presentation").forEach((iframe) => {
+  const pdfUrl = iframe.src; // Get the PDF URL from the iframe
   iframe.style.display = "none"; // Hide the iframe
 
+  // Create a new container to hold the PDF slideshow
+  const pdfContainer = document.createElement("div");
+  pdfContainer.classList = ["pdfContainer"];
+ 
   // Load the PDF using PDF.js
   const loadingTask = pdfjsLib.getDocument(pdfUrl);
-  loadingTask.promise.then(function (pdf) {
-    let currentPage = 1;
-    const totalPages = pdf.numPages;
+  loadingTask.promise
+    .then(function (pdf) {
+      let currentPage = 1;
+      const totalPages = pdf.numPages;
 
-    // Create a container to render PDF pages as a slideshow
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    pdfContainer.appendChild(canvas);
-    console.log(pdfContainer);
-    console.log(canvas);
+      // Create a canvas for rendering PDF pages
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      pdfContainer.appendChild(canvas);
 
-    // Function to render a specific page
-    function renderPage(pageNumber) {
-      pdf.getPage(pageNumber).then(function (page) {
-        const viewport = page.getViewport({ scale: 1.5 });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
+      // Function to render a specific page
+      function renderPage(pageNumber) {
+        pdf
+          .getPage(pageNumber)
+          .then(function (page) {
+            const viewport = page.getViewport({ scale: 1.5 });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
 
-        const renderContext = {
-          canvasContext: ctx,
-          viewport: viewport,
-        };
-        page.render(renderContext);
-      });
-    }
+            const renderContext = {
+              canvasContext: ctx,
+              viewport: viewport,
+            };
 
-    // Initial page render
-    renderPage(currentPage);
-
-    // Create navigation buttons
-    const prevButton = document.createElement("button");
-    prevButton.innerHTML = "Previous";
-    prevButton.onclick = function () {
-      if (currentPage > 1) {
-        currentPage--;
-        renderPage(currentPage);
+            // Render the page
+            page
+              .render(renderContext)
+              .promise.then(function () {
+                console.log("Page rendered");
+              });
+          })
       }
-    };
 
-    const nextButton = document.createElement("button");
-    nextButton.innerHTML = "Next";
-    nextButton.onclick = function () {
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderPage(currentPage);
-      }
-    };
+      // Initial page render
+      renderPage(currentPage);
 
-    pdfContainer.appendChild(prevButton);
-    pdfContainer.appendChild(nextButton);
-  });
-}
+      // Create navigation buttons
+      const prevButton = document.createElement("button");
+      prevButton.innerHTML = `<svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>`;
+      prevButton.onclick = function () {
+        if (currentPage > 1) {
+          currentPage--;
+          renderPage(currentPage);
+        }
+      };
+      prevButton.classList.add("prev");
 
-// Run the function to replace iframes with PDF.js containers
-// replaceIframeWithPDF();
+      const nextButton = document.createElement("button");
+      nextButton.innerHTML = `<svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>`;
+      nextButton.onclick = function () {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderPage(currentPage);
+        }
+      };
+      nextButton.classList.add("next");
 
-// loop over all iframe.presentation
-for (let iframe of document.querySelectorAll("iframe.presentation")) {
-  // create a div element
-  const pdfContainer = document.createElement("div");
-  // add a class of 'pdf-container' to the div
-  pdfContainer.classList.add("pdf-container");
-  // insert the div before the iframe
-  iframe.before(pdfContainer);
+      // Append the buttons to the container
+      pdfContainer.appendChild(prevButton);
+      pdfContainer.appendChild(nextButton);
 
-  // call the replaceIframeWithPDF function with the iframe and the div
-  replaceIframeWithPDF(iframe, pdfContainer);
+      document.querySelector(".content").appendChild(pdfContainer);
+      // iframe.parentNode.appendChild(pdfContainer);
 
-  console.log(iframe);
-  console.log(pdfContainer);
-}
+      // find the pdfIndex-th presentation-container
+      const presentationContainer = document.querySelectorAll(
+        ".presentation-container"
+      )[pdfIndex];
+      // add the pdfContainer to the presentationContainer
+      presentationContainer.appendChild(pdfContainer);
+
+      pdfIndex++;
+    })
+    .catch(function (error) {
+      console.error("Error loading PDF:", error);
+      pdfContainer.innerHTML = "Failed to load PDF.";
+    });
+});

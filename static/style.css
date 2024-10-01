@@ -183,10 +183,12 @@ footer .kiac-logo {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  font-family: 'Popins', sans-serif;
+  font-family: "Popins", sans-serif;
   padding: 20px;
 }
-.content h1, .content h2, .content h3 {
+.content h1,
+.content h2,
+.content h3 {
   font-weight: 700;
 }
 .content h1 {
@@ -204,6 +206,7 @@ footer .kiac-logo {
 }
 .content img {
   max-width: 100%;
+  max-height: 80vh;
   display: block;
   margin: 0 auto;
 }
@@ -213,52 +216,34 @@ footer .kiac-logo {
   text-align: center;
 }
 
-.content .pdf-viewer {
+.content .presentation-container {
   width: 100%;
-  max-width: 800px;
-  height: 70vh;
-  max-height: 600px;
-  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.pdfContainer {
+  width: 100%;
   position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
 }
-.content .canvas-container {
-  display: flex;
-  transition: transform 0.5s ease;
+.pdfContainer canvas {
+  width: 100%;
 }
-.content canvas {
-  max-width: 100%;
-  max-height: 100%;
-}
-.content .arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.pdfContainer .next,
+.pdfContainer .prev {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(50% - 25px);
+  background: rgba(255, 255, 255, 0.8);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.content .arrow svg {
-  width: 20px;
-  height: 20px;
-}
-.content .prev {
-  left: 10px;
-}
-.content .next {
+.pdfContainer .next {
   right: 10px;
 }
-
-
+.pdfContainer .prev {
+  left: 10px;
+}
 .sidebar {
   height: 100%;
   position: sticky;
@@ -274,7 +259,7 @@ footer .kiac-logo {
 }
 .sidebar ul {
   list-style-type: none;
-  font-family: 'Fire Sans', sans-serif;
+  font-family: "Fire Sans", sans-serif;
   font-weight: 600;
   font-size: 16px;
   border-left: 2px solid #000;
