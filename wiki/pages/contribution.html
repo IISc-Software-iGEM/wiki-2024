@@ -1,212 +1,395 @@
-{% extends "layout.html" %} {% block title %}Project Description{% endblock %}
+{% extends "layout.html" %} {% block title %}Collaborations{% endblock %}
 {% block lead %}{% endblock %} {% block page_content %}
 
 <style>
   body {
-    background-image: linear-gradient(
-      to bottom,
-      #edeec9 0%,
-      #dde7c7 20%,
-      #bfd8bd 40%,
-      #98c9a3 60%,
-      #77bfa3 100%
-    );
+    background-image: linear-gradient(to bottom,
+        #EDDFE0 25%,
+        #F5F5F7 50%,
+        #B7B7B7 75%,
+        #705C53 100%);
   }
+
   #float1 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/attachments.png");
+    background-image: url("https://static.igem.wiki/teams/5346/doodle/collab-img1-removebg-preview.png");
   }
+
   #float2 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/bussness-plan.png");
+    background-image: url("https://static.igem.wiki/teams/5346/doodle/collab-img2-removebg-preview.png");
   }
 </style>
 
 <div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#background" class="button">Background</a></li>
-    <li><a href="#approach" class="button">Approach</a></li>
-    <li><a href="#inspiration" class="button">Motivation</a></li>
-    <li>
-      Blah and Oof
-      <ul>
-        <li><a href="#background" class="button">Background</a>
-        
-      <ul>
-        <li><a href="#background" class="button">Background</a></li>
-        <li><a href="#approach" class="button">Approach</a></li>
-        <li><a href="#inspiration" class="button">Motivation</a></li>
-        <li><a href="#references" class="button">References</a></li>
-      </ul>
-    </li>
-        <li><a href="#approach" class="button">Approach</a></li>
-        <li><a href="#inspiration" class="button">Motivation</a></li>
-        <li><a href="#references" class="button">References</a></li>
-      </ul>
-    </li>
-    <li><a href="#references" class="button">References</a></li>
-  </ul>
 </div>
 <div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Scalable Modeling of Macromolecular Assemblies using Novel Distance
-        Geometry Approaches
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modeling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modeling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modeling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
+  <!--
+<h1>Heading</h1>
+<h1>Sub heading</h1>
+<h3>Sub sub heading</h3>
+<p>This is a paragraph.</p>
+<p>You can use the following to put a horizontal rule.</p>
+<hr> 
+<p>For photos, go to the following link and upload the photo there.</p>
+<a href="https://tools.igem.org/uploads/teams">iGEM Tools (this is also an example for how to add links)</a>
+<ol>
+    <li>You may have to log in.</li>
+    <li>Press "upload wiki files".</li>
+    <li>You may make a new folder with the name of your page or section. Now upload the file.</li>
+    <li>Press "Open" next to the uploaded file and copy the URL of the photo. Suppose that the link is: https://static.igem.wiki/teams/5346/curverd-prof-dp.png</li>
+    <li>Look below to see how to insert the image.</li>
+</ol>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+<figure>
+    <img src="https://static.igem.wiki/teams/5346/curverd-prof-dp.png" alt="Alternative text for image... this is displayed if the image somehow fails to load.">
+    <figcaption>Give a caption to your image</figcaption>
+</figure>
+<p>The image may be too big but don't worry... it will be taken care of automatically on the actual page.</p>
+<ul>
+    <li>Item 1 of unordered list</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
+<p>
+    To add presentations, first convert them to a PDF :)
+    Then upload it to the PDF to the same link as above (for photos).
+    Suppose the link is: https://static.igem.wiki/teams/5346/blah.pdf
+    Do the following.
+</p>
+<iframe src="https://static.igem.wiki/teams/5346/blah.pdf" class="presentation"></iframe>
 
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
+<p>
+    For math (LaTeX), either put inline like $$x^2 + y^2 = z^2$$ or put in a block like below.
+    \[
+        x^2 + y^2 = z^2
+    \]
+</p>
+-->
+  <p>Our team is dedicated to advancing the field of synthetic biology and supporting fellow iGEMers through innovative
+    tools and resources. Below are the key contributions we are proud to offer to the iGEM community and the scientific
+    community at large:</p>
+  <h1>IMPROVISeD</h1>
+  <p>The IMPROVISeD (Integrated Modelling of PROtein complexes Via Single-shot registration using DREAM) tool is
+    designed to assist researchers in the accurate modeling of protein complexes. By utilizing experimental data such as
+    cryo-EM, X-ray crystallography, and cross-linking mass spectrometry (XLMS), IMPROVISeD provides distance restraints
+    for building more precise structural models of proteins.</p>
+  <p>This tool is particularly valuable for fellow iGEM teams and the broader scientific community, as it enables
+    targeted therapeutic development by enhancing our understanding of protein interactions and functions. By providing
+    access to a sophisticated modeling platform, we hope to empower researchers to leverage this technology in their own
+    projects, fostering collaborative innovation in synthetic biology.</p>
+  <h1>BEPT</h1>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/contributions/bept.png" alt="Figure has not downloaded">
+    <figcaption>BEPT</figcaption>
+  </figure>
+  <p>In today’s research landscape, many scientists encounter challenges when utilizing software tools available on
+    platforms like GitHub, often due to unfamiliarity with the command line or difficulty in comprehending
+    documentation. To address this gap, we developed BEPT (Bioinformatics Environment for Protein Tools), an interactive
+    command line interface that simplifies the use of APBS (Adaptive Poisson-Boltzmann Solver) for protein
+    electrostatics studies.</p>
+  <p>BEPT automates the generation of pdb2pqr commands and allows users to adjust APBS calculation parameters
+    effortlessly. By recreating the functionality of the APBS web server within the terminal, BEPT provides a
+    user-friendly design that helps researchers overcome initial apprehensions about command-line tools. Our
+    contribution aims to make protein electrostatics more accessible, enabling scientists to conduct meaningful research
+    without the barriers often associated with traditional command-line interfaces. </p>
+  <h1>Inclusivity Tool for Enhanced Accessibility</h1>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/contributions/inclusivity.png" alt="Figure has not downloaded">
+    <figcaption>Inclusivity</figcaption>
+  </figure>
+  <p>Understanding the importance of inclusivity in research and education, we are developing a plug-in tool designed to
+    enhance accessibility on our web platform. This tool features options for color customization to aid colorblind
+    individuals, a reading focus option for those with attention disorders, and text customization for improved
+    readability. Additionally, it highlights links and buttons on the webpage to ensure that all users can navigate our
+    resources effectively.</p>
+  <p>By prioritizing inclusivity, we aim to create an environment where every individual, regardless of their abilities
+    or challenges, can engage with our project and the broader field of synthetic biology. This plug-in tool can be
+    utilised by iGEMers to enhance accessibility and inclusivity on their wikis. </p>
+  <h1>SYNTHETIC BIOLOGY IDEATHON FRAMEWORK</h1>
+  <p>To assist upcoming iGEM teams in organizing effective ideathons, we designed a systematic workflow that can be used
+    to make these events both informative and impactful. This framework aims to help future teams expand their reach,
+    engage their audience, and communicate ideas effectively through structured ideation sessions. The workflow
+    emphasizes the importance of clear objectives, well-defined challenges, audience targeting, and providing
+    participants with the right tools, resources, and mentorship to foster creative thinking and problem-solving. By
+    following this process, iGEM teams can host ideathons that inspire innovative ideas and drive meaningful discussions
+    in synthetic biology and related fields.</p>
+  <ol>
+    <li>Define Objectives and Goals
+      <ul>
+        <li>Purpose: Clearly state the purpose of the ideathon. Is it to generate innovative ideas in synthetic biology,
+          sustainability, education, or social good?</li>
+        <li>Goal Setting: Define clear outcomes:
+          <ul>
+            <li>A list of innovative ideas.</li>
+            <li>Participant engagement and learning.</li>
+            <li>Awareness and collaboration among participants on real-world issues.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Identify and Segment the Target Audience
+      <ul>
+        <li>Define Audience Profile:
+          <ul>
+            <li>High school or college students, entrepreneurs, early-career professionals, or a mixed group.</li>
+            <li>Consider their background (technical, non-technical) to ensure balanced participation.</li>
+          </ul>
+        </li>
+        <li>Understand Needs:
+          <ul>
+            <li>Conduct pre-event surveys or interact with potential participants to assess their interests and
+              challenges.</li>
+            <li>Target students or professionals interested in solving problems but unsure how to proceed with ideation.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Theme and Challenge Design
+      <ul>
+        <li>Theme Selection: Choose a relevant and engaging theme aligned with your objectives (e.g., "Innovating with
+          Synthetic Biology," "Sustainable Solutions for the Future"). In our case it was “using computational and
+          synthetic biology to produce sustainable solutions”</li>
+        <li>Challenges: Define challenges under the theme. Challenges should:
+          <ul>
+            <li>Be broad enough to allow creativity but specific enough to address real-world problems.</li>
+            <li>Provide context for participants, offering real-life scenarios where their ideas could be applied.</li>
+          </ul>
+        </li>
+        <li>Problem Statements: Prepare clear problem statements or ask participants to identify a challenge they want
+          to solve.</li>
+      </ul>
+    </li>
+    <li>Content Design and Preparation
+      <ul>
+        <li>Workshops and Resources:
+          <ul>
+            <li>Pre-event webinars or resources on creative thinking, problem framing, and ideation techniques (e.g.,
+              design thinking, mind-mapping).</li>
+            <li>Provide case studies and relevant data related to the ideathon’s theme to guide participants.</li>
+            <li>Industry insights and articles to give participants inspiration and context.</li>
+          </ul>
+        </li>
+        <li>Mentorship:
+          <ul>
+            <li>Recruit mentors with expertise in the ideathon’s theme who can guide participants through brainstorming
+              and idea refinement.</li>
+            <li>Organize one-on-one mentoring sessions or open Q&A formats.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Ideation and Evaluation Process
+      <ul>
+        <li>Structured Ideation:
+          <ul>
+            <li>Guide participants through structured ideation techniques such as:
+              <ul>
+                <li>Brainstorming sessions.</li>
+                <li>Design thinking workshops to empathize, define, ideate, prototype, and test solutions.</li>
+              </ul>
+            </li>
+            <li>Encourage participants to focus on the viability, feasibility, and impact of their ideas.</li>
+          </ul>
+        </li>
+        <li>Checkpoints:
+          <ul>
+            <li>Set up checkpoints during the event where teams can present progress, get feedback, and refine their
+              ideas.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Judging Criteria and Pitching
+      <ul>
+        <li>Criteria:
+          <ul>
+            <li>Clarity of problem definition.</li>
+            <li>Innovation and creativity.</li>
+            <li>Impact and potential for real-world application.</li>
+            <li>Feasibility of the idea.</li>
+            <li>Presentation and storytelling skills.</li>
+          </ul>
+        </li>
+        <li>Pitch Preparation:
+          <ul>
+            <li>Offer workshops or guides on how to craft effective pitches.</li>
+            <li>Time-limit pitches (e.g., 5 minutes per team), allowing for succinct communication.</li>
+          </ul>
+        </li>
+        <li>Panel of Judges:
+          <ul>
+            <li>Invite industry experts, academics, and relevant professionals to evaluate the pitches based on the
+              criteria.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Tools and Platforms
+      <ul>
+        <li>Platform for Virtual Events:
+          <ul>
+            <li>If virtual, select a platform that supports team collaboration, such as Zoom, Microsoft Teams, or
+              Discord.</li>
+            <li>Use platforms like Miro, Figma, or Google Slides for collaborative brainstorming and presentations.</li>
+          </ul>
+        </li>
+        <li>Submission System:
+          <ul>
+            <li>Designate a platform or form for idea submissions (e.g., Google Forms, Devpost, or an internal
+              submission system).</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Post-Ideathon Engagement
+      <ul>
+        <li>Follow-Up:
+          <ul>
+            <li>Provide feedback to participants on their ideas.</li>
+            <li>Share winning ideas and promote further collaboration through newsletters, social media, or community
+              forums.</li>
+          </ul>
+        </li>
+        <li>Resources for Further Development:
+          <ul>
+            <li>Share resources or connect participants to incubators, mentors, or potential funding to turn their ideas
+              into reality.</li>
+          </ul>
+        </li>
+        <li>Offer Certificates and Prizes:
+          <ul>
+            <li>Offer incentives like certificates, mentorship opportunities, internships, or small seed funding for
+              further idea development.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Promotion and Participant Outreach
+      <ul>
+        <li>Targeted Marketing:
+          <ul>
+            <li>Reach out through schools, universities, social media, and relevant industry forums.</li>
+            <li>Tailor your messaging to inspire creativity and focus on the opportunity to contribute to a meaningful
+              cause or challenge.</li>
+          </ul>
+        </li>
+        <li>Engage Communities:
+          <ul>
+            <li>Partner with student clubs, online communities, or industry groups to amplify your reach.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ol>
+  <hr>
+  <h1>Timeline (Recommended)</h1>
+  <ol>
+    <li>6-8 Weeks Before the Event:
+      <ul>
+        <li>Define objectives and theme.</li>
+        <li>Identify the target audience.</li>
+        <li>Start promoting and open registration.</li>
+      </ul>
+    </li>
+    <li>4 Weeks Before the Event:
+      <ul>
+        <li>Confirm mentors, judges, and speakers.</li>
+        <li>Design workshops or webinars.</li>
+      </ul>
+    </li>
+    <li>2 Weeks Before the Event:
+      <ul>
+        <li>Finalize logistics and share event materials (challenges, schedules, resources).</li>
+      </ul>
+    </li>
+    <li>During the Event:
+      <ul>
+        <li>Facilitate ideation, provide ongoing mentorship, and hold checkpoints.</li>
+        <li>Conduct the final pitching session.</li>
+      </ul>
+    </li>
+    <li>Post-Event:
+      <ul>
+        <li>Announce winners, share feedback, and promote ongoing engagement.</li>
+      </ul>
+    </li>
+  </ol>
+  <p> Our team's contributions are designed to enhance collaboration, accessibility, and innovation within the iGEM
+    community and the broader field of synthetic biology. By providing essential tools like IMPROVISeD and BEPT, along
+    with our inclusivity plug-in and the framework for the Synthetic Biology Ideathon, we aim to empower iGEMers and the
+    research community at large. </p>
+  <!-- </ol>
+1. Define Objectives and Goals
+          • 	Purpose: Clearly state the purpose of the ideathon. Is it to generate innovative ideas in synthetic biology, sustainability, education, or social good?
+          •	Goal Setting: Define clear outcomes:
+o	A list of innovative ideas.
+o	Participant engagement and learning.
+o	Awareness and collaboration among participants on real-world issues.
+2. Identify and Segment the Target Audience
+ •	Define Audience Profile:
+o	High school or college students, entrepreneurs, early-career professionals, or a mixed group.
+o	Consider their background (technical, non-technical) to ensure balanced participation.
+•	Understand Needs:
+o	Conduct pre-event surveys or interact with potential participants to assess their interests and challenges.
+o	Target students or professionals interested in solving problems but unsure how to proceed with ideation.
+3. Theme and Challenge Design
+•	Theme Selection: Choose a relevant and engaging theme aligned with your objectives (e.g., "Innovating with Synthetic Biology," "Sustainable Solutions for the Future"). In our case it was “using computational and synthetic biology to produce sustainable solutions”
+•	Challenges: Define challenges under the theme. Challenges should:
+o	Be broad enough to allow creativity but specific enough to address real-world problems.
+o	Provide context for participants, offering real-life scenarios where their ideas could be applied.
+•	Problem Statements: Prepare clear problem statements or ask participants to identify a challenge they want to solve.
+4. Content Design and Preparation
+•	Workshops and Resources:
+o	Pre-event webinars or resources on creative thinking, problem framing, and ideation techniques (e.g., design thinking, mind-mapping).
+o	Provide case studies and relevant data related to the ideathon’s theme to guide participants.
+o	Industry insights and articles to give participants inspiration and context.
+•	Mentorship:
+o	Recruit mentors with expertise in the ideathon’s theme who can guide participants through brainstorming and idea refinement.
+o	Organize one-on-one mentoring sessions or open Q&A formats.
+5. Ideation and Evaluation Process
+•	Structured Ideation:
+o	Guide participants through structured ideation techniques such as:
+	Brainstorming sessions.
+	Design thinking workshops to empathize, define, ideate, prototype, and test solutions.
+o	Encourage participants to focus on the viability, feasibility, and impact of their ideas.
+•	Checkpoints:
+o	Set up checkpoints during the event where teams can present progress, get feedback, and refine their ideas.
+7. Judging Criteria and Pitching
+•	Criteria:
+o	Clarity of problem definition.
+o	Innovation and creativity.
+o	Impact and potential for real-world application.
+o	Feasibility of the idea.
+o	Presentation and storytelling skills.
+•	Pitch Preparation:
+o	Offer workshops or guides on how to craft effective pitches.
+o	Time-limit pitches (e.g., 5 minutes per team), allowing for succinct communication.
+•	Panel of Judges:
+o	Invite industry experts, academics, and relevant professionals to evaluate the pitches based on the criteria.
+8. Tools and Platforms
+•	Platform for Virtual Events:
+o	If virtual, select a platform that supports team collaboration, such as Zoom, Microsoft Teams, or Discord.
+o	Use platforms like Miro, Figma, or Google Slides for collaborative brainstorming and presentations.
+•	Submission System:
+o	Designate a platform or form for idea submissions (e.g., Google Forms, Devpost, or an internal submission system).
+9. Post-Ideathon Engagement
+•	Follow-Up:
+o	Provide feedback to participants on their ideas.
+o	Share winning ideas and promote further collaboration through newsletters, social media, or community forums.
+•	Resources for Further Development:
+o	Share resources or connect participants to incubators, mentors, or potential funding to turn their ideas into reality.
+•	Offer Certificates and Prizes:
+o	Offer incentives like certificates, mentorship opportunities, internships, or small seed funding for further idea development.
+10. Promotion and Participant Outreach
+•	Targeted Marketing:
+o	Reach out through schools, universities, social media, and relevant industry forums.
+o	Tailor your messaging to inspire creativity and focus on the opportunity to contribute to a meaningful cause or challenge.
+•	Engage Communities:
+o	Partner with student clubs, online communities, or industry groups to amplify your reach. -->
+
+
 </div>
 
 {% endblock %}

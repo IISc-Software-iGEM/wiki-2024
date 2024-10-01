@@ -1,194 +1,139 @@
-{% extends "layout.html" %} {% block title %}Project Description{% endblock %}
+{% extends "layout.html" %} {% block title %}Inclusivity{% endblock %}
 {% block lead %}{% endblock %} {% block page_content %}
 
 <style>
   body {
-    background-image: linear-gradient(
-      to bottom,
-      #8c85a8 0%,
-      #706677 20%,
-      #a6808c 40%,
-      #ccb7ae 60%,
-      #d6cfcb 100%
-    );
+    background-image: linear-gradient(to bottom,
+        #FFF7D1 25%,
+        #FFECC8 50%,
+        #FFECC8 75%,
+        #FFB0B0 100%);
   }
+
   #float1 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/planet.png");
+    background-image: url("https://static.igem.wiki/teams/5346/doodle/inclusivity-img1-removebg-preview.png");
   }
+
   #float2 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/diversity.png");
+    background-image: url("https://static.igem.wiki/teams/5346/doodle/inclusivity-img2-removebg-preview.png");
+  }
+
+  .presentation {
+    width: 100%;
+    height: 600px;
   }
 </style>
 
 <div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#background" class="button">Background</a></li>
-    <li><a href="#approach" class="button">Approach</a></li>
-    <li><a href="#inspiration" class="button">Motivation</a></li>
-    <li><a href="#references" class="button">References</a></li>
-  </ul>
+
 </div>
 <div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Inclusivity Tool
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modeling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modeling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modeling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
+  <h1>Collab with Steam Vision Foundation and Ladakh Science Foundation</h1>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+  <p>
+    Our iGEM team collaborated with two science foundations to promote synthetic
+    biology and computational biology across schools and colleges. Our goal was to
+    ensure that students from diverse backgrounds had the opportunity to engage
+    with these fields, sparking interest and providing educational experiences
+    regardless of their prior exposure. The participants were students from
+    Ladakh, Srinagar and Jammu, Madhya Pradesh, Assam, Delhi, Uttar Pradesh,
+    Bengaluru, Meerut and more.
+  </p>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/ideathon/india-map-with-bg-removebg-preview.png"
+      alt="India Map Locations" />
+    <figcaption>Location of registered students all over India</figcaption>
+  </figure>
+  <p>
+    To reach different age groups effectively, we tailored our programs to suit
+    their learning needs. For high school students (classes 9 through 12), we
+    organized two sessions called "Beyond the Microscopes," offered both online
+    and offline. These sessions were designed to move beyond conventional textbook
+    teaching, introducing students to real-world applications of synthetic biology
+    and computational biology. We emphasized hands-on learning, helping students
+    visualize DNA and protein structures through tools like PyMOL, computational
+    tools to translate DNA fragments.
+  </p>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/beyond-the-microscope/beyond-the-microscope-poster.jpg"
+      alt="Beyond the Microscope Poster" />
+    <figcaption>Beyond The Microscope Poster</figcaption>
+  </figure>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/beyond-the-microscope/beyond-the-microscope-meeting-ss.jpg"
+      alt="Beyond the Microscope Session" />
+    <figcaption>Beyond The Microscope Session</figcaption>
+  </figure>
+  <p>
+    For younger students in grades 5 through 8, we developed an interactive
+    program called "BioMania." This initiative made learning fun, simplifying
+    complex concepts in biology and encouraging students to think like young
+    scientists. Through engaging craft activities, we aimed to cultivate curiosity
+    and inspire these students to explore science further in the future.
+  </p>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/biomania/biomania-poster.jpg" alt="Biomania Poster" />
+    <figcaption>BioMania Poster</figcaption>
+  </figure>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/biomania/booklet-collage.png" alt="BioMania Booklet Collage" />
+    <figcaption>BioMania - The activity books.</figcaption>
+  </figure>
+  <p>
+    For college students, we took a different approach by hosting a Tech-Bio
+    Ideathon." This event encouraged participants to think critically and come up
+    with innovative solutions to problems in synthetic biology. It was an
+    opportunity for students to apply what they had learned in a creative,
+    collaborative environment, connecting biology with real-world challenges. The
+    judges for this ideathon were people from across industries and academia
+    including professors, entrepreneurs, PhD students, doctors etc. We had maximum
+    participation by women showcasing their growing interest in STEM. By fostering
+    a space for innovative thinking, we aimed to empower college students to
+    explore synthetic biology in a way that could lead to tangible contributions
+    in the field.
+  </p>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/ideathon/ideathon-poster.jpg" alt="Tech-Bio Ideathon Poster" />
+    <figcaption>Tech-Bio Ideathon Poster</figcaption>
+  </figure>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/ideathon/stats-of-ideathon.jpg" alt="Gender Ratio Ideathon Stats" />
+    <figcaption>Gender Ratio Statistics for Tech-Bio Ideathon</figcaption>
+  </figure>
+  <p>
+    Through these outreach efforts—spanning younger students to college-level
+    thinkers— we aimed to make synthetic biology accessible, exciting, and
+    inclusive. By conducting sessions across age groups and using both online and
+    offline formats, we ensured that students from different backgrounds,
+    geographical areas, and educational levels could participate and feel inspired
+    to be part of the future of science.
+  </p>
+  <p>
+    <iframe src="https://static.igem.wiki/teams/5346/ideathon/ideathon-event-slides.pdf" class="presentation"></iframe>
+  </p>
+  <h1>Sowing seeds for future iGEMers</h1>
+  <p>
+    Our team is not only focused on promoting Synthetic and Computational Biology
+    but also committed to fostering future iGEMers at IISc Bengaluru. By involving
+    first-year undergraduates in a collaborative project, we provided hands-on
+    experience that blended Engineering and Science to create meaningful software
+    solutions.
+  </p>
+  <p>
+    The project introduced key topics like protein structures and functionalities,
+    alongside practical tools like PyMOL for visualization. We also emphasized
+    core software engineering skills such as Python packaging, Git, and
+    command-line tools. This inclusive approach led to the development of Bept, a
+    user-friendly tool for protein electrostatics aimed at benefiting the
+    scientific and the iGEM community. For more information, visit our official
+    <a href="https://github.com/IISc-Software-iGEM/bept">Github Page</a>.
+  </p>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/cli/cli-inclusivity-team.png" alt="Bept Team" />
+    <figcaption>Team working together for building BEPT</figcaption>
+  </figure>
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
-
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
 </div>
 
 {% endblock %}

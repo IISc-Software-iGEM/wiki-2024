@@ -1,183 +1,398 @@
-{% extends "layout.html" %} {% block title %}Project Description{% endblock %}
+{% extends "layout.html" %} {% block title %}Education{% endblock %}
 {% block lead %}{% endblock %} {% block page_content %}
 
 <style>
-  body {
-    background-image: linear-gradient(
-      to bottom,
-      #edeec9 0%,
-      #dde7c7 20%,
-      #bfd8bd 40%,
-      #98c9a3 60%,
-      #77bfa3 100%
-    );
-  }
-  #float1 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/attachments.png");
-  }
-  #float2 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/bussness-plan.png");
-  }
+    body {
+        background-image: linear-gradient(to bottom,
+                #edeec9 0%,
+                #dde7c7 20%,
+                #bfd8bd 40%,
+                #98c9a3 60%,
+                #77bfa3 100%);
+    }
+
+    #float1 {
+        background-image: url("https://static.igem.wiki/teams/5346/doodle/attachments.png");
+    }
+
+    #float2 {
+        background-image: url("https://static.igem.wiki/teams/5346/doodle/bussness-plan.png");
+    }
 </style>
 
 <div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#school-visit" class="button">School Visit</a></li>
-    <li><a href="#approach" class="button">Approach</a></li>
-    <li><a href="#inspiration" class="button">Motivation</a></li>
-    <li><a href="#references" class="button">References</a></li>
-  </ul>
+
 </div>
 <div class="col-md-9 content">
-  <!-- <section id="abstract">
-    <div class="text">
-      <h2>
-        Scalable Modeling of Macromolecular Assemblies using Novel Distance
-        Geometry Approaches
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section> -->
 
-  <section id="school-visit" class="anchor">
-    <div class="text">
-      <h2>School Visit</h2>
-      <br />
-      <p>
-        We visited NPS Rajajinagar to introduce high school students to synthetic biology and the role of computational tools in advancing the field. We began with an overview of DNA and proteins, followed by a hands-on DNA extraction experiment from papaya to reinforce their understanding. A quiz on molecular biology concepts further deepened their grasp of synthetic biology. We then demonstrated how scientists use software like PyMOL to visualize protein structures, DNA, and other biomolecules. Tailoring our explanations to a 10th-grade level, we discussed biomolecular segments and relevant biophysical concepts.
-        <br>
-    <b>Demonstration of DNA</b>
-    During the DNA extraction, we showed the students a real DNA structure, 1BNA (1bna.pdb from the Protein Data Bank), which consists of a single DNA helix. We explained DNA’s structure, base pairs, and used PyMOL to visualize the chemical structure of the compound, helping them better understand DNA’s molecular composition.
-    <br>
-    <b>Demonstration of Proteins</b> 
-    We introduced the students to protein structures, focusing on Keratin and Haemoglobin. 
-    <br>
-    <b>Keratin:</b> We explained that Keratin is a structural protein found in hair, nails, and skin. We discussed how the structure of keratin differs in hair and nails, emphasizing the role of alpha-keratin in hair and beta-keratin in nails. We also addressed why vertical lines appear in nails, linking this to the arrangement of beta-keratin.
-    <br>
-    <b>Haemoglobin:</b> We explained that Haemoglobin is responsible for carrying oxygen in the blood. Using the 1a3n.pdb file, we showed its tetrameric structure, consisting of four subunits, and highlighted how iron in haemoglobin binds to oxygen. We also demonstrated how its structure changes when binding to oxygen and how it releases oxygen when reaching tissues. PyMOL helped illustrate the oxygen-binding sites, providing a clearer understanding of this crucial protein. 
-    <br>
-    These demonstrations enhanced the students' understanding of common proteins in the body and the significance of molecular structures in synthetic biology.
+    <h1>AIIM Workshop</h1>
+
+    <h2>Introduction</h2>
+    <h3>What is AIIM?</h3>
+    <p>
+        The All India iGEM Meet (AIIM) is a premier annual event where iGEM teams from
+        across India come together to exchange ideas, showcase innovations, and learn
+        from each other. Hosted by a different team each year, AIIM fosters
+        collaboration and knowledge-sharing, with the 2024 edition organized by the
+        IISc Bangalore team. Alongside insightful talks by leading experts from
+        academia, industry, and entrepreneurship, the meet offers an exceptional
+        opportunity for teams to connect and grow. In 2024, the IISc-Software team led
+        an exciting workshop on "Computational Biology and Structural Visualization of
+        Proteins," delving into specialized topics such as protein electrostatics and
+        statistical mechanics. AIIM served as a dynamic platform for sparking new
+        ideas, building networks, and deepening participants’ understanding of these
+        cutting-edge fields.
     </p>
-    </div>
-  </section>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+    <h3>Workshop Summary</h3>
+    <p>
+        The primary goal of this workshop was to share our knowledge on protein
+        electrostatics and statistical mechanics—topics that are often unfamiliar to
+        undergraduate students. Recognizing this gap, we aimed to provide a
+        comprehensive introduction and offer valuable resources to help participants
+        gain a deeper understanding of these advanced subjects. All the codes, and
+        hands-on exercises were shared with the participants in the form of a github
+        repository. The link to the website is
+        <a href="https://github.com/IISc-Software-iGEM/Ion-Channel-NCC/tree/main/AIIM-Workshop">here</a>.
+    </p>
+    <ol>
+        <li>
+            <b>Protein Structure Visualization with PyMol:</b>
+            <p>
+                We demonstrated some basics of PyMol, talked about commonly used file
+                formats like PDB and PQR, alongside advanced features like alignment,
+                morphing, and mutagenesis. The focus protein, NCC, was used to explain ion
+                channels and its mutations, which causes Gitelman Syndrome.
+            </p>
+        </li>
+        <li>
+            <b>Python Automation and APBS Electrostatics:</b>
+            <p>
+                We covered automating PyMol tasks using Python and introduced participants
+                to the APBS command-line tools and web-server for calculating
+                electrostatic potentials, making the topic more approachable.
+            </p>
+        </li>
+        <li>
+            <b>Statistical Mechanics for Molecular Dynamics:</b>
+            <p>
+                Here we shared an overview of molecular simulations, underlying
+                algorithms, limitations their applications in biology, and best practices
+                for conducting simulations. The goal of this presentation was to highlight
+                the potential of these methods in biology.
+            </p>
+        </li>
+    </ol>
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/aiim/aiim-collage.png" alt="AIIM Collage" />
+        <figcaption>AIIM Workshop Conducted by IISc-Software Team.</figcaption>
+    </figure>
 
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
+    <h2>Reviews</h2>
+    <p>
+        The workshop was well-received by a diverse audience, including students from
+        other iGEM teams, IISc undergraduates, and MTech students from the CDS
+        department. Participants praised the practical insights into APBS and
+        molecular simulations, expressing interest in similar future sessions.
+        Students from IISER TVM and IISc were particularly enthusiastic, with many
+        eager to explore these advanced topics further.
+    </p>
+
+    <h1>School Visit to NPS Rajajinagar</h1>
+
+    <p>
+        During our visit, we began with an introduction to DNA and proteins, providing
+        the students with a foundational understanding. This was followed by a
+        hands-on DNA extraction experiment using papaya, aimed at reinforcing their
+        knowledge through practical experience. We also conducted a quiz on molecular
+        biology concepts to deepen their comprehension of synthetic biology. To
+        further enhance their learning, we demonstrated how scientists use software
+        like PyMOL to visualize protein structures, DNA, and other biomolecules. Our
+        explanations were tailored to a 10th-grade level, covering key biomolecular
+        segments and relevant biophysical concepts in a way that was accessible to the
+        students.
+    </p>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/school-visit/school-visit-collage.png"
+            alt="school visit collage" />
+        <figcaption>
+            Interaction with students at NPS Rajajinagar, Bengaluru.
+        </figcaption>
+    </figure>
+
+    <h2>Demonstration of DNA</h2>
+    <p>
+        During the DNA extraction activity, we presented the students with a real DNA
+        structure, 1BNA (1bna.pdb from the Protein Data Bank), consisting of a single
+        DNA helix. By explaining DNA’s structure, including base pairs, and using
+        PyMOL to visualize the chemical composition, we helped the students better
+        grasp the molecular intricacies of DNA.
+    </p>
+
+    <h2>Demonstration of Proteins</h2>
+    <p>
+        Next, we introduced the students to protein structures, focusing on Keratin
+        and Hemoglobin, two proteins that are crucial in biological processes.
+    </p>
+    <ul>
+        <li>
+            <b>Kertain</b>
+            <p>
+                We explained keratin as a structural protein found in hair, nails, and
+                skin. The focus was on the difference between alpha-keratin in hair and
+                beta-keratin in nails, linking the vertical lines in nails to the
+                arrangement of beta-keratin.
+            </p>
+        </li>
+        <li>
+            <b>Haemoglobin</b>
+            <p>
+                We explored hemoglobin's role in oxygen transport and used the 1a3n.pdb
+                file to visualize its tetrameric structure. Through PyMOL, we demonstrated
+                how iron binds to oxygen and the structural changes during oxygen binding
+                and release, giving students a clear view of this essential process.
+            </p>
+        </li>
+    </ul>
+    <iframe src="https://static.igem.wiki/teams/5346/school-visit/school-visit.pdf" class="presentation"></iframe>
+    <p>
+        These demonstrations significantly enhanced the students' understanding of
+        common proteins in the body and underscored the importance of molecular
+        structures in synthetic biology. By making complex scientific concepts
+        accessible and engaging, we aimed to inspire the next generation of scientists
+        and engineers.
+    </p>
+
+    <h1>BioComp-Bytes</h1>
+    <p>
+        The IISc-Software Team organised BioComp-Bytes, a series of talks organised
+        where professors from all over the world known for their works in
+        Computational Biology, Bioinformatics and other aspects of Biological Sciences
+        present and interact with the audience.
+    </p>
+    <p>
+        These talks are aimed at providing a platform for the students and researchers
+        to learn about the latest advancements in the field of Computational Biology
+        and Bioinformatics, by the greatest of today's scientiests. This series also
+        intended to spread awareness about the different computational tools and
+        techniques that are being used in the field of Biological Sciences, for
+        Protein Structure Prediction, Drug Discovery, Protein Anlysis and more.
+    </p>
+    <h2>Speakers</h2>
+    <p>
+        IISc-Software Team organised four talks in the BioComp-Bytes series. The
+        speakers for the talks were:
+    </p>
+    <ol>
+        <li>
+            <b>"Solving 3D Biomolecular Puzzles by Integrative Modelling"</b> by
+            Professor Dr. A.M.J.J. (Alexandre) Bonvin, Utrecht University, Netherlands.
+        </li>
+        <li>
+            <b>"Structural Map of the Human Proteome Using AlphaFold"</b> given by
+            Professor Arne Elofsson from Stockholm University, Sweden.
+        </li>
+        <li>
+            <b>"Cellular consequences of genetic variation"</b> given by Professor Pedro
+            Beltrao from ETH Zurich, Switzerland.
+        </li>
+        <li>
+            <b>"RNA Structure and Prediction"</b> given by Professor Janusz M. Bujnicki,
+            Laboratory of Bioinformatics and Protein Engineering, International
+            Institute of Molecular and Cell Biology in Warsaw.
+        </li>
+    </ol>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/biocomp-bytes/biocomp-bytes.png" alt="BioComp-Bytes Collage" />
+        <figcaption>POsters for the BioComp-Bytes Series.</figcaption>
+    </figure>
+    <h2>Audience and Participation</h2>
+    <p>
+        The talks were attended by students from IISc, and other institutions across
+        India. A google form was sent across iGEM India community, iGEM Slack and
+        other platforms to register for the event. We had multiple registrations with
+        50+ registrations for each talk. We also had students from various other
+        countries, like China and UK. The talk was conducted via Google Meets with a
+        great audience participation and interaction with the speaker.
+    </p>
+
+    <h1>Command Line Interface - BEPT</h1>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/cli/bept-logo.png" alt="Bept Logo" />
+        <figcaption>BEPT logo</figcaption>
+    </figure>
+    <p>
+        BEPT (Beginner-friendly Electrostatics for Protein analysis Tool) is a
+        command-line tool that integrates the functionalities of the pdb2pqr and APBS
+        tools, streamlining their usage for beginners. With Bept, users can explore
+        these powerful tools without the need to delve into complex documentation,
+        making the learning process smoother and more accessible.
+    </p>
+    <p>
+        Bept was developed by the IISc-Software Team, in collaboration with future
+        undergraduate iGEMers at IISc Bengaluru, under the guidance of our Principal
+        Investigator (PI).
+    </p>
+
+    <h2>Why was Bept created?</h2>
+    <p>
+        In today's research landscape, many scientists are hindered from utilizing
+        available software tools on platforms like GitHub due to a lack of familiarity
+        with the command line or difficulty understanding the provided documentation.
+        While some projects offer web servers for ease of use, these often require
+        extensive funding, limiting their accessibility.
+    </p>
+    <p>
+        Bept addresses this gap by offering an interactive interface for using APBS in
+        protein electrostatics studies. Its user-friendly design helps users overcome
+        the initial apprehension of working with the command line, while also
+        supporting them in conducting meaningful research. Bept recreates the
+        functionality of the APBS web server within the terminal, allowing users to
+        easily generate pdb2pqr commands and adjust APBS calculation parameters
+        interactively.
+    </p>
+
+    <h2>For Whom is Bept Created?</h2>
+    <p>
+        Bept is designed for anyone interested in studying protein electrostatics,
+        especially APBS Electrostatics. It caters to a wide audience, including
+        students, research professionals, and industrialists. The intuitive and
+        interactive interface makes it accessible to all, regardless of their prior
+        experience with command-line tools.
+    </p>
+    <p>
+        With Bept, users can confidently pursue research in protein electrostatics,
+        contributing to faster scientific development and discovery globally. For more
+        information, visit our official
+        <a href="https://github.com/IISc-Software-iGEM/bept">Github Page</a>.
+    </p>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/cli-education-team.png" alt="Bept Team" />
+        <figcaption>Team working together for building BEPT</figcaption>
+    </figure>
+
+    <iframe src="https://static.igem.wiki/teams/5346/cli/cli-education.pdf" class="presentation"></iframe>
+
+    <h1>Outreach</h1>
+    <h2>Beyond The Microscope</h2>
+    <p>
+        The Team together with volunteers from the foundations conducted an online and
+        a hybrid session for Beyond The Microscope in the month of September. The
+        hybrid session consisted of students from schools attending the session from
+        their computer lab during school hours. We had schools from Madhya Pradesh and
+        Ladakh. These schools included village schools with less access to modern
+        technology for advanced studies. The online sessions were conducted after
+        their schools' hours in the evening where students joined from their laptops
+        and phones.
+    </p>
+    <p>
+        These sessions focussed on concepts around conversion of DNA to Proteins,
+        visualisation of common protein structures like Keratin and Haemoglobin with
+        PyMol and a Quiz at the end. We had hands-on activities for DNA to Protein
+        conversions with small examples through online webservers. The Protein
+        visualisation gave them a new look into how protein structures and how
+        Haemoglobin and Keratin behave structurally and functionally in our body. Each
+        participant received a synthetic biology booklet and bookmarks as a reward for
+        their active involvement in the session. We had a healthy interaction with
+        everyone and our feedback from students was very positive. We also gave out.
+        Some of the students after the sessions reached out to us asking for more such
+        sessions and resources to study about the topics we had discussed.
+    </p>
+    <iframe src="https://static.igem.wiki/teams/5346/beyond-the-microscope.pdf" class="presentation"></iframe>
+
+    <h2>BIOMANIA</h2>
+    <p>
+        We organized an engaging online session for students in grades 5 to 8, in
+        collaboration with the STEAM Vision Foundation. The students were from schools
+        across the country. This interactive session introduced young participants to
+        the fundamentals of molecular biology and illustrated how these concepts are
+        applied in synthetic biology. To enhance their experience, we incorporated fun
+        arts and crafts activities that encouraged creativity and hands-on learning.
+    </p>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/biomania/biomania-collage.png" alt="Biomania craft collage" />
+        <figcaption>BioMania - Model of DNA.</figcaption>
+    </figure>
+    <iframe src="https://static.igem.wiki/teams/5346/biomania/biomania.pdf" class="presentation"></iframe>
+    <iframe src="https://static.igem.wiki/teams/5346/biomania/biomania-booklet.pdf" class="presentation"></iframe>
+
+    <p></p>
+    In the sessions, we focussed on introduction to molecular biology of DNA and
+    Proteins. This gave them a better understanding on the important of DNA in
+    heredity and Proteins in our body. Each participant received a synthetic biology
+    booklet and bookmarks as a reward for their active involvement in the session.
+    Volunteers from the STEAM Vision Foundation played a crucial role in
+    facilitating the crafts and ensuring that all students were actively engaged
+    throughout the event. The students actively participated in making the DNA
+    models with pencils, colored sticks and tapes. This initiative not only nurtured
+    interest in science among younger students but also fostered a sense of
+    community and collaboration in exploring the exciting world of synthetic
+    biology.
+
+    <h1>TechBio Ideathon</h1>
+    <p>
+        We organized a synthetic and computational biology ideathon aimed at fostering
+        interest and engagement in synthetic biology among undergraduate students
+        nationwide. The problem statements were carefully designed to reflect
+        real-life challenges, encouraging participants to explore the practical
+        applications of synthetic biology in addressing these issues. The panel of
+        judges comprised experts from a diverse range of fields, including healthcare,
+        biosensing, materials science, entrepreneurship, environmental science, and
+        other relevant disciplines. Their broad expertise ensured a comprehensive
+        evaluation of the participants' innovative solutions, providing valuable
+        insights and feedback. The problem statements were:
+    </p>
+    <iframe src="https://static.igem.wiki/teams/5346/ideathon/techbio-ideathon-first-ppt.pdf"
+        class="presentation"></iframe>
+    <ol>
+        <li>
+            Develop biodegradable and sustainable textiles using engineered microbes to
+            produce natural fibers, dyes, or binding agents, while utilizing synthetic
+            biology and also promoting a circular economy in the textile industry.
+        </li>
+        <li>
+            Design scalable, synthetic biology-based biosensors for continuous real-time
+            monitoring of environmental pollutants coupled with advanced data analysis
+            systems to provide actionable environmental insights for informed policy and
+            research decisions.
+        </li>
+        <li>
+            Design a synthetic biology platform that enables the creation of
+            personalized therapies, including custom gene therapies, engineered
+            probiotics, and targeted drug delivery systems, while utilizing patient data
+            to continuously refine and adapt treatments for optimal effectiveness and
+            responsiveness to the patient’s evolving health status.
+        </li>
+        <li>
+            Design a synthetic biology platform that enables the rapid synthesis of
+            antigens and optimizes immune responses, facilitating quick adaptation to
+            emerging pathogens and enhancing vaccine development speed and efficiency in
+            response to global health threats.
+        </li>
+    </ol>
+    <iframe src="https://static.igem.wiki/teams/5346/ideathon/techbio-ideathon-rules.pdf" class="presentation"></iframe>
+
+    <p>
+        We had around 125 registrations from participants across the country who sent
+        in their ideas for the problem statement they selected. After careful judging
+        by experts, we had 4 finalists out of them, 1 from each idea for the final
+        round. The winner of this ideathon, the best solution award was won by Riya
+        Jain from the team MedTech Coders. Students presented innovative solutions,
+        demonstrating their creativity and critical thinking skills. The judges were
+        highly impressed by the quality of the ideas generated during the event,
+        underscoring the potential of synthetic biology in solving contemporary
+        problems. We made sure to offer them post-ideathon support regarding any of
+        their ideas on how to make them ready for the real world and connected them to
+        judges who were experts in this field
+    </p>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/blurred-certificate.jpg" alt="TechBio Ideathon Certificate." />
+        <figcaption>
+            TechBio Ideation Participation Certification (blurred for data privacy).
+        </figcaption>
+    </figure>
+
 </div>
 
 {% endblock %}
