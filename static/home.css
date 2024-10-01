@@ -66,6 +66,8 @@ body {
   max-width: 500px;
   display: block;
 }
+
+
 /* float right for odd images */
 .comic > .character:nth-child(odd) img {
   float: right;
