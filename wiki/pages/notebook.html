@@ -1,5 +1,5 @@
-{% extends "layout.html" %} {% block title %}Project Description{% endblock %}
-{% block lead %}{% endblock %} {% block page_content %}
+{% extends "layout.html" %} {% block title %}Notebook{% endblock %} {% block
+lead %}{% endblock %} {% block page_content %}
 
 <style>
   body {
@@ -7,8 +7,8 @@
       to bottom,
       #428fdd 25%,
       #6992ac 50%,
-      #6A9AB0 75%,
-      #EAD8B1 100%
+      #6a9ab0 75%,
+      #ead8b1 100%
     );
   }
   #float1 {
@@ -19,175 +19,263 @@
   }
 </style>
 
-<div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#background" class="button">Background</a></li>
-    <li><a href="#approach" class="button">Approach</a></li>
-    <li><a href="#inspiration" class="button">Motivation</a></li>
-    <li><a href="#references" class="button">References</a></li>
-  </ul>
-</div>
+<div class="col-md-3 sidebar"></div>
 <div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Integrative Modeling of PROtein Complexes Via Single-shot registration using DREAM
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
+  <p>
+    Our iGEM journey has been an exciting blend of ideation, problem-solving,
+    and consistent progress. From the initial stages in June to our current
+    strides in September, we've worked hard to bring our vision of IMPROViSeD to
+    life. Below is a detailed reflection on the key moments from March through
+    September, where we highlight the pivotal tasks, decisions, and milestones
+    that shaped our project.
+  </p>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modeling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modeling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modeling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
+  <!--  
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+March - June: Ideation and Exploration 
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
+The early months were all about brainstorming and exploring different directions. From March to June, we rigorously debated potential projects, experimenting with ideas like predicting metal-binding proteins and genome-wide miRNA prediction. These discussions gave us critical insight into various possibilities, but it wasn’t until late June that we began to narrow our focus toward protein complexes and integrated modeling platforms, an area that would soon give rise to IMPROViSeD. 
 
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
+Unable to load the shape
+ 
+
+July: Settling on IMPROViSeD and Laying the Groundwork 
+
+With July, came a burst of momentum. Our team finalized the IMPROViSeD platform, which centered on using experimental cross-linking data for modeling protein complexes. We now had a solid direction, and the task ahead was to bring this platform to life. 
+
+Week of 14th July: The first week after our decision was focused on ensuring the responsiveness of our web page to make it user-friendly and accessible, this is where we started laying the foundations of our wiki. Meanwhile, we also worked on the team logo design, a crucial part of our identity, and made strides in planning an educational app for computational biology to engage with younger audiences. While the designs were still being refined, the core framework of the project was coming together, and our registration code for modeling went through its initial phase of implementation. 
+
+Week of 21st July: Alongside technical progress, we were actively engaging in outreach. Our school visits were postponed this week, but we kept busy with presentations on GPCRs (we were yet to finalize the wet lab aspects of the project), adding to our educational efforts and refining our storytelling abilities for future workshops. These talks would help us present our scientific ideas in a more accessible format. 
+
+Week of 28th July: The final week of July saw us diving into full-scale workshops. We also participated in the AIIM judging session (we presented our project to a panel of judges comprising field experts and iGEM ambassadors and also a poster to the congregation)  while mapping out a detailed plan for our upcoming experimental procedures. Additionally, we began a literature review focused on AI-based functional prediction of proteins and expanded our documentation efforts for future use. This was also the week when our coding team refined EDMC (Eucledian Distance Matrix Completion)  methods and focused on geometric refinement for the protein models. 
+
+Unable to load the shape
+ 
+
+August: Refining the Platform and Expanding Our Reach 
+
+August was a month of refining our technical workflows and enhancing outreach efforts. 
+
+Week of 4th August: We began the creation of our Project Promotion Video, a crucial step in communicating our vision to the broader iGEM audience. This week also included a visit to NPS Rajajinagar School, where we connected with students, sparking interest in synthetic biology. On the technical front, the team continued refining the EDMC methods, overcoming some initial challenges and progressing with geometric refinement, ensuring the stability of our model. 
+
+Week of 11th August: The middle of August was marked by the organization of a hackathon, where we brainstormed contact lists, platforms, and problem statements. This gave our project a fresh burst of energy. Concurrently, we focused on completing important forms, like the safety forms and team page updates. In terms of coding, we made strides with refinement II for our modeling methods, making the system more robust. 
+
+Week of 18th August: By the third week of August, we had successfully completed the second round of CLI refinement (the BEPT tool). Meanwhile, we tackled the final stages of the hackathon, making sure everything was in place for a smooth experience. Documentation was also underway, with updates on the safety and attribution forms. 
+
+Week of 25th August: The last week of August was a productive one. We integrated a SDP (Semi-Definite Program) Solver into the platform, further enhancing its functionality. This week also involved refining our safety form submission, ensuring that all necessary precautions were meticulously documented and in line with iGEM requirements. This is also where we had finalized on our wet lab aspects and discussed with Dr. Manjula Das regarding protein availability. 
+
+Unable to load the shape
+ 
+
+September: The Final Push 
+
+September marked the final stretch, where everything started coming together. 
+
+Week of 1st September: The first week of the month was marked by the submission of our final safety form and the Project Promotion Video. This was a significant milestone, as it marked the completion of key deliverables for the competition. We focused heavily on getting the video ready, making sure that it visually captured our journey and the core ideas behind IMPROViSeD.  
+
+Week of 8th September: With the video submitted, we turned our attention toward the team roster and polishing the final theme design. The homepage design was crafted with care, bringing to life the essence of our project. Simultaneously, the attribution and documentation process began, making sure that every contribution was properly acknowledged and recorded for the final submission. We received the LCN2 Protein this week and began standardizing the in-gel digestion protocol. The software team was focusing on post-processing steps. 
+
+Week of 15th September: Mid-September was all about field visits and visual presentation. We organized an industry and clinic visit, aimed at bridging the gap between our theoretical work and real-world applications. A team photo was also taken, which would be used on our website. 
+
+Week of 22nd September: As the month drew to a close, we entered the final phase of preparations. Attribution forms, judging forms, and software submissions were all tackled with care and precision, ensuring that nothing was left incomplete. The documentation effort also intensified, with every element being thoroughly reviewed and refined. The post-processing steps for the software were nearing completion. The mass spectrometry data for the in-gel digested peptide was available from the mass spectrometry facility at IISc. We also received MMP9 this week and began standardising the cross-linking experiments. 
+
+Week of 29th September: The final week was all about polishing and validating our work. We focused on optimising the results, making sure that our platform was ready for the judges. The last push toward submission involved wrapping up documentation, preparing final validation results, and ensuring that all loose ends were tied up. 
+
+ 
+
+Shape 
+
+Caption: Fuelling up for the final push! Midnight pizza party as we review and put the finishing touches on our wiki, just hours before the submission deadline. 
+
+Unable to load the shape
+ 
+
+October: Conclusion 
+
+From ideation to execution, each phase of our project has been crucial in shaping IMPROViSeD into a powerful tool for understanding protein complexes. Our journey through these months reflects the hard work, collaboration, and dedication of each team member. As we enter the final stages of the competition, we’re excited to present our work and demonstrate the impact of our platform. 
+
+  -->
+
+  <h1>March — June</h1>
+  <p>
+    <b>Ideation and Exploration.</b>
+    The early months were all about brainstorming and exploring different
+    directions. From March to June, we rigorously debated potential projects,
+    experimenting with ideas like predicting metal-binding proteins and
+    genome-wide miRNA prediction. These discussions gave us critical insight
+    into various possibilities, but it wasn't until late June that we began to
+    narrow our focus toward protein complexes and integrated modeling platforms,
+    an area that would soon give rise to IMPROViSeD.
+  </p>
+
+  <h1>July</h1>
+
+  <p>
+    <b>Settling on IMPROViSeD and Laying the Groundwork.</b>
+    With July, came a burst of momentum. Our team finalized the IMPROViSeD
+    platform, which centered on using experimental cross-linking data for
+    modeling protein complexes. We now had a solid direction, and the task ahead
+    was to bring this platform to life.
+  </p>
+
+  <h2>Week of 14th July</h2>
+  <p>
+    The first week after our decision was focused on ensuring the
+    <b>responsiveness of our web page</b> to make it user-friendly and
+    accessible, this is where we started laying the foundations of our wiki.
+    Meanwhile, we also worked on the <b>team logo</b> design, a crucial part of
+    our identity, and made strides in planning an
+    <b>educational app for computational biology</b> to engage with younger
+    audiences. While the designs were still being refined, the core framework of
+    the project was coming together, and our <b>registration code</b> for
+    modeling went through its initial phase of implementation.
+  </p>
+
+  <h2>Week of 21st July</h2>
+  <p>
+    Alongside technical progress, we were actively engaging in outreach. Our
+    <b>school visits</b> were postponed this week, but we kept busy with
+    presentations on <b>GPCRs</b> (we were yet to finalize the wet lab aspects
+    of the project), adding to our educational efforts and refining our
+    storytelling abilities for future workshops. These talks would help us
+    present our scientific ideas in a more accessible format.
+  </p>
+
+  <h2>Week of 28th July</h2>
+  <p>
+    The final week of July saw us diving into full-scale <b>workshops</b>. We
+    also participated in the <b>AIIM judging session</b> (we presented our
+    project to a panel of judges comprising field experts and iGEM ambassadors
+    and also a poster to the congregation) while mapping out a detailed plan for
+    our upcoming experimental procedures. Additionally, we began a
+    <b>literature review</b> focused on AI-based functional prediction of
+    proteins and expanded our documentation efforts for future use. This was
+    also the week when our coding team refined
+    <b>EDMC (Eucledian Distance Matrix Completion)</b> methods and focused on
+    <b>geometric refinement</b> for the protein models.
+  </p>
+
+  <h1>August</h1>
+  <p>
+    <b>Refining the Platform and Expanding Our Reach.</b> August was a month of
+    refining our technical workflows and enhancing outreach efforts.
+  </p>
+
+  <h2>Week of 4th August</h2>
+  <p>
+    We began the creation of our <b>Project Promotion Video</b>, a crucial step
+    in communicating our vision to the broader iGEM audience. This week also
+    included a visit to <b>NPS Rajajinagar School</b>, where we connected with
+    students, sparking interest in synthetic biology. On the technical front,
+    the team continued refining the <b>EDMC methods</b>, overcoming some initial
+    challenges and progressing with <b>geometric refinement</b>, ensuring the
+    stability of our model.
+  </p>
+
+  <h2>Week of 11th August</h2>
+  <p>
+    The middle of August was marked by the organization of a <b>hackathon</b>,
+    where we brainstormed contact lists, platforms, and problem statements. This
+    gave our project a fresh burst of energy. Concurrently, we focused on
+    completing important forms, like the <b>safety forms</b> and
+    <b>team page updates</b>. In terms of coding, we made strides with
+    <b>refinement II</b> for our modeling methods, making the system more
+    robust.
+  </p>
+
+  <h2>Week of 18th August</h2>
+  <p>
+    By the third week of August, we had successfully completed the second round
+    of <b>CLI refinement</b> (the BEPT tool). Meanwhile, we tackled the final
+    stages of the hackathon, making sure everything was in place for a smooth
+    experience. Documentation was also underway, with updates on the safety and
+    attribution forms.
+  </p>
+
+  <h2>Week of 25th August</h2>
+  <p>
+    The last week of August was a productive one. We integrated a
+    <b>SDP (Semi-Definite Program) Solver</b> into the platform, further
+    enhancing its functionality. This week also involved refining our
+    <b>safety form submission</b>, ensuring that all necessary precautions were
+    meticulously documented and in line with iGEM requirements. This is also
+    where we had finalized on our wet lab aspects and discussed with
+    <b>Dr. Manjula Das</b> regarding protein availability.
+  </p>
+
+  <h1>September</h1>
+  <p>
+    <b>The Final Push.</b> September marked the final stretch, where everything
+    started coming together.
+  </p>
+
+  <h2>Week of 1st September</h2>
+  <p>
+    The first week of the month was marked by the submission of our
+    <b>final safety form</b> and the <b>Project Promotion Video</b>. This was a
+    significant milestone, as it marked the completion of key deliverables for
+    the competition. We focused heavily on getting the video ready, making sure
+    that it visually captured our journey and the core ideas behind IMPROViSeD.
+  </p>
+
+  <h2>Week of 8th September</h2>
+  <p>
+    With the video submitted, we turned our attention toward the
+    <b>team roster</b> and polishing the final theme design. The homepage design
+    was crafted with care, bringing to life the essence of our project.
+    Simultaneously, the <b>attribution and documentation process</b> began,
+    making sure that every contribution was properly acknowledged and recorded
+    for the final submission. We received the <b>LCN2 Protein</b> this week and
+    began standardizing the in-gel digestion protocol. The software team was
+    focusing on post-processing steps.
+  </p>
+
+  <h2>Week of 15th September</h2>
+  <p>
+    Mid-September was all about field visits and visual presentation. We
+    organized an <b>industry and clinic visit</b>, aimed at bridging the gap
+    between our theoretical work and real-world applications. A
+    <b>team photo</b> was also taken, which would be used on our website.
+  </p>
+
+  <h2>Week of 22nd September</h2>
+  <p>
+    As the month drew to a close, we entered the final phase of preparations.
+    <b>Attribution forms, judging forms, and software submissions</b> were all
+    tackled with care and precision, ensuring that nothing was left incomplete.
+    The documentation effort also intensified, with every element being
+    thoroughly reviewed and refined. The post-processing steps for the software
+    were nearing completion. The <b>mass spectrometry data</b> for the in-gel
+    digested peptide was available from the mass spectrometry facility at IISc.
+    We also received <b>MMP9</b> this week and began standardizing the
+    cross-linking experiments.
+  </p>
+
+  <h2>Week of 29th September</h2>
+  <p>
+    The final week was all about polishing and validating our work. We focused
+    on optimising the results, making sure that our platform was ready for the
+    judges. The last push toward submission involved wrapping up documentation,
+    preparing final validation results, and ensuring that all loose ends were
+    tied up.
+  </p>
+
+  <h1>October</h1>
+  <p>
+    <b>Conclusion.</b> From ideation to execution, each phase of our project has
+    been crucial in shaping IMPROViSeD into a powerful tool for understanding
+    protein complexes. Our journey through these months reflects the hard work,
+    collaboration, and dedication of each team member. As we enter the final
+    stages of the competition, we're excited to present our work and demonstrate
+    the impact of our platform.
+  </p>
+  <figure>
+    <img
+      src="https://static.igem.wiki/teams/5346/cfa93407-1b04-416b-ac66-38e42eb6530d.jpg"
+      alt="Fuelling up for the final push! Midnight pizza party as we review and put the finishing touches on our wiki, just hours before the submission deadline."
+    />
+    <figcaption>Fuelling up for the final push! Midnight pizza party as we review and put the finishing touches on our wiki, just hours before the submission deadline.</figcaption>
+  </figure>
 </div>
 
 {% endblock %}
