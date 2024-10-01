@@ -212,6 +212,20 @@ footer .kiac-logo {
   font-style: italic;
   text-align: center;
 }
+.content .presentation-container {
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.content .presentation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .sidebar {
   height: 100%;
   position: sticky;

@@ -67,3 +67,13 @@ document
   });
 
 document.querySelector(".sidebar").appendChild(toc);
+
+// go over all iframe.presentation and create a div.presentation-container around them
+document.querySelectorAll("iframe.presentation").forEach((el) => {
+  const container = document.createElement("div");
+  container.classList.add("presentation-container");
+  container.appendChild(el.cloneNode(true));
+  
+  // remove the iframe from the parent and place the container in its place  
+  el.outerHTML = container.outerHTML;
+});
