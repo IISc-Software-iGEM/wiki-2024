@@ -1,26 +1,45 @@
-{% extends "layout.html" %} {% block title %}Home{% endblock %} {% block lead
-%}Something about IMPROViSeD.{% endblock %} {% block page_content %}
+{% extends "layout.html" %}
+
+{% block title %} <img src="https://static.igem.wiki/teams/5346/logo/cropped-logo.png" class="cropped-logo" alt="Logo">{% endblock %}
+{% block lead %}Fast Data-Driven Scalable{% endblock %}
+
+{% block page_content %}
+<style>
+  .bg-hero {
+    position: relative;
+    background-image: url('https://static.igem.wiki/teams/5346/gif/gifprotein.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.bg-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjusts the opacity */
+    z-index: 1;
+}
+
+.cropped-logo {
+    width: 65vw;
+    border-radius: 0%;
+    opacity: 1;
+    z-index: 2; /* Ensures the image is above the overlay */
+    position: relative;
+}
+</style>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}" />
-
-<style>
-  body {
-    background-image: linear-gradient(
-      to bottom,
-      #edeec9 0%,
-      #dde7c7 20%,
-      #bfd8bd 40%,
-      #98c9a3 60%,
-      #77bfa3 100%
-    );
-  }
-  #float1 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/attachments.png");
-  }
-  #float2 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/bussness-plan.png");
-  }
-</style>
 
 <div class="col-12 content">
   <div>
