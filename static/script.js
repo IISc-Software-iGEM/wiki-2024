@@ -76,8 +76,6 @@ document.querySelectorAll("iframe.presentation").forEach((iframe) => {
   container.appendChild(iframe);
 });
 
-var pdfIndex = 0;
-
 // go over all iframe.presentation and create a PDF.js
 document.querySelectorAll("iframe.presentation").forEach((iframe) => {
   const pdfUrl = iframe.src; // Get the PDF URL from the iframe
@@ -170,14 +168,13 @@ document.querySelectorAll("iframe.presentation").forEach((iframe) => {
       document.querySelector(".content").appendChild(pdfContainer);
       // iframe.parentNode.appendChild(pdfContainer);
 
-      // find the pdfIndex-th presentation-container
-      const presentationContainer = document.querySelectorAll(
-        ".presentation-container"
-      )[pdfIndex];
-      // add the pdfContainer to the presentationContainer
-      presentationContainer.appendChild(pdfContainer);
-
-      pdfIndex++;
+      // find the .presentation-container whcih contains iframe with same src
+      document.querySelectorAll(".presentation-container").forEach((container) => {
+        if (container.querySelector("iframe").src === pdfUrl) {
+          container.appendChild(pdfContainer);
+          return;
+        }
+      });
     })
     .catch(function (error) {
       console.error("Error loading PDF:", error);
