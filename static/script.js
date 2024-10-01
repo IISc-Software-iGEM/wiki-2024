@@ -68,12 +68,81 @@ document
 
 document.querySelector(".sidebar").appendChild(toc);
 
-// go over all iframe.presentation and create a div.presentation-container around them
-document.querySelectorAll("iframe.presentation").forEach((el) => {
-  const container = document.createElement("div");
-  container.classList.add("presentation-container");
-  container.appendChild(el.cloneNode(true));
-  
-  // remove the iframe from the parent and place the container in its place  
-  el.outerHTML = container.outerHTML;
-});
+// Replace the iframe with PDF.js viewer
+function replaceIframeWithPDF(iframe, pdfContainer) {
+  const pdfUrl = iframe.src; // Get the PDF URL from iframe src
+  iframe.style.display = "none"; // Hide the iframe
+
+  // Load the PDF using PDF.js
+  const loadingTask = pdfjsLib.getDocument(pdfUrl);
+  loadingTask.promise.then(function (pdf) {
+    let currentPage = 1;
+    const totalPages = pdf.numPages;
+
+    // Create a container to render PDF pages as a slideshow
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    pdfContainer.appendChild(canvas);
+    console.log(pdfContainer);
+    console.log(canvas);
+
+    // Function to render a specific page
+    function renderPage(pageNumber) {
+      pdf.getPage(pageNumber).then(function (page) {
+        const viewport = page.getViewport({ scale: 1.5 });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport,
+        };
+        page.render(renderContext);
+      });
+    }
+
+    // Initial page render
+    renderPage(currentPage);
+
+    // Create navigation buttons
+    const prevButton = document.createElement("button");
+    prevButton.innerHTML = "Previous";
+    prevButton.onclick = function () {
+      if (currentPage > 1) {
+        currentPage--;
+        renderPage(currentPage);
+      }
+    };
+
+    const nextButton = document.createElement("button");
+    nextButton.innerHTML = "Next";
+    nextButton.onclick = function () {
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderPage(currentPage);
+      }
+    };
+
+    pdfContainer.appendChild(prevButton);
+    pdfContainer.appendChild(nextButton);
+  });
+}
+
+// Run the function to replace iframes with PDF.js containers
+// replaceIframeWithPDF();
+
+// loop over all iframe.presentation
+for (let iframe of document.querySelectorAll("iframe.presentation")) {
+  // create a div element
+  const pdfContainer = document.createElement("div");
+  // add a class of 'pdf-container' to the div
+  pdfContainer.classList.add("pdf-container");
+  // insert the div before the iframe
+  iframe.before(pdfContainer);
+
+  // call the replaceIframeWithPDF function with the iframe and the div
+  replaceIframeWithPDF(iframe, pdfContainer);
+
+  console.log(iframe);
+  console.log(pdfContainer);
+}
