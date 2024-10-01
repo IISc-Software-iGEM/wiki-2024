@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block title %}Project Description{% endblock %}
+{% extends "layout.html" %} {% block title %}Wet Lab Experiments{% endblock %}
 {% block lead %}{% endblock %} {% block page_content %}
 
 <style>
@@ -21,175 +21,136 @@
 </style>
 
 <div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#background" class="button">Background</a></li>
-    <li><a href="#approach" class="button">Approach</a></li>
-    <li><a href="#inspiration" class="button">Motivation</a></li>
-    <li><a href="#references" class="button">References</a></li>
-  </ul>
+
 </div>
 <div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Scalable Modeling of Macromolecular Assemblies using Novel Distance
-        Geometry Approaches
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
+<p>When we conceptualized IMPROVISeD, we envisioned complementing its computational framework with an experimental wet-lab component to validate the software’s predictions. Our goal was to develop an integrated pipeline that could functionally analyze the protein complexes whose structures were elucidated by IMPROVISeD, emphasizing the generation of experimentally derived data to support our computational models.</p>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modeling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modeling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modeling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
+<h1>GPCR Structure-Function Experiments</h1>
+<p>Initially, we considered studying G-protein coupled receptors (GPCRs), a highly relevant class of proteins involved in signal transduction. GPCRs form one of the largest protein families in human cells and are crucial in various physiological processes by transmitting signals from the extracellular environment to the cell's interior. GPCRs, in their inactive state, form complexes with heterotrimeric G-proteins. Upon ligand binding, the GPCR undergoes a conformational change that activates the G-protein, dissociating it and initiating a signal transduction cascade. [3]</p>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+<p>Dysfunctions in GPCR signaling are linked to numerous diseases, such as neurodegenerative disorders and cancer, making them critical targets for therapeutic intervention. We identified three key protein interaction targets for structure-function analysis of GPCRs:</p>
+<ul>
+    <li><b>GPCR-G-protein complex:</b> Interaction between GPCRs and G-proteins in their inactive state. [3]</li>
+    <li><b>β-arrestin complexes:</b> β-arrestin binds to GPCRs, preventing further G-protein activation and leading to receptor desensitization. [4]</li>
+    <li><b>GPCR heteromers:</b> Emerging evidence suggests GPCRs may form heteromers, resulting in distinct functional properties compared to individual subunits. [5]</li>
+</ul>
+<p>However, after extensive consideration of the available resources and the experimental demands, we decided that studying GPCRs would not be feasible within our current framework. The complexity of the interactions, coupled with the experimental techniques required, exceeded our capacity at this stage.</p>
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
+<h1>The LCN2-MMP9 Complex</h1>
+<p>As a result, we shifted our focus to exploring the LCN2-MMP9 complex, which plays a significant role in cancer metastasis. Unlike GPCRs, this complex offered a more targeted approach that aligned with both our computational goals and the resources available for experimental validation. Our focus turned to understanding how experimentally generated cross-links could inform the modelling of protein complexes involved in cancer progression, specifically using cross-linking mass spectrometry (XLMS) to generate distance restraints for IMPROVISeD.</p>
 
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
+<h2>LCN2 and MMP9: A Crucial Complex in Cancer Metastasis</h2>
+<h2>Lipocalin-2 (LCN2)</h2>
+<p>LCN2, also known as neutrophil gelatinase-associated lipocalin, is a 25-kDa protein stored in neutrophil granules. It belongs to the lipocalin family, which specializes in binding and transporting small lipophilic molecules. [6]</p>
+
+<p>LCN2 has several key biological roles:</p>
+<ul>
+    <li><b>Iron trafficking:</b> It captures and transports iron, increasing cytoplasmic levels.</li>
+    <li><b>Immune defense:</b> Released by neutrophils, LCN2 aids in depleting iron from bacterial pathogens.</li>
+    <li><b>Cell differentiation:</b> It influences tissue growth and differentiation by regulating iron-responsive genes.</li>
+    <li><b>Carcinogenesis:</b> LCN2 enhances cancer cell proliferation by facilitating iron uptake in malignant cells. [1]</li>
+</ul>
+
+<h2>Matrix Metalloproteinase-9 (MMP9)</h2>
+<p>MMP9 is an enzyme involved in the breakdown of the extracellular matrix (ECM), playing a vital role in physiological processes like tissue remodeling.</p>
+
+<p>However, in pathological conditions such as cancer, MMP9 contributes to tumor invasion and metastasis by degrading ECM components, thereby enabling cancer cells to migrate to new locations. [1][8]</p>
+
+<h2>Role of LCN2-MMP9 Complex in Cancer Metastasis</h2>
+<p>The interaction between LCN2 and MMP9 prevents the autodegradation of MMP9, enhancing its proteolytic activity and promoting cancer metastasis. This complex is particularly important in cancers of the alimentary canal. By stabilizing MMP9, LCN2 facilitates the invasion and migration of cancer cells. Inhibiting this interaction presents a promising strategy for cancer therapy, but developing effective inhibitors requires detailed structural information about the complex. [1][7]</p>
+<figure>
+    <img src="https://static.igem.wiki/teams/5346/experimental-ideation/01.png" alt = "Figure not downloaded">
+    <figcaption>LCN2-MMP9 complex is involved in degradation of ECM, Tumoral Invasiveness and Metastasis.[7]</figcaption>
+</figure>
+<p>Past efforts to generate antibodies targeting the LCN2-MMP9 interaction have failed, primarily because the antibodies did not bind to the correct interface. To overcome this challenge, we aim to define the precise binding interface using IMPROVISeD. This requires experimental cross-links between LCN2 and MMP9, which we will generate through XLMS.</p>
+<h1>Cross-Linking Mass Spectrometry (XLMS)</h1>
+<h2>Overview</h2>
+<p>XLMS is a powerful technique for identifying interacting regions between proteins by introducing chemical cross-linkers that covalently bind specific amino acids in close proximity. These cross-links provide crucial distance restraints that can be used to model the protein complex's structure. [2]</p>
+
+<figure>
+    <img src="https://static.igem.wiki/teams/5346/experimental-ideation/02.png" alt = "Figure not downloaded">
+    <figcaption>A general XLMS workflow [2] </figcaption>
+</figure>
+
+<h2>Methodology</h2>
+<p>Our approach involves cross-linking LCN2 and MMP9 using Disuccinimidyl Glutarate (DSG), a commonly used cross-linker. The process begins with SDS-PAGE to separate the cross-linked proteins, followed by in-gel digestion using trypsin. The resulting peptides are analyzed by mass spectrometry, and the spectra are compared with non-cross-linked proteins to detect cross-links.</p>
+
+<p>The workflow consists of the following steps:</p>
+<ul>
+    <li><b>Protein Sample:</b> We run SDS-PAGE to separate LCN2 and MMP9 and obtain pure samples.</li>
+    <li><b>In-Gel Digestion:</b> Protein bands are excised and subjected to trypsin digestion to break them into smaller peptide fragments and subjected to mass spectrometry to obtain spectra for non-cross-linked proteins.</li>
+    <li><b>Cross-Linking:</b> The LCN2-MMP9 complex is cross-linked using DSG. Cross-linked peptides are separated by SDS-PAGE to verify the cross-linking, followed by in-gel digestion and mass spectrometry analysis. Peaks unique to the cross-linked peptides are indicative of amino acids involved in the interaction.</li>
+</ul>
+
+<h1>Cross-Linking Protocol Optimization</h1>
+<p>We are currently optimizing the cross-linking protocol to ensure the highest yield of cross-links between LCN2 and MMP9. This involves fine-tuning the DSG concentration and reaction conditions to achieve the most accurate and reproducible results. These cross-links will provide the experimental distance restraints needed for running IMPROVISeD and validating the modeled structures of the LCN2-MMP9 complex.</p>
+
+
+
+<h2>Protocols</h2>
+
+<h3>Solutions required</h3>
+<ol>
+    <li>ABC (Ammonium Bicarbonate) 200mM stock - 5ml</li>
+    <li>ABC 50mM - 10ml
+        <p>2.5 ml stock ABC solution + 7.5 ml MilliQ H₂O</p>
+    </li>
+    <li>100% ACN (acetonitrile)</li>
+    <li>50mM ABC in 50% ACN - 10ml
+        <p>2.5ml ABC from 200 mM stock + 2.5 ml MilliQ water + 5 ml ACN</p>
+    </li>
+    <li>1M stock DTT (Dithiothreitol) - 1ml
+        <p>154 mg DTT + 1 ml H₂O</p>
+    </li>
+    <li>10mM DTT - 1ml
+        <p>10 µl DDT from 1M stock + 990 µl of 50mM ABC solution</p>
+    </li>
+    <li>IAA- 10mg/ml in 50mM ABC - 1ml</li>
+    <li>20 ng /μl</li>
+</ol>
+
+
+<h3>In Gel Digestion</h3>
+<ol>
+    <li>Excise the band from de-stained SDS PAGE gel (after coomassie brilliant blue staining). Chop the band into small pieces.</li>
+    <li>Add solution 4 (50mM ABC in ACN) enough to soak the gel pieces (~100μl). Incubate at 37°C for 10 min. Centrifuge at 1000 rpm for 5 min and discard the supernatant.</li>
+    <li>Add 100% ACN (~100 μl). Vortex and short spin to remove ACN. Repeat steps 2 and 3 until gel pieces are completely transparent.</li>
+    <li>Add 10mM DTT (~100 μl). Incubate at 56°C for 45 min. Centrifuge at 1000 rpm and discard the supernatant.</li>
+    <li>Wash with 100% ACN, vortex, short spin, and remove supernatant. Speed vacuum until dry at 30°C. Keep in ice for 10 min.</li>
+    <li>Add 20ng/μl Trypsin in a 1:20-1:50 ratio. Top up with the 50mM ABC solution if gel pieces are not submerged. Chill on ice for 10 min so that the gel soaks up the trypsin.</li>
+    <li>Incubate at 37°C for 16 hrs.</li>
+</ol>
+<h3>Peptide extraction</h3>
+<p>Extraction solution: 60% ACN (600μl) + 5% Formic acid (50μl) + H₂O (300μl) - 1ml</p>
+<ol>
+    <li>Take supernatant in fresh MCT. Do not discard gel pieces.</li>
+    <li>Add peptide extraction solution to gel pieces (enough to soak). Vortex for 5 min, centrifuge at 1400 rpm for 15 min. Add supernatant to initial MCT with trypsin-digested peptide.</li>
+    <li>Repeat step 2 (3-4 times).</li>
+    <li>Speed vacuum at 30˚C till dry (no parafilm).</li>
+    <li>Store at -20˚C for mass spectrometry to be done.</li>
+</ol>
+
+
+
+
+
+
+
+
+<h1>References</h1> 
+<ol>
+    <li>Lin CW, Tseng SW, Yang SF, Ko CP, Lin CH, Wei LH, Chien MH, Hsieh YS. Role of lipocalin 2 and its complex with matrix metalloproteinase-9 in oral cancer. Oral Dis. 2012 Nov;18(8):734-40.</li>
+    <li>Graziadei A, Rappsilber J. Leveraging crosslinking mass spectrometry in structural and cell biology. Structure. 2022 Jan 6;30(1):37-54.</li>
+    <li>Digby GJ, Lober RM, Sethi PR, Lambert NA. Some G protein heterotrimers physically dissociate in living cells. Proc Natl Acad Sci U S A. 2006 Nov 21;103(47):17789-94.</li>
+    <li>Tobin AB. G-protein-coupled receptor phosphorylation: where, when and by whom. Br J Pharmacol. 2008 Mar;153 Suppl 1(Suppl 1):S167-76.</li>
+    <li>Dale NC, Johnstone EKM, Pfleger KDG. GPCR heteromers: An overview of their classification, function and physiological relevance. Front Endocrinol (Lausanne). 2022 Aug 30;13:931573.</li>
+    <li>Kjeldsen L, Johnsen AH, Sengeløv H, Borregaard N. Isolation and primary structure of NGAL, a novel protein associated with human neutrophil gelatinase. J Biol Chem. 1993 May 15;268(14):10425-32. PMID: 7683678.</li>
+    <li>Candido S, Abrams SL, Steelman LS, Lertpiriyapong K, Fitzgerald TL, Martelli AM, Cocco L, Montalto G, Cervello M, Polesel J, Libra M, McCubrey JA. Roles of NGAL and MMP-9 in the tumor microenvironment and sensitivity to targeted therapy. Biochim Biophys Acta. 2016 Mar;1863(3):438-448.</li>
+    <li>Vandooren J, Van den Steen PE, Opdenakker G. Biochemistry and molecular biology of gelatinase B or matrix metalloproteinase-9 (MMP-9): the next decade. Crit Rev Biochem Mol Biol. 2013 May-Jun;48(3):222-72.</li>
+</ol>
+
+
 </div>
 
 {% endblock %}
