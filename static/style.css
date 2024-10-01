@@ -223,9 +223,11 @@ footer .kiac-logo {
 .pdfContainer {
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 .pdfContainer canvas {
   width: 100%;
+  transition: 0.2s;
 }
 .pdfContainer .next,
 .pdfContainer .prev {
@@ -243,6 +245,14 @@ footer .kiac-logo {
 }
 .pdfContainer .prev {
   left: 10px;
+}
+canvas.nextCanvas {
+  position: absolute;
+  left: 100%;
+}
+canvas.prevCanvas {
+  position: absolute;
+  right: 100%;
 }
 .sidebar {
   height: 100%;

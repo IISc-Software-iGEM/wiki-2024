@@ -23,7 +23,7 @@ body {
 
 .bg-hero {
     background-image: url('https://static.igem.wiki/teams/5346/lcn2-mmp9-5-compressed.gif');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;

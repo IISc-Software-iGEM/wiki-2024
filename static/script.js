@@ -86,7 +86,7 @@ document.querySelectorAll("iframe.presentation").forEach((iframe) => {
   // Create a new container to hold the PDF slideshow
   const pdfContainer = document.createElement("div");
   pdfContainer.classList = ["pdfContainer"];
- 
+
   // Load the PDF using PDF.js
   const loadingTask = pdfjsLib.getDocument(pdfUrl);
   loadingTask.promise
@@ -99,28 +99,35 @@ document.querySelectorAll("iframe.presentation").forEach((iframe) => {
       const ctx = canvas.getContext("2d");
       pdfContainer.appendChild(canvas);
 
-      // Function to render a specific page
       function renderPage(pageNumber) {
-        pdf
-          .getPage(pageNumber)
-          .then(function (page) {
-            const viewport = page.getViewport({ scale: 1.5 });
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
+        pdf.getPage(pageNumber).then(function (page) {
+          const viewport = page.getViewport({ scale: 1.5 });
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
 
-            const renderContext = {
-              canvasContext: ctx,
-              viewport: viewport,
-            };
+          const renderContext = {
+            canvasContext: ctx,
+            viewport: viewport,
+          };
 
-            // Render the page
-            page
-              .render(renderContext)
-              .promise.then(function () {
-                console.log("Page rendered");
-              });
-          })
+          // Render the page
+          page.render(renderContext).promise.then(function () {
+            console.log("Page rendered");
+          });
+        });
       }
+
+      // automatically change the page
+      var changeFunc = () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderPage(currentPage);
+        } else {
+          currentPage = 1;
+          renderPage(currentPage);
+        }
+      };
+      var interval = setInterval(changeFunc, 3000);
 
       // Initial page render
       renderPage(currentPage);
@@ -132,7 +139,12 @@ document.querySelectorAll("iframe.presentation").forEach((iframe) => {
         if (currentPage > 1) {
           currentPage--;
           renderPage(currentPage);
+        } else {
+          currentPage = totalPages;
+          renderPage(currentPage);
         }
+        clearInterval(interval);
+        interval = setInterval(changeFunc, 3000);
       };
       prevButton.classList.add("prev");
 
@@ -142,7 +154,12 @@ document.querySelectorAll("iframe.presentation").forEach((iframe) => {
         if (currentPage < totalPages) {
           currentPage++;
           renderPage(currentPage);
+        } else {
+          currentPage = 1;
+          renderPage(currentPage);
         }
+        clearInterval(interval);
+        interval = setInterval(changeFunc, 3000);
       };
       nextButton.classList.add("next");
 
