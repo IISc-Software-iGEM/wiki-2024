@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block title %}Project Description{% endblock %}
+{% extends "layout.html" %} {% block title %}Collaborations{% endblock %}
 {% block lead %}{% endblock %} {% block page_content %}
 
 <style>
@@ -21,175 +21,40 @@
 </style>
 
 <div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#background" class="button">Background</a></li>
-    <li><a href="#approach" class="button">Approach</a></li>
-    <li><a href="#inspiration" class="button">Motivation</a></li>
-    <li><a href="#references" class="button">References</a></li>
-  </ul>
 </div>
 <div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Scalable Modeling of Macromolecular Assemblies using Novel Distance
-        Geometry Approaches
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
+  
+<h1>Collaboration</h1>
+<p>Our iGEM team has engaged in meaningful collaborations with several organizations and individuals, enhancing our outreach efforts and the overall impact of our project.</p>
+<h1>Ladakh Science Foundation</h1>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modeling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modeling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modeling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
+<figure>
+    <img src="https://static.igem.wiki/teams/5346/collaboration/lsf.png" alt="Ladakh Science Foundation">
+</figure>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+<p>The <b>Ladakh Science Foundation</b> is committed to fostering scientific awareness and education, focusing on <b>empowering children and youth in underrepresented regions of India</b> such as Ladakh, Arunachal Pradesh, Himachal Pradesh, Karnataka, and Sikkim. The foundation promotes education, literacy, and initiatives in fields like biotechnology, information technology, renewable energy, and environmental conservation. Through its programs, the Ladakh Science Foundation aims to inspire innovation and enhance scientific literacy, driving sustainable development in these communities. </p>
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
+<p><b>We partnered with the Ladakh Science Foundation to extend our outreach and engage students from remote regions.</b> This collaboration enabled us to bring educational sessions on <b>synthetic biology</b> and <b>computational biology</b> to students in Ladakh, where access to such advanced topics is limited. The foundation provided essential logistical support, helping us connect with local schools, setting up events, and ensuring our sessions were inclusive and accessible to students from diverse backgrounds. This partnership not only enriched the educational landscape in Ladakh but also fostered a passion for science among students who may not otherwise have had such opportunities. </p>
 
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
+<h1>STEAM Vision Foundation</h1>
+
+<figure>
+    <img src="https://static.igem.wiki/teams/5346/collaboration/steamvision.png" alt="STEAM Vision Foundation">
+</figure>
+
+<p><b>STEAM Vision Foundation</b> is dedicated to shaping the future of youth through <b>accessible education</b>, inspired by leaders like Swami Vivekananda and Dr. Abdul Kalam. Founded in 2015, it pioneers STEAM education—integrating <b>S</b>cience, <b>T</b>echnology, <b>E</b>ngineering, <b>A</b>rts, and <b>M</b>athematics—to cultivate critical thinking and 21st-century skills. With a commitment to innovation and social responsibility, the foundation impacts thousands of students through workshops, mentoring programs, and community outreach, empowering them to become job creators and responsible contributors to society. </p>
+
+<p><b>Our collaboration with the STEAM Vision Foundation allowed us to expand our reach across the country</b>. The foundation’s extensive network helped publicize our sessions to a broader audience of high school and middle school students. In addition to providing a platform for engagement, STEAM Vision Foundation played a vital role in offering financial support, particularly for awarding prizes in the competitions we organized. Their backing not only boosted participation but also enhanced the overall quality and impact of our outreach activities, making science more accessible and engaging for young learners. </p>
+
+<h1>Collaboration with Dr. Manjula Das's Lab </h1>
+
+<figure>
+    <img src="https://static.igem.wiki/teams/5346/collaboration/mazumdar.png" alt="Mazumdar Shaw Center for Translational Research (MSCTR)">
+</figure>
+
+<p><b>Dr. Manjula Das</b> is a Principal Investigator at the <b>Mazumdar Shaw Center for Translational Research (MSCTR)</b>. She is an expert in <b>Biotherapeutics</b>, especially critical reagent and assay development (in vitro and in vivo) for regulatory submission of protein drugs. She also has established many companies, the latest being a consultancy firm named Beyond Antibody. Manjula Das with 20-years long market experience concentrates on translating basic research to products and processes for direct patient care in various areas of cancer. </b>
+
+<p>We are collaborating with Dr. Manjula Das's lab, which has kindly provided us with purified LCN2 and MMP9 proteins. These proteins are essential for our cross-linking mass spectrometry experiments, allowing us to standardize our methodologies and advance our research. This collaboration underscores the importance of academic partnerships in facilitating cutting-edge scientific inquiry and ensuring the success of our iGEM project. </p>
 </div>
 
 {% endblock %}

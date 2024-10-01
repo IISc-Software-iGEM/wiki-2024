@@ -3,193 +3,263 @@
 
 <style>
   body {
-    background-image: linear-gradient(
-      to bottom,
-      #f9dbbd 0%,
-      #ffa5ab 20%,
-      #da627d 40%,
-      #a53860 60%,
-      #450920 100%
-    );
+    background-image: linear-gradient(to bottom,
+        #f9dbbd 0%,
+        #ffa5ab 20%,
+        #da627d 40%,
+        #a53860 60%,
+        #450920 100%);
   }
+
   #float1 {
     background-image: url("https://static.igem.wiki/teams/5346/doodle/chemistry-teacher.png");
   }
+
   #float2 {
     background-image: url("https://static.igem.wiki/teams/5346/doodle/inspiration.png");
   }
 </style>
 
 <div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#background" class="button">Background</a></li>
-    <li><a href="#approach" class="button">Approach</a></li>
-    <li><a href="#inspiration" class="button">Motivation</a></li>
-    <li><a href="#references" class="button">References</a></li>
-  </ul>
 </div>
 <div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Scalable Modeling of Macromolecular Assemblies using Novel Distance
-        Geometry Approaches
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modeling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modeling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modeling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
+  <h1>Human Practices</h1>
+  <p>
+    Our iGEM project, <b>IMPROVISeD (Integrated Modelling of Protein Complexes using Distance-Restraints and
+      Energy-Assisted Modelling)</b>, has been shaped through an iterative process of ideation, expert feedback, and
+    practical applications. This section outlines our engagement with stakeholders, detailing how their insights shaped
+    the direction of our project. Our work not only aligns with scientific goals but also addresses broader societal
+    challenges, particularly in therapeutic development.
+  </p>
+  <hr>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/hp/01.png" alt="Figure not downloaded">
+    <figcaption>Announcement of a Software and AI iGEM team at IISc.</figcaption>
+  </figure>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/hp/02.png" alt="Figure not downloaded">
+    <figcaption>Initial team meetings : Brainstorming</figcaption>
+  </figure>
+  <h2>Early Ideation and Exploratory Concepts</h2>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+  <p>
+    In the initial stages, we explored multiple ideas, collaborating with experts and stakeholders from various
+    scientific fields. These brainstorming sessions were crucial for understanding the scope and limitations of
+    different approaches. Although we didn’t pursue these ideas for iGEM, they helped us refine our thinking and
+    ultimately led us to the development of <b>IMPROVISeD</b>.
+  </p>
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
+  <ol>
+    <li>
+      <h3>Prediction of Metal Binding Proteins</h3>
+      <p>This idea stemmed from our discussions with <a href="https://biochem.iisc.ac.in/nagasuma-chandra.php"><b> Prof.
+            Nagasuma Chandra</b></a> from the Department of Biochemistry at IISc, who specializes in computational
+        biology and the study of genome-wide perturbations in diseases. Our goal was to leverage computational models to
+        predict peptide sequences that could bind metals, with potential applications in bioremediation or metal-ion
+        detection.</p>
+      <p>Following <b>Prof. Chandra’s</b> suggestion, we engaged with <a
+          href="https://www.msruas.ac.in/faculty-staff/deepesh-nagarajan"> <b> Dr. Deepesh Nagarajan </b> </a> from M.S.
+        Ramaiah University of Applied Sciences. Dr. Nagarajan encouraged us to develop short peptides that could quench
+        specific metals of interest. We focused on understanding metal-binding regions within proteins and explored the
+        possibility of engineering these peptides for environmental or diagnostic applications. </p>
+      <p>However, after further analysis, we realized that this approach lacked novelty. Several similar projects had
+        been developed in the past, and the practical impact seemed limited. Additionally, while computationally
+        interesting, this idea did not fully align with iGEM’s emphasis on innovation and societal relevance. Therefore,
+        we decided to move forward in a more promising direction. </p>
+    </li>
+    <li>
+      <h3>Genome-wide Prediction of miRNA</h3>
+      <p> Another concept involved predicting microRNAs (miRNAs) at a genome-wide level, a task inspired by discussions
+        with stakeholders such as <a href="https://dbg.iisc.ac.in/people/arun-kumar/"> <b>Sakshi and Mukund from Prof.
+            Arun Kumar’s lab </b></a> and <a href="https://srimontasd.wixsite.com/gayen-lab"> <b>Hemant from Srimonta
+            Gayen's Lab</b></a>, from Developmental Biology and Genetics, IISc, as well as input from <a
+          href="https://cbr-iisc.ac.in/people/shweta_ramdas/"><b>Prof. Swetha</b></a> at Center for Brain Research,
+        IISc. miRNAs regulate gene expression post-transcriptionally and play crucial roles in various diseases,
+        including cancer, making them attractive candidates for therapeutic targeting. </p>
+      <p> Our idea was to use computational models to predict miRNA sequences that could potentially target
+        disease-related genes, providing a platform for personalized medicine or biomarker discovery. This would have
+        required extensive computational analysis of genomic data, as well as experimental validation. However, during
+        the brainstorming phase, we encountered several challenges, including the difficulty of validating miRNA targets
+        without significant experimental infrastructure. Furthermore, we recognized that while miRNA prediction is an
+        exciting area of research, our approach lacked the experimental novelty and broader integration required for a
+        successful iGEM project. </p>
+    </li>
+    <li>
+      <h3>Ion Channels</h3>
+      <p>In our initial brainstorming, we also explored the role of ion channels, specifically focusing on the
+        sodium-chloride co-transporter (NCC) located in the distal convoluted tubule (DCT) of kidneys. This protein is
+        essential for sodium ion reabsorption, and mutations in the SLC12A3 gene lead to Gitelman syndrome, which
+        results in renal loss of sodium and potassium, causing various health issues such as hypokalemia and metabolic
+        alkalosis. </p>
+      <p>To address this, we aimed to design a synthetic ion channel simulation to better understand NCC’s electrostatic
+        potential and how SLC12A3 mutations affect its function. For this project, we received significant guidance from
+        <a href="https://cds.iisc.ac.in/faculty/dpal/"><b>Prof Debnath Pal</b></a> from Center for Data Sciences,
+        IISc and his student <a href="https://www.djmaity.com/"><b>Dibyajyoti Maity</b></a>. Prof Debnath helped us
+        grasp the foundational concepts and provided practical insights through discussions and visualizations using
+        PyMol. He guided us through the calculation of electrostatic potentials during protein conformational changes,
+        teaching us to interpret results using Delphi software. Additionally, he assisted in preparing PDB files for
+        molecular dynamics simulations with Gromacs, which were vital for our analysis.
       </p>
-    </div>
-  </section>
+      <p>Dibyajyoti, despite living in the USA, offered support through Google Meet sessions, teaching us how to use
+        Delphi and MD-Davis effectively. His guidance allowed us to streamline our workflow and analyze the
+        electrostatic potential of the NCC protein efficiently. This collaborative effort laid the groundwork for
+        understanding the role of ion channels in our project. </p>
+    </li>
+  </ol>
+  <hr>
+  <h2>Pivot to IMPROVISeD: A Focus on Protein Complexes</h2>
+  <p>With the realization that our early ideas weren’t feasible within the constraints of the iGEM competition, we
+    shifted our focus. Guided by our PI, <b>Prof. Debnath Pal</b>, and our instructor, <b>Niladri Ranjan Das</b>, we
+    began developing a project centered around the <b>structural modeling of protein complexes</b>. This pivot was
+    heavily influenced by ongoing discussions with <a href="https://www.ncbs.res.in/faculty/shruthi"><b>Dr. Shruthi
+        Viswanath</b></a>, who has extensive experience working with integrated modeling platforms.</p>
+  <p>As we moved forward, our weekly meetings began to focus on how to integrate <b>DREAM (Distance Restraints and
+      Energy-Assisted Modelling)</b> into an <b>Integrated Modelling Platform (IMP)</b> for protein complexes. This led
+    us to the development of <b>IMPROVISeD</b>, a platform designed to model protein structures using experimental
+    distance restraints derived from techniques such as <b>cross-linking mass spectrometry (XLMS)</b>.</p>
 
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/hp/03.png" alt="Figure not downloaded">
+
+  </figure>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/hp/04.png" alt="Figure not downloaded">
+    <figcaption>Hybrid/online meetings during summer to finalise the project idea</figcaption>
+  </figure>
+  <hr>
+  <p>Around this time, we also sought input from <a href="https://www.msctr.org/2016/06/08/dr-manjula-das/"><b>Dr.
+        Manjula Das</b></a>, an expert in antibody-based therapeutics. She highlighted the therapeutic potential of
+    understanding protein-protein interactions, especially in the context of cancer metastasis. This interaction led us
+    to focus on the <b>LCN2-MMP9 complex</b>, a pair of proteins known to play a significant role in the spread of
+    cancer. With Dr. Das’ input, we decided to demonstrate the power of our platform by applying it to the structural
+    modeling of this complex. This decision provided a clear use case that aligned with both societal needs and the
+    goals of iGEM.</p>
+  <h2>Refining Our Approach: Meetings with Experts</h2>
+  <p>As we refined our project, we engaged with various experts who helped us address technical challenges and optimize
+    our methodology.</p>
+  <ul>
+    <li>
+      <a href="https://www.uu.nl/staff/AMJJBonvin">
+        <h3>Dr. Alexandre Bonvin:</h3>
+      </a>
+      A key figure in the development of the <b>HADDOCK</b> platform for modeling biomolecular complexes, Dr. Bonvin
+      provided invaluable feedback on improving the accuracy of our structural models. His recommendations included:
+      <ol>
+        <li><b>Inclusion of Surface Atoms:</b>
+          <p>Dr. Bonvin highlighted the potential for clashes when only using C-alpha atoms for localization and
+            suggested including surface atoms with lower bounds between them. While we initially had concerns about the
+            large number of lower bounds this might introduce, we adapted his advice by first localizing C-alpha atoms
+            and then refining the model by focusing on surface atoms from the protein interface.</p>
+        </li>
+        <li><b>Handling Protein Flexibility:</b>
+          <p> He also recommended breaking down flexible regions of the protein and performing multi-registration, a
+            suggestion that we incorporated into our approach.</p>
+        </li>
+        <li><b>Crosslink Ambiguities:</b>
+          <p>Assigning experimental crosslink data to specific residue pairs can be challenging due to ambiguities. Dr.
+            Bonvin reassured us that as long as the C-alpha distances were comparable, the proposed method would be
+            tolerant to these ambiguities.</p>
+        </li>
+        <li><b>Iterative Pruning:</b>
+          <p>Finally, he advised iterating multiple times to generate different localization solutions and then pruning
+            based on crosslink violations. This iterative process became a core aspect of our modeling workflow.</p>
+        </li>
+      </ol>
+    </li>
+  </ul>
+  <hr>
+  <h2>Industry and Medical Foundation Engagement</h2>
+  <p>As part of our efforts to ensure that our project had real-world applications, we reached out to both industry
+    professionals and medical experts for their input.</p>
+  <ul>
+    <li>
+      <h3>ThermoFisher Scientific:</h3>
+      <p>We had the opportunity to present our work to a panel of experts at <b>ThermoFisher Scientific</b>, a leading
+        company in scientific instrumentation and research solutions. During this meeting, the panel provided
+        constructive feedback on how our platform could be applied to large-scale datasets, emphasizing the potential
+        for <b>IMPROVISeD</b> to be used in drug discovery and other protein interaction studies. The discussions
+        encouraged us to think about scalability and real-world applications, further refining our approach to ensure
+        that our project could have a tangible impact beyond the academic sphere.</p>
+    </li>
+
+    <figure>
+      <img src="https://static.igem.wiki/teams/5346/hp/05.png" alt="Figure not downloaded">
+      <figcaption>ThermoFisher Scientific visit</figcaption>
+    </figure>
+    <li>
+      <h3>Majumdar Shaw Medical Foundation:</h3>
+      <p>We also presented our work at the <b>Majumdar Shaw Medical Foundation</b>, a prominent institution in cancer
+        research and treatment. Here, we received specific feedback on the potential applications of <b>IMPROVISeD</b>
+        in modeling cancer-related protein complexes. The experts we interacted with underscored the importance of
+        accurate structural data for the development of antibody-based therapies. By focusing on the <b>LCN2-MMP9
+          complex</b>, we positioned our project to directly contribute to cancer metastasis research, with potential
+        long-term benefits in therapeutic development.</p>
+
+      <figure>
+        <img src="https://static.igem.wiki/teams/5346/hp/06.png" alt="Figure not downloaded">
+        <!-- <figcaption>MSMF visit</figcaption> -->
+      </figure>
+      <figure>
+        <img src="https://static.igem.wiki/teams/5346/hp/07.png" alt="Figure not downloaded">
+        <figcaption>MSMF visit</figcaption>
+      </figure>
+  </ul>
+  <hr>
+  <h2>Conclusion: A Collaborative and Impactful Project </h2>
+  <p>Our project, <b>IMPROVISeD</b>, has been shaped by continuous stakeholder engagement, expert feedback, and
+    real-world considerations. Through our early explorations of ideas such as <b>metal-binding peptides</b> and
+    <b>miRNA prediction</b>, we gained a deeper understanding of computational biology and its limitations. This process
+    led us to focus on a project with clear societal relevance—the structural modeling of protein complexes involved in
+    cancer metastasis.
+  </p>
+  <p>By combining <b>DREAM</b> with experimental data from <b>XLMS</b>, and working with experts such as <b>Dr.
+      Alexandre Bonvin</b> and <b>Dr. Manjula Das</b>, we have built a platform that not only addresses fundamental
+    questions in structural biology but also has the potential to improve therapeutic development for cancer treatment.
+  </p>
+  <p>Our interactions with industry professionals at <b>ThermoFisher Scientific</b> and medical experts at the
+    <b>Majumdar Shaw Medical Foundation</b> have further broadened the scope of our project, ensuring that
+    <b>IMPROVISeD</b> can be applied to real-world problems in drug discovery and cancer therapeutics. Through this
+    collaborative and iterative process, we believe <b>IMPROVISeD</b> has the potential to make a lasting impact on the
+    scientific and medical communities.
+  </p>
+
+  <!-- <p>For photos, go to the following link and upload the photo there.</p>
+<a href="https://tools.igem.org/uploads/teams">iGEM Tools (this is also an example for how to add links)</a>
+<ol>
+    <li>You may have to log in.</li>
+    <li>Press "upload wiki files".</li>
+    <li>You may make a new folder with the name of your page or section. Now upload the file.</li>
+    <li>Press "Open" next to the uploaded file and copy the URL of the photo. Suppose that the link is: https://static.igem.wiki/teams/5346/curverd-prof-dp.png</li>
+    <li>Look below to see how to insert the image.</li>
+</ol>
+
+<figure>
+    <img src="https://static.igem.wiki/teams/5346/curverd-prof-dp.png" alt="Alternative text for image... this is displayed if the image somehow fails to load.">
+    <figcaption>Give a caption to your image</figcaption>
+</figure>
+<p>The image may be too big but don't worry... it will be taken care of automatically on the actual page.</p>
+<ul>
+    <li>Item 1 of unordered list</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<p>
+    To add presentations, first convert them to a PDF :)
+    Then upload it to the PDF to the same link as above (for photos).
+    Suppose the link is: https://static.igem.wiki/teams/5346/blah.pdf
+    Do the following.
+</p>
+<iframe src="https://static.igem.wiki/teams/5346/blah.pdf" class="presentation"></iframe>
+
+<p>
+    For math (LaTeX), either put inline like $$x^2 + y^2 = z^2$$ or put in a block like below.
+    \[
+        x^2 + y^2 = z^2
+    \]
+</p> -->
+
 </div>
 
 {% endblock %}
