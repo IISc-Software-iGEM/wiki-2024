@@ -29,167 +29,53 @@
   </ul>
 </div>
 <div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Scalable Modeling of Macromolecular Assemblies using Novel Distance
-        Geometry Approaches
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
+  <p>Our project aims to elucidate the structural interactions within the LCN2-MMP9 protein complex involved in cancer metastasis. A critical step in this process is obtaining precise experimental data through cross-linking mass spectrometry (XLMS) to identify interaction interfaces and develop accurate structural models. Although our comprehensive XLMS analysis is ongoing, we have made significant progress in the experimental preparation for LCN2 analysis, yielding promising initial results. </p>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modeling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modeling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modeling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+<h2>Successful In-Gel Digestion of LCN2 </h2>
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
+<p>
+    To begin our exploration of the LCN2-MMP9 complex, we performed in-gel digestion of purified LCN2 following cross-linking reactions. This step is vital, as it allows us to isolate and fragment the cross-linked protein for downstream mass spectrometry analysis. 
+</p>
+<p>
+After running the cross-linked samples on SDS-PAGE, we successfully identified the LCN2 band based on its expected molecular weight. This band was carefully excised from the gel, and we proceeded with the established protocol for in-gel tryptic digestion. The LCN2 protein was digested into peptides overnight, ensuring thorough cleavage into smaller fragments amenable to mass spectrometry. 
+</p>
+<p>
+The digestion process was confirmed to be successful, as subsequent steps yielded well-resolved peptide fragments. This success sets a solid foundation for further analysis of LCN2 and its interaction with MMP9
+</p>
 
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
+<figure>
+    <img src="https://static.igem.wiki/teams/5346/wetlabresult/first.jpg" alt="Image of our toolbar plugin">
+</figure>
+
+<p>Lanes from Right to Left : Marker (Ladder), LCN2 (wild type); shows band at 50KDa (as it forms a dimer, LCN2 (mutant); shows a band at 25KDa </p>
+
+<h2>Mass Spectrometry Analysis of LCN2 Peptides </h2>
+<p>
+    Following the in-gel digestion, the resulting peptides were extracted and subjected to liquid chromatography-tandem mass spectrometry (LC-MS/MS). The high-resolution mass spectrometry data were meticulously analyzed, focusing on identifying the peptide sequences derived from LCN2 and assessing potential cross-linked regions that could provide insights into protein interactions. 
+</p>
+
+<p>
+    Our mass spectrometry analysis yielded a robust set of LCN2 peptide spectra, confirming the successful identification of multiple peptide fragments corresponding to different regions of the LCN2 protein. This data provides a rich source of information for further interpretation and cross-linking analysis. 
+</p>
+
+<p>
+In particular, we observed peptides that cover key regions of the LCN2 structure, which could serve as critical points of interaction in its complex with MMP9. These peptide spectra will be analyzed in more detail to identify any cross-linked pairs that indicate proximity between the two proteins. 
+</p>
+
+    <img src="https://static.igem.wiki/teams/5346/wetlabresult/secound.jpg" alt="Image of our toolbar plugin">
+
+<p>LCN2 (wild type) : Base peaks</p>
+
+
+    <img src="https://static.igem.wiki/teams/5346/wetlabresult/third.jpg" alt="Image of our toolbar plugin">
+<p>LCN2 (wild type) : TIC (Total Ion Chromatogram) </p>
+
+<h2>Next Steps: Cross-Linking Data Integration </h2>
+
+<p>
+    While our mass spectrometry results have so far focused on LCN2 alone, this marks a crucial first step in mapping the interaction interfaces between LCN2 and MMP9. Moving forward, we will integrate the cross-linking data derived from our XLMS experiments with these peptide fragments, and feed into our Integrated Modeling Platform for Protein Complexes (IMPROVISeD) to refine the structural models of this critical cancer-related protein interaction. As we continue to build on these results, we anticipate that our experimental pipeline will reveal new insights into the mechanisms underlying tumor metastasis, with potential applications in therapeutic design. 
+</p>
 </div>
 
 {% endblock %}
