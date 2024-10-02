@@ -2,82 +2,95 @@
 {% block lead %}{% endblock %} {% block page_content %}
 
 <style>
-  body {
-    background-image: linear-gradient(
-      to bottom,
-      #f1b9e7 0%,
-      #e9c4ed 20%,
-      #e2cef3 40%,
-      #dad9f9 60%,
-      #d2e4ff 100%
-    );
-  }
-  #float1 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/408-signing-up-removebg-preview.png");
-  }
-  #float2 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/algorithms.png");
-  }
+    body {
+        background-image: linear-gradient(to bottom,
+                #f1b9e7 0%,
+                #e9c4ed 20%,
+                #e2cef3 40%,
+                #dad9f9 60%,
+                #d2e4ff 100%);
+    }
+
+    #float1 {
+        background-image: url("https://static.igem.wiki/teams/5346/doodle/408-signing-up-removebg-preview.png");
+    }
+
+    #float2 {
+        background-image: url("https://static.igem.wiki/teams/5346/doodle/algorithms.png");
+    }
 </style>
 
 <div class="col-md-3 sidebar">
 </div>
 <div class="col-md-9 content">
-  
 
     <h1>IMPROVISeD Pipeline</h1>
     <figure>
-        <img src="https://static.igem.wiki/teams/5346/code11.png" id="code11" alt="" /><figcaption>
-                Simplified Flowchart for IMProv. The subunits are oriented in multiple interations. Each resulting from a subset of crosslinks, followed by and . The iterations proceed in parallel. The structrues without clashes while satisfying the crosslinks gives final results.
+        <img src="https://static.igem.wiki/teams/5346/code11.png" id="code11" alt="" />
+        <figcaption>
+            Simplified Flowchart for IMPROVised. The subunits are oriented in multiple interations. Each results from a
+            subset of crosslinks, followed by localiztion and registration. The iterations proceed in parallel. The
+            structrues with low crosslink violations and those that do not have clashes make it to as final result.
         </figcaption>
     </figure>
 
     <h1>Flip Correction Refinement</h1>
     <p>
-        We have discussed about flip correction in our engineering section in more details. Here is the visual representation of the flip correction refinement for 1dfj when choosen 6 out of 12 crosslinks.
+        We have discussed about flip correction in our engineering section in more details. Here is the visual
+        representation of the flip correction refinement for 1dfj when choosen 6 out of 12 crosslinks.
     </p>
     <figure>
-        <img src="https://static.igem.wiki/teams/5346/exp-images/1dfj-flip.png" id="noflip" alt="" /><figcaption>
-                Registered Structure without flip correction
+        <img src="https://static.igem.wiki/teams/5346/exp-images/1dfj-flip.png" id="noflip" alt="" />
+        <figcaption>
+            Registered Structure without flip correction.
         </figcaption>
     </figure>
     <figure>
-        <img src="https://static.igem.wiki/teams/5346/exp-images/1dfj-proof-2.png" id="flip" alt="" /><figcaption>
-                Registered Structure with flip correction
+        <img src="https://static.igem.wiki/teams/5346/exp-images/1dfj-proof-2.png" id="flip" alt="" />
+        <figcaption>
+            Registered Structure with flip correction.
         </figcaption>
     </figure>
 
     <h1>
-        Result for 1dfj
+        Result for 1DFJ
     </h1>
     <p>
-        We have done the flip correction in the required structures and here are the obtained results on 1dfj structure.
+        We have done the flip correction in the required structures and here are the obtained results on 1DFJ structure.
     </p>
     <figure>
-        <img src="https://static.igem.wiki/teams/5346/exp-images/whatsapp-image-2024-10-02-at-10-17-38.jpeg" id="1dfj" alt="" /><figcaption>
-                1dfj structure modelled using a subset of crosslinks,RMSD and violated crosslinks are shown
+        <img src="https://static.igem.wiki/teams/5346/exp-images/whatsapp-image-2024-10-02-at-10-17-38.jpeg" id="1dfj"
+            alt="" />
+        <figcaption>
+            1DFJ structure modelled using a subset of crosslinks, backbone RMSD with respect to the structure in PDB,
+            and crosslink violations (denoted as number of violations/total number of crosslinks) are shown.
         </figcaption>
     </figure>
     <figure>
-        <img src="https://static.igem.wiki/teams/5346/exp-images/1dfj-movie.gif" id="1dfj" alt="" /><figcaption>
-                More new orientations that satisfy most of the crosslinks
+        <img src="https://static.igem.wiki/teams/5346/exp-images/1dfj-movie.gif" id="1dfj" alt="" />
+        <figcaption>
+            More new orientations that satisfy most of the crosslinks
         </figcaption>
     </figure>
 
     <h1>
-        Result for lcn2-mmp9
+        Result for LCN2-MMP9
     </h1>
     <p>
-        We have done the flip correction in the required structures and here are the obtained results on lcn2-mmp9 structure.
+        We have done the flip correction in the required structures and here are the obtained results on lcn2-mmp9
+        structure.
     </p>
     <figure>
-        <img src="https://static.igem.wiki/teams/5346/exp-images/lcn2-drawing.png" id="lcn2-mmp9" alt="" /><figcaption>
-                lcn2-mmp9 structure modelled using a subset of crosslinks,RMSD and violated crosslinks are shown
+        <img src="https://static.igem.wiki/teams/5346/exp-images/lcn2-drawing.png" id="lcn2-mmp9" alt="" />
+        <figcaption>
+            LCN2-MMP9 structure modelled using a subset of crosslinks, backbone RMSD with respect to the structure in
+            PDB, and crosslink violations (denoted as number of violations/total number of crosslinks) are shown.
         </figcaption>
     </figure>
     <figure>
-        <img src="https://static.igem.wiki/teams/5346/exp-images/lcn-movie.gif" id="lcn2-mmp9" alt="" /><figcaption>
-                More new orientations that satisfy most of the crosslinks
+        <img src="https://static.igem.wiki/teams/5346/exp-images/lcn-movie.gif" id="lcn2-mmp9" alt="" />
+        <figcaption>
+            More new orientations that satisfy majority of the crosslinks.
         </figcaption>
     </figure>
 </div>
