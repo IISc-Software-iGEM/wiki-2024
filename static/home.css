@@ -213,6 +213,9 @@ body {
 .card h1 {
     text-align: center;
 }
+.card p {
+    text-align: justify;
+}
 .card:nth-child(3n+1) {
     /* orange gradient */
     background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
@@ -224,4 +227,28 @@ body {
 .card:nth-child(3n) {
     /* green gradient */
     background: linear-gradient(135deg, #52c234 0%, #10dbd9 100%);
+}
+
+.cardRow {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+.cardIcon {
+  width: 40px;
+}
+.cardText {
+  width: 100%;
+  padding: 0 10px;
+  display: table;
+}
+.cardText h4 {
+  padding: 0!important;
+  margin: 0;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.center {
+  text-align: center;
 }
