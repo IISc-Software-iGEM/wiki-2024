@@ -23,31 +23,36 @@
 <div class="col-md-3 sidebar">
 </div>
 <div class="col-md-9 content">
-  <p>The method presented in this document for modelling protein complexes is innovative and well-suited for submission
-    to the iGEM 2024 competition for the Best Model Award. Here's why it's the best choice:</p>
 
   <h1>Integrated Iterative Approach</h1>
-  <p>The proposed model, IMPROViSeD, adopts an integrated, multi-step iterative approach, well-aligned
+  <p>The proposed model, termed IMPROVISeD, adopts an integrated, multi-step iterative approach, which is well-aligned
     with the concept of "integrative modelling." This approach mimics the scientific process—collecting experimental
     data, proposing hypotheses, and refining models in an iterative manner.</p>
 
   <p>The challenges of computing optimal orientations for subunits forming protein complexes, is broken down into
-    well-known mathematical problem of <b>"Graph-embedding in Euclidean space"</b> and <b>"Multiview registration"</b> in computer
+    well-known mathematical problem of <b>"Graph-embedding in Euclidean space"</b> and <b>"Multiview registration"</b>
+    in computer
     vision. This not only makes the pipeline robust, but helps us avert the computational overhead of starting with
-    numerous random starting orientations.</p>
+    numerous random starting orientations. We lay out the steps involved in the IMPROViSeD pipeline below.
+  </p>
+  <h2>Localization</h2>
+  <p>Using a supporting structure composed of C-alpha atoms, the model identifies
+    plausible alignments while maintaining distance constraints.</p>
 
-  <h2>Steps Involved</h2>
-  <ul>
-    <li><strong>Localization</strong>: Using a supporting structure composed of C-alpha atoms, the model identifies
-      plausible alignments while maintaining distance constraints.</li>
-    <li><strong>One-Shot Registration</strong>: The model performs a global alignment of the protein subunits to the
-      supporting structure, reducing computational cost compared to traditional pairwise alignment approaches that
-      accumulate errors.</li>
-    <li><strong>Flip Refinement</strong>: By incorporating a mirror reflection step, the method corrects for potential
-      symmetry-related errors, ensuring biologically valid configurations.</li>
-    <li><strong>Iterative Conformation Generation</strong>: The model generates multiple conformations to account for
-      the dynamic nature of proteins, enhancing the overall robustness of the resulting models.</li>
-  </ul>
+
+  <h2>One-Shot Registration</h2>
+  <p>The model performs a global alignment of the protein subunits to the
+    supporting structure, reducing computational cost compared to traditional pairwise alignment approaches that
+    accumulate errors.</p>
+
+  <h2>Flip Refinement</h2>
+
+  <p>By incorporating a mirror reflection step, the method corrects for potential
+    symmetry-related errors, ensuring biologically valid configurations.</p>
+  <h2>Iterative Conformation Generation</h2>
+  <p>The model generates multiple conformations to account for
+    the dynamic nature of proteins, enhancing the overall robustness of the resulting models.</p>
+
   <p>This multi-cycle process allows for rapid convergence to a solution that fits experimental crosslinking data,
     resulting in a highly refined model.</p>
 
@@ -55,7 +60,8 @@
     <img src="https://static.igem.wiki/teams/5346/iterations.png" id="flowchart" alt="" />
     <figcaption>
       Simplified Flowchart for IMPROViSeD. The subunits are oriented in multiple iterations. Each resulting from a
-      subset of crosslinks, followed by localization and registration. The iterations proceed in parallel. The structrues without clashes while
+      subset of crosslinks, followed by localization and registration. The iterations proceed in parallel. The
+      structrues without clashes while
       satisfying the crosslinks gives final results.
     </figcaption>
   </figure>
@@ -65,31 +71,38 @@
   <p>The method addresses the common problem of computational cost by breaking the modelling into different cycles and
     utilizing distance-preserving transformations through rigid body motions.</p>
 
-  <h2>Key Aspects</h2>
-  <ul>
-    <li><strong>Optimization on SE(3)</strong>: The algorithm takes advantage of the mathematical properties of SE(3) to
-      efficiently compute rigid body motions, ensuring distance preservation without deformation.</li>
-    <li><strong>Semi-Definite Programming</strong>: A non-linear optimization formulation known as semi-definite
-      programming solves the registration problem, providing an optimal solution with reduced computation.
-    </li>
-    <li><strong>Parallel Execution</strong>: The iterative steps proceed in parallel, allowing the model to generate
-      multiple conformations simultaneously, reducing overall computation time.</li>
-  </ul>
+  <h2>Optimization on \(\mathbb{SE}(3)\)</h2>
+  <p>The algorithm takes advantage of the mathematical properties of \(\mathbb{SE}(3)\) to
+    efficiently compute rigid body motions, ensuring distance preservation without deformation.</p>
+
+  <h2>Semi-Definite Programming</h2>
+  <p>A non-linear optimization formulation known as semi-definite
+    programming is used to solve the registration problem, providing an optimal solution with reduced computation.</p>
+
+
+  <h2>Parallel Execution</h2>
+  <p>The iterative steps proceed in parallel, allowing the model to generate
+    multiple conformations simultaneously, reducing overall computation time.</p>
 
   <h1>Practical Applications and Novelty</h1>
-  <ul>
-    <li><strong>Handling Experimental Noise</strong>: The model includes the uncertainty inherent in crosslink data,
-      effectively integrating noise into the optimization to create more biologically realistic structures.</li>
-    <li><strong>Global Alignment for Accuracy</strong>: The global alignment of all subunits ensures that the final
-      configuration is accurate and optimally aligned.</li>
-    <li><strong>Generation of Hypothetical Contact Points</strong>: The use of hypothetical supporting structures allows
-      for the exploration of multiple orientations and predictions of new interfaces, which is valuable for artificial
-      drug design.</li>
-  </ul>
+
+
+  <h2>Handling Experimental Noise</h2>
+  <p>The model includes the uncertainty inherent in crosslink data,
+    effectively integrating noise into the optimization to create more biologically realistic structures.</p>
+
+  <h2>Global Alignment for Accuracy</h2>
+  <p>The global alignment of all subunits ensures that the final
+    configuration is accurate and optimally aligned.</p>
+
+  <h2>Generation of Hypothetical Contact Points</h2>
+  <p>The use of hypothetical supporting structures allows
+    for the exploration of multiple orientations and predictions of new interfaces, which is valuable for artificial
+    drug design.</p>
 
   <h1>Experimental Validation and Refinement</h1>
-  <p>The proposed method was validated using experimental data from protein complexes RIBONUCLEASE INHIBITOR COMPLEXED
-    WITH RIBONUCLEASE A (PDB ID: 1DFJ). The model showed that it could reconstruct protein structures in a single
+  <p>The proposed method was validated using experimental data from protein complexes Ribonuclease Inhibitor Complexed
+    with Ribonuclease A (PDB 1DFJ). The model showed that it could reconstruct protein structures in a single
     alignment step and provided quantitative metrics like RMSD to verify the accuracy of predictions.</p>
   <p>Additional energy minimization step ensures the thermodynamic stability of the final model, allowing
     researchers to obtain reliable, biologically relevant conformations.</p>
@@ -101,9 +114,10 @@
 
   <h1>Key Highlights for the Best Model Award Submission</h1>
   <ol>
-    <li><strong>Unique Iterative Workflow</strong>: IMPROViSeD integrates localization, registration, flip refinement,
+    <li><strong>Unique Iterative Workflow</strong>: IMPROVISeD integrates localization, registration, flip refinement,
       and parallel iteration—ensuring efficient and accurate protein modelling.</li>
-    <li><strong>Mathematical Rigor and Flexibility</strong>: The utilization of SE(3) and semi-definite programming not
+    <li><strong>Mathematical Rigor and Flexibility</strong>: The utilization of \(\mathbb{SE}(3)\) and semi-definite
+      programming not
       only offers computational efficiency. Additional corrections ensure biological relevance of the structures.</li>
     <li><strong>Practical Relevance</strong>: The ability to handle experimental uncertainty and generate biologically
       plausible hypothetical interfaces positions this model as a valuable tool in biomedicine, especially in drug
