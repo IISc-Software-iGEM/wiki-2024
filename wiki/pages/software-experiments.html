@@ -25,38 +25,45 @@
 </div>
 <div class="col-md-9 content">
     <p>
-        We did our experiments on 2 cases, one case involves a protein with 2 chains and other case involves a protein
-        with 3 chains. We have used experimental as well as synthetic generated crosslinks data to run our pipeline.
-        Here are the sources of our data.
+        We demonstrate the result of our pipeline on 2 cases. One of them are from experimetal crosslinks data and other
+        one is from synthetic crosslinks data.
+
+        While one of them contain a single chain for both the protein structures forming the complex, the other
+        consisted of a dimer and a monomer forming a complex. The data for the second case was generated sythetically as
+        descibed in the "LCN2-MMP9 Case" section.
+
     </p>
-    <h1>1DFJ Case</h1>
+    <h1>Ribonuclease Inhibitor Complexed With Ribonuclease (PDB ID: 1DFJ)</h1>
     <p>
-        We have protein 1DFJ which has 2 chains as shown below. We also have experimental crosslink data available for
-        this protein from IMP (Cite this link) <href>https://intact-portal.ebi.ac.uk/interaction/EBI-2623041</href>
+        We have protein with PDB ID 1DFJ which has 2 chains as shown below. We also have experimental crosslink data
+        available for this protein from IMP <href>https://github.com/isblab/Integrative_docking_benchmark/tree/main
+        </href>
     </p>
     <figure>
         <img src="https://static.igem.wiki/teams/5346/1dfj-1.png" alt="1dfj">
-        <figcaption>1DFJ Chain_1</figcaption>
+        <figcaption>PDB ID 1DFJ Chain E</figcaption>
     </figure>
     <figure>
         <img src="https://static.igem.wiki/teams/5346/1dfj-2.png" alt="1dfj">
-        <figcaption>1DFJ Chain_2</figcaption>
+        <figcaption>1DFJ Chain I</figcaption>
     </figure>
 
     <h1>
-        LCN2-MMP9 Case
+        Human Neutrophil Gelatinase-Associated Lipocalin (HNGAL) (PDB ID:LCN2) - Hydrolase/Hydrolase Inhibitor (PDB ID:
+        MMP9)
     </h1>
     <p>
-        MMP9 has 2 chains and LCN2 has 1 chain. We have taken these 2 proteins from RCSB PDB which are as follows.
+        MMP9 has 2 chains and LCN2 has 1 chain. We compare the results obtained from IMPROVISeD with the structrues for
+        the complex downloaded from PDB.
     </p>
 
     <figure>
         <img src="https://static.igem.wiki/teams/5346/chain-a.png" alt="lcn2">
-        <figcaption>LCN2</figcaption>
+        <figcaption>PDB ID: LCN2</figcaption>
     </figure>
     <figure>
         <img src="https://static.igem.wiki/teams/5346/chain-b.png" alt="mmp9">
-        <figcaption>MMP9</figcaption>
+        <figcaption>PDB ID: MMP9</figcaption>
     </figure>
     <p>
         We do not have experimental crosslinks data available between these 2 proteins. Hence we have generated
@@ -73,42 +80,44 @@
         Number of crosslinks:
     </h2>
     <ul>
-        <li>1DFJ: 12 (experimental)</li>
+        <li>1dfj: 12 (experimental)</li>
         <li>LCN2-MMP9: 11 (synthetically generated)</li>
     </ul>
     <h2>
         All vs Subset of Crosslinks
     </h2>
     <p>
-        We run our pipeline by choosing random subsets of crosslinks. We estimate a solution to the localization problem
-        to built the supporting framework for structures involved, which is non-convex by nature. We vary the starting
-        seed to generate multiple supporting framework. The final solution, after registration, is therefore multiple
-        conformations. Note, that each iteration takes around 1-1.5 minutes to compute. Thus the user can quickly
-        geenrate multiple structures based on the crosslink entries selected.
+        We ran our pipeline by choosing random subsets of crosslinks, since we are solving a localization problem forms
+        a supporting framework for the two bodies. Note that being inherently non-convex, the solution is not unique
+        (depends on random seed). In fact we use the same to our advantage to generate multiple structures for the
+        supporting framework by starting with random seeds. Note that the execution time is less than a minutes.
     </p>
     <p>
-        We also tried by choosing all crosslinks, but it resulted in clashes. This is expected since the magtinude of
-        distance between the C-alpha atoms, obtained from experimental crosslink data vary due to the flexibility of the
-        side-chain and the backbone chain of the protein. We hypothesize that a fraction of accurate crosslinks lead to
-        an accurate structure. We test our algorithm by choosing random subsets of crosslinks. Despite using only a
-        fraction of the crosslinks, the end result satisfied a large percentage of the entire set of crosslinks. This
-        confirms that IMPROViSeD can be used for efficient and accurate modelling o fthe three dimensional structrues for
-        the protein complexes.
+        We also tried by choosing all crosslinks, but that resulted in more clashes. The reson for this is that the
+        magnitude of the crosslink is not an absolute value. It is dependent on the flexibility of the sidechain and the
+        backbone of the protein. Hence the distance of 30 angstroms varies. Moreover, the crosslinks denotes the
+        distance between the residues, while IMPROVISeD uses the distance between the CA atoms. We thus add a tolerance
+        value of 5 angstroms to the crosslink distance, while evaluating violations.
     </p>
 
     <h2>
         Evaluation
     </h2>
     <p>
-        We get different solutions to localization problem for different runs, which results in different registered
-        structures. We evaluated these structures based on percentage of correctly satisfied crosslinks.
-    </p>
-    <p>
-        Recall that a crosslink is defined a distance of 30 angstroms between a pair of C-alpha atoms. In reality they
-        refer to the distance between the corresponding amino acid residues. Thus a tolerance value of 5 angstrom is
-        added to the magnitude of crosslink while evaluating for violations. Once the final structures are modeled, the
-        distance between every pair of C-alpha atoms are taken which constitute the crosslinks. If the distance is more
-        than 35 angstrom, then it is noted as a violation.
+        The results are obtained by running the IMPROVISeD, is tested for:
+    <ul>
+        <li>Backbone RMSD with known structrue in PDB repository: This indicates how similar or distict are the
+            structures modeled by IMPROVISeD</li>
+        <li>Number of crosslink violations to assess the accuracy of structure modeling with respect to the experimental
+            data.</li>
+    </ul>
+
+    We get different solutions to localization problem for different runs, which results in different structures
+    following the registration step. We evaluated these structures based on percentage of correctly satisfied
+    crosslinks. We also report the backbone RMSD for each of the cases with respect to the structure found in PDB.
+
+    A crosslink is said to be satisfied if crosslink distance is less than 35 angstroms. In our case crosslink distance
+    is between CA atoms between specific residues of 2 chains.
     </p>
     <h2>
         Format of Crosslinks Data
