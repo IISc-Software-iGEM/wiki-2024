@@ -102,13 +102,13 @@
     <p>
         We also tried by choosing all crosslinks, but that resulted in more
         clashes. The reason for this is that the
-        magnitude of the crosslink is not an absolute value. It is dependent on
+        magnitude of the crosslinking distance is not an absolute value ( additionally, the presence of alternately organised complexes cannot be ruled out ). It is dependent on
         the flexibility of the sidechain and the
-        backbone of the protein. Hence, the distance of 30 angstroms varies.
+        backbone of the protein. Hence, the distance of 30 Angstroms varies.
         Moreover, the crosslinks denote the
         distance between the residues, while IMPROViSeD uses the distance
-        between the CA atoms. We thus add a tolerance
-        value of 5 angstroms to the crosslink distance, while evaluating
+        between the C\(^\alpha\) atoms. We thus add a tolerance
+        value of 5 Angstroms to the crosslink distance, while evaluating
         violations.
     </p>
 
@@ -119,7 +119,7 @@
         The results are obtained by running IMPROViSeD, is tested for:
         <ul>
             <li>Backbone RMSD with known structure in PDB repository: This
-                indicates how similar or distict are the
+                indicates how similar or distinct are the
                 structures modeled by IMPROViSeD</li>
             <li>Number of crosslink violations to assess the accuracy of
                 structure modelling with respect to the experimental
@@ -133,8 +133,8 @@
         crosslinks. We also report the backbone RMSD for each of the cases with
         respect to the structure found in PDB.
 
-        A crosslink is said to be satisfied if crosslink distance is less than
-        35 angstroms. In our case crosslink distance
+        We consider a crosslink to be satisfied if it is less than
+        35 Angstorms. In our case crosslink distance
         is between CA atoms between specific residues of 2 chains.
     </p>
     <h2>
