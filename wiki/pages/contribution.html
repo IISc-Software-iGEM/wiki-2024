@@ -57,14 +57,45 @@
     effortlessly. By recreating the functionality of the APBS web server within the terminal, BEPT provides a
     user-friendly design that helps researchers overcome initial apprehensions about command-line tools. Our
     contribution aims to make protein electrostatics more accessible, enabling scientists to conduct meaningful research
-    without the barriers often associated with traditional command-line interfaces. </p>
+    without the barriers often associated with traditional command-line interfaces.</p>
   <figure>
     <img src="https://static.igem.wiki/teams/5346/contributions/bept-collage-2.png" alt="bept collage">
     <figcaption>Working of BEPT</figcaption>
   </figure>
+
+  Bept also provides a framework for the iGEM community for building their interactive command line tool in Python.
+  <ol>
+    <li><b>Define Scope</b>  
+      <p>
+        Outline the tool's goals, core functionalities, and supported techniques (e.g., protein analysis, electrostatics). Bept has well defined scope for protein electrostatics studies clearly defined in the documentation.
+      </p>
+    </li>
+    <li><b>Use Beginner-Friendly Libraries</b>  
+      <p>
+        Leverage python libraries like `click` or `argparse` for CLI and `rich` for interactive output, ensuring ease of use. Grouping commands logically, providing clear help descriptions, and include simple examples helps users understand the tool's capabilities. Bept uses `click`, `rich`, `beaupy`, `textual` and more libraries for interactive interface.
+      </p>
+    </li>
+    <li><b>Testing and Maintainance</b>  
+      <p>
+        Implement unit tests, integration tests, and continuous integration to ensure the tool's reliability and performance. Regular updates and bug fixes enhance user experience. Bept has been tested cross-platform on Linux, MacOS and Windows and well maintained on Github.
+      </p>
+    </li>
+    <li><b>Documentation</b>
+      <p>
+        Create detailed documentation with installation instructions, usage examples, and troubleshooting tips to guide users effectively. You can add the documentation online using Read the Docs, GitHub Pages, or other platforms. Bept uses Sphinx and Read the Docs for documentation.
+      </p>
+    </li>
+    <li><b>Publishing on Package Managers</b>
+      <p>
+        Distribute the tool on PyPI, Conda, or Homebrew for easy installation and accessibility. Include versioning and dependencies for seamless integration.
+      </p>
+    </li>
+  </ol>
+  Bept is available on <a href="https://github.com/IISc-Software-iGEM/bept">Github</a>, <a href="https://pypi.org/project/bept/">PyPI</a>, <a href="https://github.com/AnirudhG07/homebrew-AnirudhG07">Homebrew Tap</a> and documentations at <a href="https://bept.readthedocs.io/en/latest/">Read the Docs</a>.
+
   <h1>Inclusivity Tool for Enhanced Accessibility</h1>
   <figure>
-    <img src="https://static.igem.wiki/teams/5346/contributions/inclusivity.png" alt="Figure has not downloaded">
+    <img src="https://static.igem.wiki/teams/5346/contributions/inclusivity.png" alt="inclusivity image">
     <figcaption>Inclusivity</figcaption>
   </figure>
   <p>Understanding the importance of inclusivity in research and education, we are developing a plug-in tool designed to
