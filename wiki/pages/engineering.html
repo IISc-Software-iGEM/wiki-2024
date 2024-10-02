@@ -162,7 +162,7 @@
                         \mathrm{Find} &amp;\left\{x_i \right\}_{i \in C_1 \cup \, C_2}\\
                         \text{subject to} &amp;\quad \|x_i - x_j \|_2^2 = d^2_{ij} \quad &amp; (i,j) \in \mathcal{E}_1
                         \cup \mathcal{E}_2\\
-                        &amp;\quad \|x_i - x_j \|_2^2 \geqslant \underline{c}^2 \pm \sigma \quad &amp; (i,j) \in
+                        &amp;\quad \|x_i - x_j \|_2^2 \leqslant \underline{c}^2 \pm \sigma \quad &amp; (i,j) \in
                         \mathcal{L}_{12}
                         \end{aligned}\]</span>
         </p>
@@ -273,7 +273,7 @@
                 describes a global alignment approach following a non-linear optimization formulation known as
                 Semidefinite programmimng <span class="citation" data-cites="boyd"></span>, to estimate a solution to
                 the following problem. The variables of equation are separated into \(\mathbb{R}^3\)</span> and
-                \(\mathbb{O}(3)\)</span>. In oder to circumvent the non-convexity of \(\mathbb{O}(3)\)</span>, a convex
+                \(\mathbb{O}(3)\)</span>. In order to circumvent the non-convexity of \(\mathbb{O}(3)\)</span>, a convex
                 progam is designed over a new variable \(G\)</span> defined as \(G = R^\top R\)</span>, i.e, inner
                 product of rotation matrices. This has been employed in <span class="citation"
                         data-cites="dream dreamweb"></span> as well to derive protein structrue from NMR. We apply
