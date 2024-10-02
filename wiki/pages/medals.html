@@ -1,212 +1,164 @@
-{% extends "layout.html" %} {% block title %}Medals{% endblock %}
-{% block lead %}{% endblock %} {% block page_content %}
+<h1>Medals</h1>
+<h2>Bronze</h2>
+<figure>
+  <img
+    src="https://static.igem.wiki/teams/5346/medals/medal-bronze.png"
+    alt="Bronze Medal"
+  />
+  <figcaption>Bronze Medal</figcaption>
+</figure>
+<ol>
+  <li>
+    Wiki: We've created a comprehensive wiki to explain our project and make it
+    accessible to a wider audience.
+  </li>
+  <li>
+    Project Promotion Video: This short video offers a quick overview of our
+    project, designed to capture interest and highlight key features.
+    <a href="https://video.igem.org/w/c63c21df-a4c6-4a07-886e-6174e48927c9"
+      >Link</a
+    >
+  </li>
+  <li>
+    Presentation Video: In this 15-minute video, we delve into all aspects of
+    our project, which will be used by the judges during the evaluation process.
+  </li>
+  <li>
+    Judging Form: We have completed and submitted the required judging form.
+  </li>
+  <li>
+    Judging Session: We will participate in the in-person judging sessions at
+    the Grand Jamboree.
+  </li>
+  <li>
+    Attributions: The new standard attributions page, introduced this year, has
+    been completed to acknowledge all individuals and organizations who
+    contributed to our project. Link:
+    <a href="https://2024.igem.wiki/iisc-software/attributions"
+      >Attributions | IISc-Software - iGEM 2024</a
+    >
+  </li>
+  <li>
+    Project Description: Our project description, including the motivation
+    behind it, the problem we are addressing, and the solutions we are
+    proposing, is fully documented on our Project Description Page. Link:
+    <a href="https://2024.igem.wiki/iisc-software/description"
+      >Project Description | IISc-Software - iGEM 2024</a
+    >
+  </li>
+  <li>
+    Contribution: We have detailed all our contributions to the iGEM community,
+    with the aim of supporting future iGEM teams. Link: <a href="https://2024.igem.wiki/iisc-software/contribution"> Contribution |
+    IISc-Software - iGEM 2024 </a>
+  </li>
+</ol>
 
-<style>
-  body {
-    background-image: linear-gradient(
-      to bottom,
-      #5cfdde 0%,
-      #aefeee 20%,
-      #f9537b 40%,
-      #fba4b9 60%,
-      #ffe4eb 100%
-    );
-  }
-  #float1 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/medal-1-removebg-preview.png");
-  }
-  #float2 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/medal-2-removebg-preview.png");
-  }
-</style>
+<h2>Silver</h2>
+<figure>
+  <img
+    src="https://static.igem.wiki/teams/5346/medals/medal-silver.png"
+    alt="Silver Medal"
+  />
+  <figcaption>Silver Medal</figcaption>
+</figure>
+<ol>
+  <li>
+    Engineering: We completed several iterations of the Design-Build-Test-Learn
+    cycle throughout our processes, leading to successful results. These
+    iterations are thoroughly detailed on our Engineering Success page link:
+    <a href="https://2024.igem.wiki/iisc-software/engineering"
+      >Engineering Success | IISc-Software - iGEM 2024</a 
+  </li>
+  <li>
+    Human Practices: We conducted a range of human practices activities,
+    gathering valuable feedback to improve our project. These activities
+    included outreach efforts to engage the community, raise awareness about
+    computational biology and synthetic biology, and initiate thought-provoking
+    discussions on the challenges and potential solutions related to biofuels.
+    Full details can be found on the linked page. Link:
+    <a href="https://2024.igem.wiki/iisc-software/human_practices"
+      >Human Practices | IISc-Software - iGEM 2024</a
+  </li>
+  <li>All bronze medal criteria.</li>
+</ol>
 
-<div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#background" class="button">Background</a></li>
-    <li><a href="#approach" class="button">Approach</a></li>
-    <li><a href="#inspiration" class="button">Motivation</a></li>
+<h2>Gold</h2>
+<figure>
+  <img
+    src="https://static.igem.wiki/teams/5346/medals/medal-gold.png"
+    alt="Gold Medal"
+  />
+  <figcaption>Gold Medal</figcaption>
+</figure>
+  <ol>
+    <li>All bronze and silver medal criteria.</li>
     <li>
-      Blah and Oof
-      <ul>
-        <li><a href="#background" class="button">Background</a>
-        
-      <ul>
-        <li><a href="#background" class="button">Background</a></li>
-        <li><a href="#approach" class="button">Approach</a></li>
-        <li><a href="#inspiration" class="button">Motivation</a></li>
-        <li><a href="#references" class="button">References</a></li>
-      </ul>
+      For the three special prizes, we have focused on achieving excellence in:
     </li>
-        <li><a href="#approach" class="button">Approach</a></li>
-        <li><a href="#inspiration" class="button">Motivation</a></li>
-        <li><a href="#references" class="button">References</a></li>
-      </ul>
-    </li>
-    <li><a href="#references" class="button">References</a></li>
-  </ul>
-</div>
-<div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Scalable Modeling of Macromolecular Assemblies using Novel Distance
-        Geometry Approaches
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
+  </ol>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modeling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modeling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modeling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
+  <h3>Best Education:</h3>
+  <p>
+    Education and outreach are fundamental values integral to the iGEM mission,
+    and we embraced these ideals through a comprehensive and inclusive approach.
+    Our initiatives targeted a wide array of students, ranging from aspiring
+    young scientists to high school and undergraduate learners, including those
+    from economically and socially marginalized backgrounds. We organized a
+    variety of activities, such as the Tech-Bio Ideathon and informative
+    sessions on synthetic and computational biology, to engage participants from
+    all backgrounds.
+  </p>
+  <p>
+    We extended our outreach efforts to the broader iGEM community and society
+    at large too. This involved hosting a workshop on molecular dynamics and
+    PyMOL modeling for other iGEM teams, participating in the All India iGEM
+    Meet, and launching a series of talks designed to raise awareness and
+    encourage discussions on protein modeling and computational biology
+    research, along with their practical applications. To maximize our impact,
+    we also partnered with science foundations and several student-led clubs at
+    our institute.
+  </p>
+  <p>
+    We are confident that we have successfully fulfilled the criterion of
+    education and outreach by fostering awareness and learning across diverse
+    segments of society. Throughout our endeavors, we emphasized inclusivity and
+    maintained a thoughtful, well-rounded approach.
+  </p>
+    <a href="https://2024.igem.wiki/iisc-software/education"
+      >Education | IISc-Software - iGEM 2024</a>
+  <h3>Best Inclusivity:</h3>
+  <p>
+    Inclusivity is a core principle of the iGEM mission, and we are dedicated to
+    ensuring that our initiatives reach individuals from various age groups,
+    genders, and diverse backgrounds. Our sessions were specifically designed to
+    engage participants from middle school to college, offering tailored
+    sessions that cater to different learning needs. We prioritized inclusivity
+    by actively encouraging the participation of underrepresented groups
+    including students from economically disadvantaged communities.
+    Additionally, we were proud to see a significant increase in women's
+    participation in the ideathon, reflecting our commitment to fostering gender
+    inclusivity and empowering female students to engage in STEM fields.
+  </p>
+  <p>
+    To further enhance our outreach, we developed an accessibility tool aimed at
+    improving website usability for individuals with various disabilities. This
+    tool ensures that our educational resources are more approachable and
+    comprehensible, enabling all users to access valuable information without
+    barriers.
+  </p>
+  <p>
+    In addition, we created a command-line tool for protein electrostatics
+    analysis, designed to assist researchers and students at all skill levels.
+    This tool simplifies complex calculations, making it easier for individuals
+    to engage with protein analysis regardless of their technical background.
+    Through these initiatives, we have not only fostered a more inclusive
+    environment within our project but have also laid the groundwork for a
+    broader, more accessible scientific community. We believe our commitment to
+    inclusivity has enriched our work, allowing us to inspire and empower a
+    diverse range of participants in the exciting fields of synthetic and
+    computational biology.
+  </p>
+    <a href="https://2024.igem.wiki/iisc-software/inclusivity"
+      >Inclusivity | IISc-Software - iGEM 2024</a>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modeling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modeling (DREAM) algorithm, a novel method for modeling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modeling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modeling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
-
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modeling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modeling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
-
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modeling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modeling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modeling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modeling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
-</div>
-
-{% endblock %}
+<h3>Best Model:</h3>
