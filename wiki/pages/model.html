@@ -3,210 +3,129 @@
 
 <style>
   body {
-    background-image: linear-gradient(
-      to bottom,
-      #b09e99 0%,
-      #fee9e1 20%,
-      #fad4c0 40%,
-      #64b6ac 60%,
-      #64b6ac 100%
-    );
+    background-image: linear-gradient(to bottom,
+        #b09e99 0%,
+        #fee9e1 20%,
+        #fad4c0 40%,
+        #64b6ac 60%,
+        #64b6ac 100%);
   }
+
   #float1 {
     background-image: url("https://static.igem.wiki/teams/5346/doodle/model-1-removebg-preview-1.png");
   }
+
   #float2 {
     background-image: url("https://static.igem.wiki/teams/5346/doodle/model-2-removebg-preview.png");
   }
 </style>
 
 <div class="col-md-3 sidebar">
-  <ul>
-    <li><a href="#background" class="button">Background</a></li>
-    <li><a href="#approach" class="button">Approach</a></li>
-    <li><a href="#inspiration" class="button">Motivation</a></li>
-    <li>
-      Blah and Oof
-      <ul>
-        <li><a href="#background" class="button">Background</a>
-        
-      <ul>
-        <li><a href="#background" class="button">Background</a></li>
-        <li><a href="#approach" class="button">Approach</a></li>
-        <li><a href="#inspiration" class="button">Motivation</a></li>
-        <li><a href="#references" class="button">References</a></li>
-      </ul>
-    </li>
-        <li><a href="#approach" class="button">Approach</a></li>
-        <li><a href="#inspiration" class="button">Motivation</a></li>
-        <li><a href="#references" class="button">References</a></li>
-      </ul>
-    </li>
-    <li><a href="#references" class="button">References</a></li>
-  </ul>
 </div>
 <div class="col-md-9 content">
-  <section id="abstract">
-    <div class="text">
-      <h2>
-        Scalable Modelling of Macromolecular Assemblies using Novel Distance
-        Geometry Approaches
-      </h2>
-    </div>
-    <div class="graphical_abstract">
-      <img
-        src="https://static.igem.wiki/teams/5346/ga4.jpeg"
-        alt="graphical_abstract"
-      />
-      <figcaption class="caption">Fig.1-Graphical Abstract</figcaption>
-    </div>
-  </section>
+  <p>The method presented in this document for modeling protein complexes is innovative and well-suited for submission
+    to the iGEM 2024 competition for the Best Model Award. Here's why it's the best choice:</p>
 
-  <section id="background" class="anchor">
-    <div class="text">
-      <h2>Background</h2>
-      <br />
-      <p>
-        The Integrative Modelling Platform (IMP) provides a computational
-        approach designed to model the structure of macromolecular assemblies.
-        Using Bayesian inference, IMP models biomolecular systems ranging from
-        small peptides to large macromolecular complexes by integrating data
-        from experiments, statistical analyses, physical principles, and prior
-        models.<br /><br />
-        IMP frames the construction of structural models as a computational
-        optimization problem, where information about the assembly is encoded
-        into a scoring function that evaluates candidate models. These scoring
-        functions comprise terms known as restraints, which measure how well a
-        model aligns with the information from which the restraint was derived.
-        The restraints incorporate both general structural knowledge and
-        specific details about the target structure. Consequently, a candidate
-        model that scores well is consistent with all available information. The
-        precision and accuracy of the resulting model improve with the amount
-        and quality of information encoded in the restraints. Integrative
-        modelling facilitates the incorporation of new and varied information,
-        low ering the barrier for using incremental data that is typically not
-        applied to structural characterization. Even when individual data types
-        are relatively uninformative, the inte gration of multiple types can
-        provide a comprehensive and accurate picture of an assembly. This
-        approach often results in more precise and complete models than those
-        based on single data sources.<br /><br />
-        Additionally, IMP offers a framework for both static and dynamic
-        modelling, enhancing its utility across a range of biomolecular systems.
-      </p>
-    </div>
-  </section>
+  <h1>Integrated Iterative Approach</h1>
+  <p>The proposed model, termed IMPROVISeD, adopts an integrated, multi-step iterative approach, which is well-aligned
+    with the concept of "integrative modeling." This approach mimics the scientific process—collecting experimental
+    data, proposing hypotheses, and refining models in an iterative manner.</p>
 
-  <section id="approach" class="anchor">
-    <div class="text">
-      <h2>Approach</h2>
-      <br />
-      <p>
-        IMP is a powerful tool for modelling macromolecular assemblies, but
-        several challenges must be addressed to enhance its accuracy and extend
-        the scope of its applications. These challenges include optimizing model
-        representation, expanding the variety of computable models, and
-        incorporating diverse types of data. Additionally, there is a need for
-        improved methods to score models, sample models, and analyze and
-        interpret results. Currently, IMP employs Markov Chain Monte Carlo
-        (MCMC) sampling to explore the space of possible models, which can be
-        computationally expensive and slow. To address this, we propose
-        developing an IMP-based software tool that models the structure of
-        macromolecular assemblies using a bottom-up approach.
-        <br />
-        <br />
-        Ourapproach will utilize the Distance Restraint and Energy Assisted
-        Modelling (DREAM) algorithm, a novel method for modelling the structure of
-        macromolecular assemblies. This algorithm follows a bottom-up strategy,
-        building smaller substructures for regions with a high concentration of
-        experimental data and consolidating them before modelling the rest of the
-        protein-complex structure. This method improves structure conformance in
-        the final models, ensuring higher compliance with experimental data. It
-        provides a faster and scalable approach to modelling macromolecular
-        assemblies by using a parallel-processed single-step assembly of
-        complexes, as opposed to the conventional iterative assembly.
-      </p>
-    </div>
-  </section>
+  <p>The challenges of computing optimal orientations for subunits forming protein complexes is broken down into
+    well-known mathematical problem of "Graph-embedding in Euclidean space" and "Multiview registration" in computer
+    vision. This not only makes the pipeline robust, but helps us avert the computational overhead of starting with
+    numerous random starting orientations.</p>
 
-  <section id="inspiration" class="anchor">
-    <div class="text">
-      <h2>Motivation</h2>
-      <br />
-      <p>
-        Proteins are the driving forces behind cellular processes, participating
-        in various biological functions such as signal transduction, gene
-        regulation, and cell division. They do not act in isolation but
-        collaborate with other proteins to form macromolecular assemblies. These
-        assemblies are crucial for the cell’s proper functioning, performing
-        complex tasks that no single protein can accomplish alone. Understanding
-        the structure and dynamics of these assemblies is key to comprehending
-        biological systems.<br /><br />
-        However, the inability to determine the structure of macromolecular
-        assemblies has been a significant obstacle in structural biology.
-        Initially, NMR problems were addressed using distance geometry, but its
-        lack of scalability limited its utility. This led to a focus on
-        molecular dynamics, MCMC, and other methods, which are computationally
-        intensive. Modelling the structure and dynamics of macromolecular
-        assemblies can provide in sights into the workings, evolution, control,
-        and design of biological systems. Our iGEM project aims to use
-        Integrative Modelling Platform (IMP) with the DREAM algorithm to build
-        models of macromolecular assemblies using a bottom-up approach,
-        overcoming existing bottlenecks.
-      </p>
-    </div>
-  </section>
+  <h2>Steps Involved</h2>
+  <ul>
+    <li><strong>Localization</strong>: Using a supporting structure composed of C-alpha atoms, the model identifies
+      plausible alignments while maintaining distance constraints.</li>
+    <li><strong>One-Shot Registration</strong>: The model performs a global alignment of the protein subunits to the
+      supporting structure, reducing computational cost compared to traditional pairwise alignment approaches that
+      accumulate errors.</li>
+    <li><strong>Flip Refinement</strong>: By incorporating a mirror reflection step, the method corrects for potential
+      symmetry-related errors, ensuring biologically valid configurations.</li>
+    <li><strong>Iterative Conformation Generation</strong>: The model generates multiple conformations to account for
+      the dynamic nature of proteins, enhancing the overall robustness of the resulting models.</li>
+  </ul>
+  <p>This multi-cycle process allows for rapid convergence to a solution that fits experimental crosslinking data,
+    resulting in a highly refined model.</p>
 
-  <section id="references" class="anchor">
-    <div class="text">
-      <h2>References</h2>
-      <p>
-        [1]
-        <a
-          href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001244"
-          target="_blank"
-          >Russel D, Lasker K, Webb B, Velázquez-Muriel J, Tjioe E, et al.
-          (2012) Putting the Pieces Together: Integrative Modelling Platform
-          Software for Structure Determination of Macromolecular Assemblies.
-          PLoS Biol 10(1): e1001244. doi:10.1371/journal.pbio.1001244</a
-        >
-      </p>
-      <p>
-        [2]
-        <a href="https://doi.org/10.1016/j.jbc.2021.100743" target="_blank"
-          >Andrej Sali, From integrative structural biology to cell biology,
-          Journal of Biological Chemistry, Volume 296, 2021, 100743, ISSN
-          0021-9258, https://doi.org/10.1016/j.jbc.2021.100743</a
-        >
-      </p>
-      <p>
-        [3]
-        <a href="https://arxiv.org/abs/2401.17894v4" target="_blank"
-          >Arvindekar, Shreyas, Kartik Majila, and Shruthi Viswanath. "Recent
-          methods from statistical inference and machine learning to improve
-          integrative modelling of macromolecular assemblies." arXiv preprint
-          arXiv:2401.17894 (2024).</a
-        >
-      </p>
-      <p>
-        [4]
-        <a href="https://doi.org/10.1002/pmic.202300379" target="_blank"
-          >Das, Niladri Ranajan et al. “DREAMweb: An online tool for graph-based
-          modelling of NMR protein structure.” Proteomics, e2300379. 17 Apr.
-          2024, doi:10.1002/pmic.202300379</a
-        >
-      </p>
-      <p>
-        [5]
-        <a
-          href="https://onlinelibrary.wiley.com/doi/full/10.1002/prot.26439"
-          target="_blank"
-          >Improved NMR-data-compliant protein structure modelling captures
-          context-dependent variations and expands the scope of functional
-          inference</a
-        >
-      </p>
-    </div>
-  </section>
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/iterations.png" id="flowchart" alt="" />
+    <figcaption>
+      Simplified Flowchart for IMPROVISeD. The subunits are oriented in multiple iterations. Each resulting from a
+      subset of crosslinks, followed by and . The iterations proceed in parallel. The structrues without clashes while
+      satisfying the crosslinks gives final results.
+    </figcaption>
+  </figure>
+
+
+  <h1>Computational Efficiency</h1>
+  <p>The method addresses the common problem of computational cost by breaking the modeling into different cycles and
+    utilizing distance-preserving transformations through rigid body motions.</p>
+
+  <h2>Key Aspects</h2>
+  <ul>
+    <li><strong>Optimization on SE(3)</strong>: The algorithm takes advantage of the mathematical properties of SE(3) to
+      efficiently compute rigid body motions, ensuring distance preservation without deformation.</li>
+    <li><strong>Semi-Definite Programming</strong>: A non-linear optimization formulation known as semi-definite
+      programming is used to solve the registration problem, providing an optimal solution with reduced computation.
+    </li>
+    <li><strong>Parallel Execution</strong>: The iterative steps proceed in parallel, allowing the model to generate
+      multiple conformations simultaneously, reducing overall computation time.</li>
+  </ul>
+
+  <h1>Practical Applications and Novelty</h1>
+  <ul>
+    <li><strong>Handling Experimental Noise</strong>: The model includes the uncertainty inherent in crosslink data,
+      effectively integrating noise into the optimization to create more biologically realistic structures.</li>
+    <li><strong>Global Alignment for Accuracy</strong>: The global alignment of all subunits ensures that the final
+      configuration is accurate and optimally aligned.</li>
+    <li><strong>Generation of Hypothetical Contact Points</strong>: The use of hypothetical supporting structures allows
+      for the exploration of multiple orientations and predictions of new interfaces, which is valuable for artificial
+      drug design.</li>
+  </ul>
+
+  <h1>Experimental Validation and Refinement</h1>
+  <p>The proposed method was validated using experimental data from protein complexes RIBONUCLEASE INHIBITOR COMPLEXED
+    WITH RIBONUCLEASE A (PDB ID: 1DFJ). The model showed that it could reconstruct protein structures in a single
+    alignment step and provided quantitative metrics like RMSD to verify the accuracy of predictions.</p>
+  <p>Additional energy minimization step can ensures the thermodynamic stability of the final model, allowing
+    researchers to obtain reliable, biologically relevant conformations.</p>
+
+  <h1>Comprehensive Post-Processing</h1>
+  <p>The energy minimization after alignment ensures that the modeled protein structures are not only geometrically
+    accurate but also energetically favorable. This final refinement step makes the model output suitable for downstream
+    applications, such as structure-based drug design or functional analysis.</p>
+
+  <h1>Key Highlights for the Best Model Award Submission</h1>
+  <ol>
+    <li><strong>Unique Iterative Workflow</strong>: IMPROVISeD integrates localization, registration, flip refinement,
+      and parallel iteration—ensuring efficient and accurate protein modeling.</li>
+    <li><strong>Mathematical Rigor and Flexibility</strong>: The utilization of SE(3) and semi-definite programming not
+      only offers computational efficiency. Additional corrections ensure biological relevance of the structures.</li>
+    <li><strong>Practical Relevance</strong>: The ability to handle experimental uncertainty and generate biologically
+      plausible hypothetical interfaces positions this model as a valuable tool in biomedicine, especially in drug
+      discovery.</li>
+    <li><strong>Efficiency and Scalability</strong>: The parallel processing capability makes it scalable for modeling
+      large protein complexes, setting it apart from traditional modeling methods.</li>
+  </ol>
+
+  <h1>Conclusion</h1>
+  <p>In conclusion, the IMPROVISeD model represents a well-balanced approach combining accuracy, efficiency, and
+    practical relevance, making it a competitive choice for the iGEM 2024 Best Model Award. Its ability to handle the
+    complexities of protein structure determination with an efficient computational design provides a clear advantage,
+    especially in scenarios involving large datasets or where computational resources are limited.</p>
+
+  <figure>
+    <img src="https://static.igem.wiki/teams/5346/exp-images/1dfj-movie.gif" id="flowchart" alt="" />
+    <figcaption>
+      Visual comparison for the results generated by IMPROVeD with that available in the PDB repository (top left),
+      shown in similar orientations. The structures derived by our method is able to model new orientations while
+      satifying the crosslink data.
+    </figcaption>
+  </figure>
 </div>
 
 {% endblock %}
