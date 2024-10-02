@@ -300,16 +300,16 @@
                 diagonal entry replaced by \(-1\)</span>. Note that \(I_{-1} R\)</span> is also a solution of equation.
         </p>
         <p>
-                In context of registration problem, the may lead to the chain I in Fig. <a href="#ramaflip"
-                        data-reference-type="ref" data-reference="ramaflip">2.4</a>a. The corresponding Ramachandran map
-                for the chain I is shown in Fig. <a href="#ramaflip" data-reference-type="ref"
-                        data-reference="ramaflip">2.4</a>d. Hence chain E is reflected as correction. This can be done
+                In context of registration problem, the may lead to the chain I, as shown in (a) in the figure <a href="#ramaflip"
+                        data-reference-type="ref" data-reference="ramaflip">above</a>. The corresponding Ramachandran map
+                for the chain I is shown in (d) in the figure <a href="#ramaflip" data-reference-type="ref"
+                        data-reference="ramaflip">above</a>. Hence chain E is reflected as correction. This can be done
                 by noting the rotation matrix, say \(R_{I}\)</span> which was obtained from the registration step, and
                 multiplying any diagonal value by \(-1\)</span>. Thus determinant of \(R_{I}\)</span> will change sign,
                 indicating a reflection. The coordinates of chain I, acted upon the by the corrected \(R_{E}\)</span>
-                results in Fig. <a href="#ramaflip" data-reference-type="ref" data-reference="ramaflip">2.4</a>c. The
-                corresponding Ramachandran map is Fig. <a href="#ramaflip" data-reference-type="ref"
-                        data-reference="ramaflip">2.4</a>e. Note that no such corrections was required for chain E.
+                results shown in (c) in the figure <a href="#ramaflip" data-reference-type="ref" data-reference="ramaflip">above</a>. The
+                corresponding Ramachandran map shown in (e) in the figure <a href="#ramaflip" data-reference-type="ref"
+                        data-reference="ramaflip">above</a>. Note that no such corrections was required for chain E.
         </p>
         <h2 id="iterating-cycle-4">Iterating (Cycle-4)</h2>
         <figure>
@@ -340,11 +340,8 @@
         </p>
         <h2 id="post-processing-cycle-4">Post-processing (Cycle-4)</h2>
         <p>
-                The post processing steps include the energy minimisation steps in order to simulate a thermodynamically
-                stable protein conformations. We apply the XX forcefield and YY water model to perform an energy
-                minimisation step. The terminating condition was supplied to be \(10000\)</span> steps or if the
-                potencial energy of the system decreases below \(YY\)</span> KJ/MOL/K. PyRosetta package was used for
-                this purpose.
+                Psedocode for IMPROViSeD. Modeling three dimensional structures for protein complexes using crosslinking is broken down into two steps: Localization and Registration. The subunits are oriented in multiple interations. Each results from a subset of crosslinks, followed by localiztion and registration. The iterations proceed in parallel. The structrues with low crosslink violations and those that do not have clashes make it to as final result.
+
         </p>
         <figure>
                 <img src="https://static.igem.wiki/teams/5346/eng-images/code11.png" id="code11" alt="" />
@@ -360,10 +357,10 @@
         </p>
         <ul>
                 <li>
-                        side chain EM
+                        Side chain EM
                 </li>
                 <li>
-                        main chain EM
+                        Main chain EM
                 </li>
                 <li>
                         Simulated annealing
@@ -382,7 +379,7 @@
                         American Chemical Society, 125(7):1731–1737, 2003.</li>
                 <li>Serge Lang. Differential manifolds, volume 2. Springer, 1972. </li>
                 <li>Nathan Jacobson. Lie algebras. Courier Corporation, 2013.</li>
-                <li>Arnaud de Mesmay, Yo’av Rieck, Eric Sedgwick, and Martin Tancer. imgdability in
+                <li>Arnaud de Mesmay, Yo’av Rieck, Eric Sedgwick, and Martin Tancer. embeddability in
                         R3 is NP-hard. SODA ’18, pages 1316–1329, 2018 </li>
                 <li>Leo Liberti, Carlile Lavor, Nelson Maculan, and Antonio Mucherino. Euclidean distance
                         geometry and applications. SIAM Review, 56(1):3–69, 2014.</li>
