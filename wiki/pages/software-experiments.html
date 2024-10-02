@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block title %}Project Description{% endblock %}
+{% extends "layout.html" %} {% block title %}Software Experiments{% endblock %}
 {% block lead %}{% endblock %} {% block page_content %}
 
 <style>
@@ -24,7 +24,80 @@
   
 </div>
 <div class="col-md-9 content">
+  <p>
+      We did our experiments on 2 cases, one case involves a protein with 2 chains and other case involves a protein with 3 chains. We have used experimental as well as synthetic generated crosslinks data to run our pipeline. Here are the sources of our data. 
+  </p>
+  <h1>1dfj Case</h1>
+  <p>
+      We have protein 1dfj which has 2 chains as shown below. We also have experimental crosslink data available for this protein from IMP (Cite this link) <href>https://intact-portal.ebi.ac.uk/interaction/EBI-2623041</href>
+  </p>
+  <figure>
+      <img src="https://static.igem.wiki/teams/5346/1dfj-1.png" alt="1dfj">
+      <figcaption>1dfj Chain_1</figcaption>
+  </figure>
+  <figure>
+      <img src="https://static.igem.wiki/teams/5346/1dfj-2.png" alt="1dfj">
+      <figcaption>1dfj Chain_2</figcaption>
+  </figure>
+
+  <h1>
+      LCN2-MMP9 Case
+  </h1>
+  <p>
+      MMP9 has 2 chains and LCN2 has 1 chain. We have taken these 2 proteins from RCSB PDB which are as follows.
+  </p>
+
+  <figure>
+      <img src="https://static.igem.wiki/teams/5346/chain-a.png" alt="lcn2">
+      <figcaption>lcn-2</figcaption>
+  </figure>
+  <figure>
+      <img src="https://static.igem.wiki/teams/5346/chain-b.png" alt="mmp9">
+      <figcaption>mmp-9</figcaption>
+  </figure>
+  <p>
+      We do not have experimental crosslinks data available between these 2 proteins. Hence we have generated synthetic crosslinks data between using the following algorithm.
+  </p>
+  <figure>
+      <img src="https://static.igem.wiki/teams/5346/code22.png" alt="Algorithm">
+      <figcaption>Algorithm for synthetic crosslink generation</figcaption>
+  </figure>
+
+  <h1>Running the pipeline</h1>
   
+  <h2>
+      Number of crosslinks:
+  </h2>
+  <ul>
+      <li>1dfj: 12 (experimental)</li>
+      <li>LCN2-MMP9: 11 (synthetically generated)</li> 
+  </ul>
+  <h2>
+      All vs Subset of Crosslinks
+  </h2>
+  <p>
+      We run our pipeline by choosing random subsets of crosslinks, since we are solving a localization problem which is basically the supporting framework for the two bodies, its solution is not unique (depends on random seed), hence final solution is also not unique and directly depends on structure of supporting framework.
+  </p>
+  <p>
+      We also tried by choosing all crosslinks, but that resulted in more clashes between proteins and percentage of satisfied crosslinks was less. This is because our registration algorithm will force every crosslink to be equal to the distance specified but that is not true in for all crosslinks. Hence we choose random subsets of crosslinks to get better results.
+  </p>
+
+  <h2>
+      Evaluation
+  </h2>
+  <p>
+      We get different solutions to localization problem for different runs, which results in different registered structures. We evaluated these structures based on percentage of correctly satisfied crosslinks.
+  </p>
+  <p>
+      A crosslink is said to be satisfied if crosslink distance is less than 35 angstroms. In our case crosslink distance is between CA atoms between specific residues of 2 chains.
+  </p>
+  <h2>
+      Format of Crosslinks Data
+  </h2>
+  <figure>
+      <img src="https://static.igem.wiki/teams/5346/crosslinks.png" alt="Algorithm">
+      <figcaption>Crosslinks</figcaption>
+  </figure>
 </div>
 
 {% endblock %}
