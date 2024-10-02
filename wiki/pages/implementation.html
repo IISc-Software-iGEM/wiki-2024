@@ -43,22 +43,22 @@
   be proved to be composed of only rotation/reflection and translations.
 
   <h1>Solving the Localization Problem</h1>
-  For solving the localization problem we do temporary mapping of CA atoms
+  For solving the localization problem we do temporary mapping of  C\(^\alpha\) atoms
   corresponding to residues involved in the crosslinks. Generally they are less
   than 15 in number.
   <ul>
     <li>
-      We have used scipy library for Euclidean distance matrix completion (EDMC)
+      We have used Sci-py library for Euclidean distance matrix completion (EDMC)
       in python to solve the localization problem. We evaluated the peformance
       with other packages for low rank approximation of EDMC.
     </li>
     <li>
-      We observed that scipy's package works best for sparse data. Other
-      packages avaible in MATLAB such as the one by Bamdev et al. (2016) works
+      We observed that Sci-py's package works best for sparse data. Other
+      packages available in MATLAB such as the one by Bamdev et al. (2016) works
       better for dense data.
     </li>
     <li>
-      Our constraints include crosslink data and equality constraints between CA
+      Our constraints include crosslink data and equality constraints between  C\(^\alpha\)
       atoms of residues in both subunits, because these are rigid body
       transformations.
     </li>
@@ -76,13 +76,13 @@
   We use our One-Shot Registration Algorithm to register the subunits. Our
   inputs are 3 rigid bodies in this case
   <ul>
-    <li>Subunit 1</li>
-    <li>Subunit 2</li>
+    <li>Subunit 1 Coordinates</li>
+    <li>Subunit 2 Coordinates</li>
     <li>Supporting Framework</li>
   </ul>
-  The input format consists of coordinates and index files per subunit. In
+  The input format conforms to PDB style. In
   order to circumvent the problem of optimization over the non-convex set of
-  rigid body, motions, a non-linear formulations using "Semidefinite
+  rigid body motions, a non-linear formulations using "Semidefinite
   Programming" (Chaudhury et al. 2014) is used. We use the MOSEK library in C++
   to solve this problem.
 
@@ -91,13 +91,13 @@
   orientation. Recall from the "Engineering cycles", that although geometrically
   mirror images have similar inter-atomic distances, one of the instances do not
   occur in nature. We use the flip refinement algorithm to check this. The
-  operation was coded in Python. Here is a visualization of the flip refinement.
+  operation was coded in Python.
 
   <h1>Validation</h1>
   We validated our structures on the basis of percentage of satisfied
-  crosslinks. A crosslink is violated if it exceeds 35 angstroms.
+  crosslinks. 
 
-  <h1>System specfication</h1>
+  <h1>System Specfication</h1>
   The implementation, experimentation, and data analysis was performed on a
   x86_64, 64 bit processor having "12th Gen Intel(R) Core(TM) i9" CPU, having 24
   cores, operating at a maximum clock speed of 5.2 GHz. The size of RAM was 64
