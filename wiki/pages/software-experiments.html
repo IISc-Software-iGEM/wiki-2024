@@ -2,102 +2,121 @@
 {% block lead %}{% endblock %} {% block page_content %}
 
 <style>
-  body {
-    background-image: linear-gradient(
-      to bottom,
-      #ccdbfd 0%,
-      #c1d3fe 20%,
-      #abc4ff 40%,
-      #9fbcff 60%,
-      #9fbcff 100%
-    );
-  }
-  #float1 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/groth.png");
-  }
-  #float2 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/co-worker.png");
-  }
+    body {
+        background-image: linear-gradient(to bottom,
+                #ccdbfd 0%,
+                #c1d3fe 20%,
+                #abc4ff 40%,
+                #9fbcff 60%,
+                #9fbcff 100%);
+    }
+
+    #float1 {
+        background-image: url("https://static.igem.wiki/teams/5346/doodle/groth.png");
+    }
+
+    #float2 {
+        background-image: url("https://static.igem.wiki/teams/5346/doodle/co-worker.png");
+    }
 </style>
 
 <div class="col-md-3 sidebar">
-  
+
 </div>
 <div class="col-md-9 content">
-  <p>
-      We did our experiments on 2 cases, one case involves a protein with 2 chains and other case involves a protein with 3 chains. We have used experimental as well as synthetic generated crosslinks data to run our pipeline. Here are the sources of our data. 
-  </p>
-  <h1>1dfj Case</h1>
-  <p>
-      We have protein 1dfj which has 2 chains as shown below. We also have experimental crosslink data available for this protein from IMP (Cite this link) <href>https://intact-portal.ebi.ac.uk/interaction/EBI-2623041</href>
-  </p>
-  <figure>
-      <img src="https://static.igem.wiki/teams/5346/1dfj-1.png" alt="1dfj">
-      <figcaption>1dfj Chain_1</figcaption>
-  </figure>
-  <figure>
-      <img src="https://static.igem.wiki/teams/5346/1dfj-2.png" alt="1dfj">
-      <figcaption>1dfj Chain_2</figcaption>
-  </figure>
+    <p>
+        We did our experiments on 2 cases, one case involves a protein with 2 chains and other case involves a protein
+        with 3 chains. We have used experimental as well as synthetic generated crosslinks data to run our pipeline.
+        Here are the sources of our data.
+    </p>
+    <h1>1DFJ Case</h1>
+    <p>
+        We have protein 1DFJ which has 2 chains as shown below. We also have experimental crosslink data available for
+        this protein from IMP (Cite this link) <href>https://intact-portal.ebi.ac.uk/interaction/EBI-2623041</href>
+    </p>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/1dfj-1.png" alt="1dfj">
+        <figcaption>1DFJ Chain_1</figcaption>
+    </figure>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/1dfj-2.png" alt="1dfj">
+        <figcaption>1DFJ Chain_2</figcaption>
+    </figure>
 
-  <h1>
-      LCN2-MMP9 Case
-  </h1>
-  <p>
-      MMP9 has 2 chains and LCN2 has 1 chain. We have taken these 2 proteins from RCSB PDB which are as follows.
-  </p>
+    <h1>
+        LCN2-MMP9 Case
+    </h1>
+    <p>
+        MMP9 has 2 chains and LCN2 has 1 chain. We have taken these 2 proteins from RCSB PDB which are as follows.
+    </p>
 
-  <figure>
-      <img src="https://static.igem.wiki/teams/5346/chain-a.png" alt="lcn2">
-      <figcaption>lcn-2</figcaption>
-  </figure>
-  <figure>
-      <img src="https://static.igem.wiki/teams/5346/chain-b.png" alt="mmp9">
-      <figcaption>mmp-9</figcaption>
-  </figure>
-  <p>
-      We do not have experimental crosslinks data available between these 2 proteins. Hence we have generated synthetic crosslinks data between using the following algorithm.
-  </p>
-  <figure>
-      <img src="https://static.igem.wiki/teams/5346/code22.png" alt="Algorithm">
-      <figcaption>Algorithm for synthetic crosslink generation</figcaption>
-  </figure>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/chain-a.png" alt="lcn2">
+        <figcaption>LCN2</figcaption>
+    </figure>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/chain-b.png" alt="mmp9">
+        <figcaption>MMP9</figcaption>
+    </figure>
+    <p>
+        We do not have experimental crosslinks data available between these 2 proteins. Hence we have generated
+        synthetic crosslinks data between using the following algorithm.
+    </p>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/code22.png" alt="Algorithm">
+        <figcaption>Algorithm for synthetic crosslink generation</figcaption>
+    </figure>
 
-  <h1>Running the pipeline</h1>
-  
-  <h2>
-      Number of crosslinks:
-  </h2>
-  <ul>
-      <li>1dfj: 12 (experimental)</li>
-      <li>LCN2-MMP9: 11 (synthetically generated)</li> 
-  </ul>
-  <h2>
-      All vs Subset of Crosslinks
-  </h2>
-  <p>
-      We run our pipeline by choosing random subsets of crosslinks, since we are solving a localization problem which is basically the supporting framework for the two bodies, its solution is not unique (depends on random seed), hence final solution is also not unique and directly depends on structure of supporting framework.
-  </p>
-  <p>
-      We also tried by choosing all crosslinks, but that resulted in more clashes between proteins and percentage of satisfied crosslinks was less. This is because our registration algorithm will force every crosslink to be equal to the distance specified but that is not true in for all crosslinks. Hence we choose random subsets of crosslinks to get better results.
-  </p>
+    <h1>Running the pipeline</h1>
 
-  <h2>
-      Evaluation
-  </h2>
-  <p>
-      We get different solutions to localization problem for different runs, which results in different registered structures. We evaluated these structures based on percentage of correctly satisfied crosslinks.
-  </p>
-  <p>
-      A crosslink is said to be satisfied if crosslink distance is less than 35 angstroms. In our case crosslink distance is between CA atoms between specific residues of 2 chains.
-  </p>
-  <h2>
-      Format of Crosslinks Data
-  </h2>
-  <figure>
-      <img src="https://static.igem.wiki/teams/5346/crosslinks.png" alt="Algorithm">
-      <figcaption>Crosslinks</figcaption>
-  </figure>
+    <h2>
+        Number of crosslinks:
+    </h2>
+    <ul>
+        <li>1DFJ: 12 (experimental)</li>
+        <li>LCN2-MMP9: 11 (synthetically generated)</li>
+    </ul>
+    <h2>
+        All vs Subset of Crosslinks
+    </h2>
+    <p>
+        We run our pipeline by choosing random subsets of crosslinks. We estimate a solution to the localization problem
+        to built the supporting framework for structures involved, which is non-convex by nature. We vary the starting
+        seed to generate multiple supporting framework. The final solution, after registration, is therefore multiple
+        conformations. Note, that each iteration takes around 1-1.5 minutes to compute. Thus the user can quickly
+        geenrate multiple structures based on the crosslink entries selected.
+    </p>
+    <p>
+        We also tried by choosing all crosslinks, but it resulted in clashes. This is expected since the magtinude of
+        distance between the C-alpha atoms, obtained from experimental crosslink data vary due to the flexibility of the
+        side-chain and the backbone chain of the protein. We hypothesize that a fraction of accurate crosslinks lead to
+        an accurate structure. We test our algorithm by choosing random subsets of crosslinks. Despite using only a
+        fraction of the crosslinks, the end result satisfied a large percentage of the entire set of crosslinks. This
+        confirms that IMPROVised can be used for efficient and accurate modeling o fthe three dimensional structrues for
+        the protein complexes.
+    </p>
+
+    <h2>
+        Evaluation
+    </h2>
+    <p>
+        We get different solutions to localization problem for different runs, which results in different registered
+        structures. We evaluated these structures based on percentage of correctly satisfied crosslinks.
+    </p>
+    <p>
+        Recall that a crosslink is defined a distance of 30 angstroms between a pair of C-alpha atoms. In reality they
+        refer to the distance between the corresponding amino acid residues. Thus a tolerance value of 5 angstrom is
+        added to the magnitude of crosslink while evaluating for violations. Once the final structures are modeled, the
+        distance between every pair of C-alpha atoms are taken which constitute the crosslinks. If the distance is more
+        than 35 angstrom, then it is noted as a violation.
+    </p>
+    <h2>
+        Format of Crosslinks Data
+    </h2>
+    <figure>
+        <img src="https://static.igem.wiki/teams/5346/crosslinks.png" alt="Algorithm">
+        <figcaption>Crosslinks</figcaption>
+    </figure>
 </div>
 
 {% endblock %}
