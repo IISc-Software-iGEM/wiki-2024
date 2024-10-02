@@ -2,257 +2,415 @@
 {% block lead %}{% endblock %} {% block page_content %}
 
 <style>
-  body {
-    background-image: linear-gradient(
-      to bottom,
-      #edeec9 0%,
-      #dde7c7 20%,
-      #bfd8bd 40%,
-      #98c9a3 60%,
-      #77bfa3 100%
-    );
-  }
-  #float1 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/attachments.png");
-  }
-  #float2 {
-    background-image: url("https://static.igem.wiki/teams/5346/doodle/bussness-plan.png");
-  }
+        body {
+                background-image: linear-gradient(to bottom,
+                                #edeec9 0%,
+                                #dde7c7 20%,
+                                #bfd8bd 40%,
+                                #98c9a3 60%,
+                                #77bfa3 100%);
+        }
+
+        #float1 {
+                background-image: url("https://static.igem.wiki/teams/5346/doodle/attachments.png");
+        }
+
+        #float2 {
+                background-image: url("https://static.igem.wiki/teams/5346/doodle/bussness-plan.png");
+        }
 </style>
 
 <div class="col-md-3 sidebar">
-  
+
 </div>
 <div class="col-md-9 content">
+        <h1 id="challenges">Challenges in Integrated Modelling</h1>
+        <p>The conundrum lies in the computational cost incurred in modeling three-dimensional structures for protein
+                complexes.</p>
+        <ul>
+                <li>
+                        The challenges stem from sampling the entire space of valid protein conformations for instances
+                        that satisfy the experimental evidence.
+                </li>
+                <li>
+                        Under-sampling of the conformational space risks missing one or more valid solutions. This may
+                        have far-reaching consequences.
+                </li>
+                <li>
+                        A conservation approach is therefore adopted by beginning with a sizable number, say \(k\), of
+                        initial orientation for the protein sub-units forming the complexes. The guess must be randomly
+                        selected across the space of valid protein conformations. This is easier said than accomplished.
+                        Indeed, a large volume of work exists to sample this space.
+                </li>
+        </ul>
+        <p>Each of these is successively improved to decrease the system’s potential energy. The goal is that the
+                conformation with the lowest energy is a thermodynamically stable state. However, the underlying
+                computations involve deriving a new position for each of the atoms involved, as they are perturbed in
+                each iteration. Recall that even for a moderately sized protein, the number of atoms can be in tens of
+                thousands. The computational overhead is further compounded by the fact that:</p>
+        <ul>
+                <li>while parallel computations are employed to mitigate the overhead, the increased demands on the
+                        computational resources are substantially large,</li>
+                <li>each run originating from a single guess results in an ensemble of protein structures,</li>
+                <li>branch and bound and/or clustering methods are designed to quell the exponential increment of the
+                        solutions space.</li>
+        </ul>
+        <p>The factors combine together to make the protein modeling problem beyond the reach of modest user with
+                limited resources. This includes handheld devices or edge computing.</p>
 
-  <h1 id="challenges">Challenges in Integrated Modelling</h1>
-  <p>The conundrum lies in the computational cost incurred in modeling three-dimensional structures for protein complexes.</p>
-      <ul>
-      <li>
-              The challenges stem from sampling the entire space of valid protein conformations for instances that satisfy the experimental evidence.
-      </li>
-      <li>
-              Under-sampling of the conformational space risks missing one or more valid solutions. This may have far-reaching consequences.
-      </li>
-      <li>
-              A conservative approach is therefore adopted by beginning with a sizable number, say \(k\), of initial orientation for the protein sub-units forming the complexes. The guess must be randomly selected across the space of valid protein conformations. This is easier said than accomplished. Indeed, a large volume of work exists to sample this space.
-      </li>
-      </ul>
-  <p>Each of these is successively improved to decrease the system’s potential energy. The goal is that the conformation with the lowest energy is a thermodynamically stable state. However, the underlying computations involve deriving a new position for each of the atoms involved, as they are perturbed in each iteration. Recall that even for a moderately sized protein, the number of atoms can be in tens of thousands. The computational overhead is further compounded by the fact that:</p>
-      <ul>
-      <li>while parallel computations are employed to mitigate the overhead, the increased demands on the computational resources are substantially large,</li>
-      <li>each run originating from a single guess results in an ensemble of protein structures,</li>
-      <li>branch and bound and/or clustering methods are designed to quell the exponential increment of the solutions space.</li>
-      </ul>
-  <p>The factors combine together to make the protein modeling problem beyond the reach of modest user with limited resources. This includes handheld devices or edge computing.</p>
+        <h1 id="motivation">Motivation</h1>
+        <ul>
+                <li>Why random guesses when data says otherwise. We intend to find initial orientations such that the
+                        experimental evidence is satisfied.</li>
+                <li>How sensitive are the relative orientations of the proteins, given errors in the experimental
+                        crosslinks?</li>
+                <li>How sensitive are the relative orientations of the protein molecules for tailor-made contact points?
+                </li>
+                <li>If multiple orientations are possible? Can we predict new interfaces if they can be obtained with
+                        limited computation cost? This would be useful in artificial drug design.</li>
+        </ul>
+        <h1 id="method">Method</h1>
+        <h2 id="conceptualize-cycle-1">Conceptualize (Cycle-1)</h2>
+        <figure>
+                <img src="https://static.igem.wiki/teams/5346/wood-puzzle.png" id="woodpuzzle" />
+                <figcaption>Puzzle to align pieces of wood such that thin struts between them fall into specific
+                        notches.</figcaption>
+        </figure>
+        <p>Let’s solve a puzzle. Blocks of wood must be placed adjacent but not clash with each other. To aid the mutual
+                orientations, thin pegs of wood must snugly fit in their respective notches in the individual pieces. In
+                essence, the puzzle involves, </p>
+        <ol>
+                <li>Bring two bodies together such that they do not deform</li>
+                <li>Orientate them such that separation between certain anchor points remains fixed.</li>
+                <li>Perform minor adjustments so that any errors are ironed out.</li>
+        </ol>
+        <p>Where else are similar problems found?</p>
+        <ul>
+                <li>Multiview registration</li>
+                <li>DREAM</li>
+                <li>Sensor network localization</li>
+                <li>Robot position determination</li>
+        </ul>
+        <p>We now revisit the problem of protein complex modeling from the experimental data. The inputs include:</p>
+        <ol>
+                <li>three-dimensional coordinate files for the subunits of the protein complex,</li>
+                <li>experimental evidence, i.e., the crosslink file indicating the residues belonging to different
+                        subunits that are proximal to each other. The cutoff distance depends on the experimental setup.
+                </li>
+        </ol>
+        <p>We now formalize the mathematical construct for the problem so that we can analytically investigate the
+                various steps involved.</p>
+        <h2 id="mathematical-modelling">Mathematical modelling</h2>
+        <p><strong>Distance preserving transformation</strong></p>
+        <p>One of the first steps is to characterize the set of transformations that the individual subunits have to
+                undergo. Note that they should not suffer any deformation. In other words, the subunits must behave as
+                rigid bodies. Any transformation that the rigid bodies undergo must preserve their internal structure,
+                i.e. inter-atomic distance between points belonging to a single subunit must remain fixed..</p>
 
-      <h1 id="motivation">Motivation</h1>
-      <ul>
-      <li>Why random guesses when data says otherwise. We intend to find initial orientations such that the experimental evidence is satisfied.</li>
-      <li>How sensitive are the relative orientations of the proteins, given errors in the experimental crosslinks?</li>
-      <li>How sensitive are the relative orientations of the protein molecules for tailor-made contact points?</li>
-      <li>If multiple orientations are possible? Can we predict new interfaces if they can be obtained with limited computation cost? This would be useful in artificial drug design.</li>
-      </ul>
-      <h1 id="method">Method</h1>
-      <h2 id="conceptualize-cycle-1">Conceptualize (Cycle-1)</h2>
-      <figure>
-      <img src="https://static.igem.wiki/teams/5346/wood-puzzle.png" id="woodpuzzle" /><figcaption>Puzzle to align pieces of wood such that thin struts between them fall into specific notches.</figcaption>
-      </figure>
-  <p>Let’s solve a puzzle. Blocks of wood must be placed adjacent but not clash with each other. To aid the mutual orientations, thin pegs of wood must snugly fit in their respective notches in the individual pieces. In essence, the puzzle involves,        </p>
-      <ol>
-      <li>Bring two bodies together such that they do not deform</li>
-      <li>Orientate them such that separation between certain anchor points remains fixed.</li>
-      <li>Perform minor adjustments so that any errors are ironed out.</li>
-      </ol>
-  <p>Where else are similar problems found?</p>
-      <ul>
-      <li>Multiview registration</li>
-      <li>DREAM</li>
-      <li>Sensor network localization</li>
-      <li>Robot position determination</li>
-      </ul>
-  <p>We now revisit the problem of protein complex modeling from the experimental data. The inputs include:</p>
-      <ol>
-      <li>three-dimensional coordinate files for the subunits of the protein complex,</li>
-      <li>experimental evidence, i.e., the crosslink file indicating the residues belonging to different subunits that are proximal to each other. The cutoff distance depends on the experimental setup.</li>
-      </ol>
-  <p>We now formalize the mathematical construct for the problem so that we can analytically investigate the various steps involved.</p>
-      <h2 id="mathematical-modelling">Mathematical modelling</h2>
-  <p><strong>Distance preserving transformation</strong></p>
-  <p>One of the first steps is to characterize the set of transformations that the individual subunits have to undergo. Note that they should not suffer any deformation. In other words, the subunits must behave as rigid bodies. Any transformation that the rigid bodies undergo must preserve their internal structure, i.e. inter-atomic distance between points belonging to a single subunit must remain fixed..</p>
+        <figure>
+                <img src="https://static.igem.wiki/teams/5346/1.png" id="3D_Camera" />
+                <figcaption>(A) 3D Object Reconstruction from various camera poses</figcaption>
+                <img src="https://static.igem.wiki/teams/5346/cam-poses.png" id="Panorma" />
+                <figcaption>(B) Image Stiching for panorama</figcaption>
+                <img src="https://static.igem.wiki/teams/5346/lidar-autonomous-car.png" id="lidar" />
+                <figcaption>(C) Simultaneous pose and position estimation from LIDAR data</figcaption>
+                <img src="https://static.igem.wiki/teams/5346/2.png" id="Protein" />
+                <figcaption>(D) Protein Modelling from NMR in DREAM</figcaption>
+        </figure>
 
-      <figure>
-              <img src="https://static.igem.wiki/teams/5346/1.png" id="3D_Camera" /><figcaption>(A) 3D Object Reconstruction from various camera poses</figcaption>
-              <img src="https://static.igem.wiki/teams/5346/cam-poses.png" id="Panorma" /><figcaption>(B) Image Stiching for panorama</figcaption>
-              <img src="https://static.igem.wiki/teams/5346/lidar-autonomous-car.png" id="lidar" /><figcaption>(C) Simultaneous pose and position estimation from LIDAR data</figcaption>
-              <img src="https://static.igem.wiki/teams/5346/2.png" id="Protein" /><figcaption>(D) Protein Modelling from NMR in DREAM</figcaption>
-      </figure>
+        <p>
+                It can be shown mathematically that this leaves only , composed of and that operate in the space of a
+                three-dimensional Cartesian coordinate system. The space of the rigid body orientations is well known to
+                form a special set in mathematics known as the in $$3$$</span>D, denoted by $$\mathbb{SE}(3)$$</span>.
+                The set belongs to a larger class known as <span class="citation" data-cites="diffmanifold"></span>. A
+                differentiable manifold is a generalization to higher dimensions of the concept of a in
+                three-dimensional Euclidean space. Differentiation operation may be defined on such a set, and
+                consequently, one may model mathematical algorithms to directly optimize on $$\mathbb{SE}(3)$$</span>.
+                In other words, the problem of deriving optimal rigid motion, can be directed defined on
+                $$\mathbb{SE}(3)$$</span>. Indeed, a large volume of literature exists in this regard <span
+                        class="citation" data-cites="liealg"></span>.
+        </p>
 
-  <p>
-          It can be shown mathematically that this leaves only , composed of and that operate in the space of a three-dimensional Cartesian coordinate system. The space of the rigid body orientations is well known to form a special set in mathematics known as the in \(3\)</span>D, denoted by \(\mathbb{SE}(3)\)</span>. The set belongs to a larger class known as <span class="citation" data-cites="diffmanifold"></span>. A differentiable manifold is a generalization to higher dimensions of the concept of a in three-dimensional Euclidean space. Differentiation operation may be defined on such a set, and consequently, one may model mathematical algorithms to directly optimize on \(\mathbb{SE}(3)\)</span>. In other words, the problem of deriving optimal rigid motion, can be directed defined on \(\mathbb{SE}(3)\)</span>. Indeed, a large volume of literature exists in this regard <span class="citation" data-cites="liealg"></span>.
-  </p>
+        <p>
+                For our purpose of deriving a $$3$$</span>D structure for the complex, each of the subunits is
+                considered a rigid body. The crosslinks form the lower bounds in distance, which need to be satisfied
+                when the subunits are aligned together.
+        </p>
+        <p>
+                $$\mathbb{SE}(3)$$</span> is composed of the cartesian product of two sets, one being the set of
+                rotations in $$3$$</span>D ($$\mathbb{SO}(3)$$</span>) and seconds being the space of $$3$$</span>D
+                coordinates itself ($$\mathbb{R}^3$$</span>). Formally, $$\mathbb{SE}(3) = \mathbb{SO}(3) \times
+                \mathbb{R}^3$$</span>. We use this concept to break our problem of complex modeling into two steps. In
+                essence, the computation of optimal mutual orientation between the subunits (each orientation belonging
+                to $$\mathbb{SE}(3)$$</span>) is broken down into two steps. First, an optimization module is designed
+                over the Cartesian coordinate $$\mathbb{R}^3$$</span>. The second is over the rotation group
+                $$\mathbb{SO}(3)$$</span>.
+        </p>
+        <h2 id="implementation-cycle-2">Implementation (Cycle-2)</h2>
+        <p>
+                The underlying idea is to model a hypothetical structure consisting of only the C$$^\alpha$$</span>
+                atoms from various subunits involved in the crosslinks. Synonymous with the wooden puzzle in Fig. <a
+                        href="#woodpuzzle" data-reference-type="ref" data-reference="woodpuzzle">2.1</a>, the support
+                structure forms a scaffold for the subunits to attach with.
+        </p>
+        <h3 id="localization">Localization</h3>
+        <p>
+                Let $$C_1$$</span> and $$C_2$$</span> be the C$$^\alpha$$</span> atoms from subunit-$$1$$</span> and
+                $$2$$</span> involved in the crosslinks. Since the structures of subunits are known, we derive a set of
+                equality bounds between any pair of atoms belonging to $$C_1$$</span> or $$C_2$$</span>. Let the
+                equality bound be denoted by $$\mathcal{E}_1$$</span> and $$\mathcal{E}_2$$</span>. Let the pairs of
+                atoms forming crosslinks be denoted by $$\mathcal{L}_{12}$$</span> and the magnitude be $$c$$</span>. We
+                want to compute a $$3$$</span>D coordinates $$\left\{x_i \right\}_{i \in C_1 \cup \, C_2}$$</span>, such
+                that the distance constraints are satisfied.
+        </p>
+        <p>Mathematically,
+                <span class="math display">\[\label{localizationprob}
+                        \begin{aligned}
+                        \mathrm{Find} &amp;\left\{x_i \right\}_{i \in C_1 \cup \, C_2}\\
+                        \text{subject to} &amp;\quad \|x_i - x_j \|_2^2 = d^2_{ij} \quad &amp; (i,j) \in \mathcal{E}_1
+                        \cup \mathcal{E}_2\\
+                        &amp;\quad \|x_i - x_j \|_2^2 \geqslant \underline{c}^2 \pm \sigma \quad &amp; (i,j) \in
+                        \mathcal{L}_{12}
+                        \end{aligned}\]</span>
+        </p>
+        <p>
+                Here, $$\sigma$$</span> is randomly drawn from a normal distribution $$\mathcal{N}(0,\mu)$$</span> to
+                denote the uncertainty of assigning a particular value to the magtitude of the crosslink. The
+                mathematical therefore models the noise in the experimental data. Unfortunately problem can be shown to
+                reducable to a more general problem of graph imgding in $$3$$</span>D. This was shown to be NP-hard,
+                i.e., computationaly intractable in polynomial time <span class="citation"
+                        data-cites="graphimg1"></span>. Hence we look for indirect approaches to estimate the solution
+                of problem.
+        </p>
+        <p>
+                Consider a Euclidean distance matrix $$D$$</span>. Each cell in the matrix is the distance between a
+                pair of atoms. Refer to Fig. <a href="#edmc" data-reference-type="ref" data-reference="edmc">2.2</a>.
+                The matrix can be divided into two blocks. The lilac and green block contain the equality bounds between
+                the C$$^\alpha$$</span> atoms belonging to $$C_1$$</span> and $$C_2$$</span>. The white blocks are empty
+                except for the pairs, for which the lower bound can be found in the list of crosslinks
+                $$\mathcal{L}_{12}$$</span>. The matrix is there incomplete.
+        </p>
+        <p>
+                Techniques such as review in <span class="citation" data-cites="edmcreview"></span>, establish
+                approaches to approximate a complete distance matrix, say $$\tilde{D}$$</span>, which best approximates
+                the entries defined in $$D$$</span>. We found that <span class="citation"
+                        data-cites="bamdevlowrank"></span> was prone to errors for sparse data, i.e., for a smaller
+                number of C$$^\alpha$$</span> atoms, whereas CITE performed significantly better. Interestingly, the
+                trend was found to be the opposite if more atoms were involved. Since the number of crosslinks was in
+                the order of $$10$$</span>-$$12$$</span>, CITE was found to work best empirically.
+        </p>
+        <p>
+                We can then derive the coordinates $$X = \left\{x_i \right\}_{i \in C_1 \cup \, C_2}$$</span> from
+                $$\tilde{D}$$</span> by two steps:
+        </p>
+        <ul>
+                <li>
 
-  <p>
-          For our purpose of deriving a \(3\)</span>D structure for the complex, each of the subunits is considered a rigid body. The crosslinks form the lower bounds in distance, which need to be satisfied when the subunits are aligned together.
-  </p>
-  <p>
-          \(\mathbb{SE}(3)\)</span> is composed of the cartesian product of two sets, one being the set of rotations in \(3\)</span>D (\(\mathbb{SO}(3)\)</span>) and seconds being the space of \(3\)</span>D coordinates itself (\(\mathbb{R}^3\)</span>). Formally, \(\mathbb{SE}(3) = \mathbb{SO}(3) \times \mathbb{R}^3\)</span>. We use this concept to break our problem of complex modeling into two steps. In essence, the computation of optimal mutual orientation between the subunits (each orientation belonging to \(\mathbb{SE}(3)\)</span>) is broken down into two steps. First, an optimization module is designed over the Cartesian coordinate \(\mathbb{R}^3\)</span>. The second is over the rotation group \(\mathbb{SO}(3)\)</span>.
-  </p>
-      <h2 id="implementation-cycle-2">Implementation (Cycle-2)</h2>
-  <p>
-          The underlying idea is to model a hypothetical structure consisting of only the C\(^\alpha\)</span> atoms from various subunits involved in the crosslinks. Synonymous with the wooden puzzle in Fig. <a href="#woodpuzzle" data-reference-type="ref" data-reference="woodpuzzle">2.1</a>, the support structure forms a scaffold for the subunits to attach with.
-  </p>
-      <h3 id="localization">Localization</h3>
-  <p>
-          Let \(C_1\)</span> and \(C_2\)</span> be the C\(^\alpha\)</span> atoms from subunit-\(1\)</span> and \(2\)</span> involved in the crosslinks. Since the structures of subunits are known, we derive a set of equality bounds between any pair of atoms belonging to \(C_1\)</span> or \(C_2\)</span>. Let the equality bound be denoted by \(\mathcal{E}_1\)</span> and \(\mathcal{E}_2\)</span>. Let the pairs of atoms forming crosslinks be denoted by \(\mathcal{L}_{12}\)</span> and the magnitude be \(c\)</span>. We want to compute a \(3\)</span>D coordinates \(\left\{x_i \right\}_{i \in C_1 \cup \, C_2}\)</span>, such that the distance constraints are satisfied.
-  </p>
-  <p>Mathematically, 
-          <span class="math display">\[\label{localizationprob}
-                  \begin{aligned}
-                  \mathrm{Find} &amp;\left\{x_i \right\}_{i \in C_1 \cup \, C_2}\\
-                  \text{subject to} &amp;\quad \|x_i - x_j \|_2^2 = d^2_{ij} \quad &amp; (i,j) \in \mathcal{E}_1 \cup \mathcal{E}_2\\
-                  &amp;\quad \|x_i - x_j \|_2^2 \geqslant \underline{c}^2 \pm \sigma \quad &amp; (i,j) \in \mathcal{L}_{12}
-          \end{aligned}\]</span>
-  </p>
-  <p>
-          Here, \(\sigma\)</span> is randomly drawn from a normal distribution \(\mathcal{N}(0,\mu)\)</span> to denote the uncertainty of assigning a particular value to the magtitude of the crosslink. The mathematical therefore models the noise in the experimental data. Unfortunately problem can be shown to reducable to a more general problem of graph imgding in \(3\)</span>D. This was shown to be NP-hard, i.e., computationaly intractable in polynomial time <span class="citation" data-cites="graphimg1"></span>. Hence we look for indirect approaches to estimate the solution of problem.
-  </p>
-  <p>
-          Consider a Euclidean distance matrix \(D\)</span>. Each cell in the matrix is the distance between a pair of atoms. Refer to Fig. <a href="#edmc" data-reference-type="ref" data-reference="edmc">2.2</a>. The matrix can be divided into two blocks. The lilac and green block contain the equality bounds between the C\(^\alpha\)</span> atoms belonging to \(C_1\)</span> and \(C_2\)</span>. The white blocks are empty except for the pairs, for which the lower bound can be found in the list of crosslinks \(\mathcal{L}_{12}\)</span>. The matrix is there incomplete.
-  </p>
-  <p>
-          Techniques such as review in <span class="citation" data-cites="edmcreview"></span>, establish approaches to approximate a complete distance matrix, say \(\tilde{D}\)</span>, which best approximates the entries defined in \(D\)</span>. We found that <span class="citation" data-cites="bamdevlowrank"></span> was prone to errors for sparse data, i.e., for a smaller number of C\(^\alpha\)</span> atoms, whereas CITE performed significantly better. Interestingly, the trend was found to be the opposite if more atoms were involved. Since the number of crosslinks was in the order of \(10\)</span>-\(12\)</span>, CITE was found to work best empirically.
-  </p>
-  <p>
-          We can then derive the coordinates \(X = \left\{x_i \right\}_{i \in C_1 \cup \, C_2}\)</span> from \(\tilde{D}\)</span> by two steps:
-  </p>
-  <ul>
-  <li>
-          
-                  We derive \(\tilde{X}\)</span> by Cholesky’s decomposition <span class="citation" data-cites="meyer01"></span> of \(\tilde{D}\)</span>, i.e., \(\tilde{D} =  \tilde{X}^\top \tilde{X}\)</span>.
-          
-  </li>
-  <li>
-          
-                  Note that if \(\tilde{D}\)</span>, were a complete matrix, we would have obtained \(\tilde{X}\)</span> as \(3\)</span>D coordinates. However, since it is incomplete there are no such guarantees. In fact, for lower number of crosslinks, or ambiguities in them, \(\tilde{X}\)</span> belongs to a higher dimension.
-          
-  </li>
-  <li>
-                  We project \(\tilde{X}\)</span> back to \(3\)</span>D space by solving the problem <span class="math display">\[\begin{aligned}
-                          \underset{X}{\mathrm{min}} \quad&amp;\|X - \tilde{X}\|_F^2 \\
-                          \text{subject to} \quad&amp; \mathrm{rank}(X) = 3.
-                  \end{aligned}\]</span>
-                  This is the well-known Young-Egkart theorem <span class="citation" data-cites="meyer01"></span> and has a closed-formed solution by the singular value decomposition of \(\tilde{D}\)</span>.
-  </li>
-  </ul>
-  <figure>
-          <img src="https://static.igem.wiki/teams/5346/edmc.png" id="edmc" alt="" /><figcaption>
-                  Euclidean distance matrix (EDM). Each cell in the matrix denotes a pairwise distance making EDM symmetric. While the coloured blocks are filled by equality bounds \(\mathcal{E}_1, \mathcal{E}_2\)</span>, the white block is largely empty. Only crosslinks entries \(\mathcal{L}_{12}\)</span> contribute to it. Localization problem can be modelled as completing such an incomplete EDM. \(\sigma\)</span> is a noise drawn from normal distribition \(\mathcal{N}(0,\mu)\)</span>
-          </figcaption>
-  </figure>
-  <h3 id="registration">Registration</h3>
-  <p>
-          Once the supporting structure (s) has been computed, we compute the optimal orientation of the subunits, such that they attach to specified points in the supporting structure. The specific points to which the subunits attaches themselves, if of course defined by the C\(^\alpha\)</span> atoms which constitute the supporting structure. However, the question remains, how does one find an optimal rigid body motions (rotations, translations) which would align all the bodies together.
-  </p>
-  <figure>
-          <img src="https://static.igem.wiki/teams/5346/1dfj-registration.png" id="reg1dfj" alt="" /><figcaption>One shot Registration of protein with PDB ID 1DFJ. A hypothetical structure, shown with coloured spheres correspoinding to the C\(^\alpha\)</span> atoms in the two structrue in similar colour. Both the structures and the hypothetical structure aligns in a single step resulting in the final structure.</figcaption>
-  </figure>
-  <h3 id="pairwise-versus-global">Pairwise versus global</h3>
-  <p>
-          A go to solution could be a sequence of pairwise alignments. A sequence of pairwise alignment leads to the accumulation of errors. Further, the merging sequence is a combinatorial problem since all may not lead to the same solution. Morevoer, the set of all rigid body motions, \(SE(3)\)</span>, is a non-convex set. Hence optimization algorithms cannot be applied direct on such sets.
-  </p>
-  <p>
-          Let \(y_i\)</span> be the unknown coordinates of the PDB’s oriented together. Let \(x_i\)</span> be coordinates of the individual PDB’s and the hypothetical structure computed in the localization stage. Each of the PDB’s and the hypothetical structure under a rigid body motion (Rotation-\(R_i\)</span> and translation-\(t_i\)</span>) such the C\(^\alpha\)</span> atoms align together. We find a solution to the following problem: <span class="math display">\[\label{regeq}
-                  \underset{y_i, R_k, t_k} {\text{min}} \quad \sum_{k=1}^m \quad \sum_{i \in \mathcal{C}_k} \|y_i - \left(R_k x^k_i + t_k\right)\|_2^2.\]</span>
-  </p>
-  <p>
-          In general directly computing solutoin over the set of rotation matrices is computationaly intractable since it is a non-smooth non-convex set. However, <span class="citation" data-cites="gretsdp"></span> describes a global alignment approach following a non-linear optimization formulation known as Semidefinite programmimng <span class="citation" data-cites="boyd"></span>, to estimate a solution to the following problem. The variables of equation  are separated into \(\mathbb{R}^3\)</span> and \(\mathbb{O}(3)\)</span>. In oder to circumvent the non-convexity of \(\mathbb{O}(3)\)</span>, a convex progam is designed over a new variable \(G\)</span> defined as \(G = R^\top R\)</span>, i.e, inner product of rotation matrices. This has been employed in <span class="citation" data-cites="dream dreamweb"></span> as well to derive protein structrue from NMR. We apply similar approach to align the coordinates of the subunits and the supporting structrue together.
-  </p>
-  <h2 id="flip-refinement-cycle-3">Flip Refinement (Cycle-3)</h2>
-  <figure>
-  <img src="https://static.igem.wiki/teams/5346/flip-1dfj-e-i.png" id="ramaflip" alt="" /><figcaption>
-          Ramachandran flip (PDB ID 1DFJ). Working with distance data results in mirrored structrues. Although mathematically valid, they are biologically invalid. Chain-I in (a) with its Ramachandran map shown in (d) is such a case. We reflect the same to result in (c). Ramachandran map is shown in (e). Chain-E in (a) or (c) require no such flip as seen from the plot in (b).
-  </figcaption>
-  </figure>
-  <p>
-          Since, we are working with distance data alone, it is impossible to distinguish mirror images from each other. Consider the registration problem. Consider two \(3\)</span>D points \(y\)</span> and \(x\)</span> such that they are related to each other by, <span class="math display">\[\label{2bodyreg}
-                  y = R x\]</span>
-  </p>
-  <p>
-          such that \(R \in \mathbb{SO}(3)\)</span>. Define \(I_{-1}\)</span> as the identity matrix with a single diagonal entry replaced by \(-1\)</span>. Note that \(I_{-1} R\)</span> is also a solution of equation.
-  </p>
-  <p>
-          In context of registration problem, the may lead to the chain I in Fig. <a href="#ramaflip" data-reference-type="ref" data-reference="ramaflip">2.4</a>a. The corresponding Ramachandran map for the chain I is shown in Fig. <a href="#ramaflip" data-reference-type="ref" data-reference="ramaflip">2.4</a>d. Hence chain E is reflected as correction. This can be done by noting the rotation matrix, say \(R_{I}\)</span> which was obtained from the registration step, and multiplying any diagol value by \(-1\)</span>. Thus determinant of \(R_{I}\)</span> will change sign, indicating a reflection. The coordinates of chain I, acted upon the by the corrected \(R_{E}\)</span> results in Fig. <a href="#ramaflip" data-reference-type="ref" data-reference="ramaflip">2.4</a>c. The corresponding Ramachandran map is Fig. <a href="#ramaflip" data-reference-type="ref" data-reference="ramaflip">2.4</a>e. Note that no such corrections was required for chain E.
-  </p>
-  <h2 id="iterating-cycle-4">Iterating (Cycle-4)</h2>
-  <figure>
-  <img src="https://static.igem.wiki/teams/5346/iterations.png" id="flowchart" alt="" /><figcaption>
-          Simplified Flowchart for IMProv. The subunits are oriented in multiple interations. Each resulting from a subset of crosslinks, followed by and . The iterations proceed in parallel. The structrues without clashes while satisfying the crosslinks gives final results.
-  </figcaption>
-  </figure>
-  <p>
-          Protein is a dynamic molecule. Their conformations undergo changes due to even minor flexibility of the side chains or the main chain. In order to model such a scenario, we generate multiple conformations as described in  and summarized in Fig. <a href="#flowchart" data-reference-type="ref" data-reference="flowchart">2.5</a>. The number of crosslinks are varied in each run. Their number were taken to vary between \(6\)</span>-\(8\)</span> for each case. The localization step may lead to multiple solutions. In order to explore the space of valid conformational spaces, the localization step was computed multiple times varying the seed value. The structures are then registered. Note that each iteration is computationaly fast. Morevers, the executations can progress parallely. This further reduces the computation time.
-  </p>
-  <p>
-          In order to prune the exponential increase of solution space, the structrue are evaluated for crosslink violations and clashes. The ones falling below a pre-determined thresshold are discarded. Also the whole process terminates beyond a user defined number of iterations. The final structures obtaiend are ranked on the basis of crosslink violation fraction and the energy score, using PyRosetta, computed for each of them.
-  </p>
-  <h2 id="post-processing-cycle-4">Post-processing (Cycle-4)</h2>
-  <p>
-          The post processing steps include the energy minimisation steps in order to simulate a thermodynamically stable protein conformations. We apply the XX forcefield and YY water model to perform an energy minimisation step. The terminating condition was supplied to be \(10000\)</span> steps or if the potencial energy of the system decreases below \(YY\)</span> KJ/MOL/K. PyRosetta package was used for this purpose.
-  </p>
-  <figure>
-          <img src="https://static.igem.wiki/teams/5346/code11.png" id="code11" alt="" /><figcaption>
-                  Simplified Flowchart for IMProv. The subunits are oriented in multiple interations. Each resulting from a subset of crosslinks, followed by and . The iterations proceed in parallel. The structrues without clashes while satisfying the crosslinks gives final results.
-          </figcaption>
-          </figure>
-  <p>
-          We perform only a short EM (Energy minimization) step for a crude orientation. The user may choose to employ detailed steps such as
-  </p>
-  <ul>
-          <li>
-                  side chain EM
-          </li>
-          <li>
-                  main chain EM
-          </li>
-          <li>
-                  Simulated annealing
-          </li>
-  </ul>
-  <p>
-      <h1>Refrences</h1>
-          <ol>    <li>Daniel Russel, Keren Lasker, Ben Webb, Javier Vel´azquez-Muriel, Elina Tjioe, Dina
-                  Schneidman-Duhovny, Bret Peterson, and Andrej Sali. Putting the pieces together: in-
-                  tegrative modeling platform software for structure determination of macromolecular as-
-                  semblies. PLoS Biol., 10(1):e1001244, January 2012.</li>
-                  
-                  <li>Cyril Dominguez, Rolf Boelens, and Alexandre MJJ Bonvin. Haddock: a protein- pro-
-                          tein docking approach based on biochemical or biophysical information. Journal of the
-                          American Chemical Society, 125(7):1731–1737, 2003.</li>
-                   <li>Serge Lang. Differential manifolds, volume 2. Springer, 1972. </li>
-                  <li>Nathan Jacobson. Lie algebras. Courier Corporation, 2013.</li>
-                  <li>Arnaud de Mesmay, Yo’av Rieck, Eric Sedgwick, and Martin Tancer. imgdability in
-                          R3 is NP-hard. SODA ’18, pages 1316–1329, 2018 </li>
-                  <li>Leo Liberti, Carlile Lavor, Nelson Maculan, and Antonio Mucherino. Euclidean distance
-                          geometry and applications. SIAM Review, 56(1):3–69, 2014.</li>
-                  <li>Bamdev Mishra, Gilles Meyer, and Rodolphe Sepulchre. Low-rank optimization for distance matrix completion. In 2011 50th IEEE Conference on Decision and Control and
-                          European Control Conference, pages 4455–4460. IEEE, 2011.</li>
-                  <li>Carl D. Meyer. Matrix Analysis and Applied Linear Algebra. SIAM, 2001.</li>
-                  <li>K N Chaudhury, Y Khoo, and A Singer. Global registration of multiple point clouds using
-                          semidefinite programming. SIAM Journal on Optimization, 25(1):468–501, 2015.</li>
-                  <li>Niladri R. Das, Kunal N. Chaudhury, and Debnath Pal. Improved nmr-data-compliant
-                          protein structure modeling captures context-dependent variations and expands the scope of
-                          functional inference. Proteins: Structure, Function, and Bioinformatics, 91(3):412–435,
-                          2023.</li>
-                  <li>Niladri Ranajan Das, Kunal Narayan Chaudhury, and Debnath Pal. DREAMweb: An online tool for graph-based modeling of NMR protein structure. Proteomics, page e2300379,
-                          April 2024.</li>
-                  <li>Zhang Yichi, Jindal Muskaan, Viswanath Shruthi, and Sitharam Meera. Integrative docking benchmark, 2020</li>
-          </ol>
-      <p>
-          
-      </p>
+                        We derive $$\tilde{X}$$</span> by Cholesky’s decomposition <span class="citation"
+                                data-cites="meyer01"></span> of $$\tilde{D}$$</span>, i.e., $$\tilde{D} = \tilde{X}^\top
+                        \tilde{X}$$</span>.
 
-  </p>
+                </li>
+                <li>
+
+                        Note that if $$\tilde{D}$$</span>, were a complete matrix, we would have obtained
+                        $$\tilde{X}$$</span> as $$3$$</span>D coordinates. However, since it is incomplete there are no
+                        such guarantees. In fact, for lower number of crosslinks, or ambiguities in them,
+                        $$\tilde{X}$$</span> belongs to a higher dimension.
+
+                </li>
+                <li>
+                        We project $$\tilde{X}$$</span> back to $$3$$</span>D space by solving the problem <span
+                                class="math display">\[\begin{aligned}
+                                \underset{X}{\mathrm{min}} \quad&amp;\|X - \tilde{X}\|_F^2 \\
+                                \text{subject to} \quad&amp; \mathrm{rank}(X) = 3.
+                                \end{aligned}\]</span>
+                        This is the well-known Young-Egkart theorem <span class="citation" data-cites="meyer01"></span>
+                        and has a closed-formed solution by the singular value decomposition of $$\tilde{D}$$</span>.
+                </li>
+        </ul>
+        <figure>
+                <img src="https://static.igem.wiki/teams/5346/edmc.png" id="edmc" alt="" />
+                <figcaption>
+                        Euclidean distance matrix (EDM). Each cell in the matrix denotes a pairwise distance making EDM
+                        symmetric. While the coloured blocks are filled by equality bounds $$\mathcal{E}_1,
+                        \mathcal{E}_2$$</span>, the white block is largely empty. Only crosslinks entries
+                        $$\mathcal{L}_{12}$$</span> contribute to it. Localization problem can be modelled as completing
+                        such an incomplete EDM. $$\sigma$$</span> is a noise drawn from normal distribition
+                        $$\mathcal{N}(0,\mu)$$</span>
+                </figcaption>
+        </figure>
+        <h3 id="registration">Registration</h3>
+        <p>
+                Once the supporting structure (s) has been computed, we compute the optimal orientation of the subunits,
+                such that they attach to specified points in the supporting structure. The specific points to which the
+                subunits attaches themselves, if of course defined by the C$$^\alpha$$</span> atoms which constitute the
+                supporting structure. However, the question remains, how does one find an optimal rigid body motions
+                (rotations, translations) which would align all the bodies together.
+        </p>
+        <figure>
+                <img src="https://static.igem.wiki/teams/5346/1dfj-registration.png" id="reg1dfj" alt="" />
+                <figcaption>One shot Registration of protein with PDB ID 1DFJ. A hypothetical structure, shown with
+                        coloured spheres correspoinding to the C$$^\alpha$$</span> atoms in the two structrue in similar
+                        colour. Both the structures and the hypothetical structure aligns in a single step resulting in
+                        the final structure.</figcaption>
+        </figure>
+        <h3 id="pairwise-versus-global">Pairwise versus global</h3>
+        <p>
+                A go to solution could be a sequence of pairwise alignments. A sequence of pairwise alignment leads to
+                the accumulation of errors. Further, the merging sequence is a combinatorial problem since all may not
+                lead to the same solution. Morevoer, the set of all rigid body motions, $$SE(3)$$</span>, is a
+                non-convex set. Hence optimization algorithms cannot be applied direct on such sets.
+        </p>
+        <p>
+                Let $$y_i$$</span> be the unknown coordinates of the PDB’s oriented together. Let $$x_i$$</span> be
+                coordinates of the individual PDB’s and the hypothetical structure computed in the localization stage.
+                Each of the PDB’s and the hypothetical structure under a rigid body motion (Rotation-$$R_i$$</span> and
+                translation-$$t_i$$</span>) such the C$$^\alpha$$</span> atoms align together. We find a solution to the
+                following problem: <span class="math display">\[\label{regeq}
+                        \underset{y_i, R_k, t_k} {\text{min}} \quad \sum_{k=1}^m \quad \sum_{i \in \mathcal{C}_k} \|y_i
+                        - \left(R_k x^k_i + t_k\right)\|_2^2.\]</span>
+        </p>
+        <p>
+                In general directly computing solutoin over the set of rotation matrices is computationaly intractable
+                since it is a non-smooth non-convex set. However, <span class="citation" data-cites="gretsdp"></span>
+                describes a global alignment approach following a non-linear optimization formulation known as
+                Semidefinite programmimng <span class="citation" data-cites="boyd"></span>, to estimate a solution to
+                the following problem. The variables of equation are separated into $$\mathbb{R}^3$$</span> and
+                $$\mathbb{O}(3)$$</span>. In oder to circumvent the non-convexity of $$\mathbb{O}(3)$$</span>, a convex
+                progam is designed over a new variable $$G$$</span> defined as $$G = R^\top R$$</span>, i.e, inner
+                product of rotation matrices. This has been employed in <span class="citation"
+                        data-cites="dream dreamweb"></span> as well to derive protein structrue from NMR. We apply
+                similar approach to align the coordinates of the subunits and the supporting structrue together.
+        </p>
+        <h2 id="flip-refinement-cycle-3">Flip Refinement (Cycle-3)</h2>
+        <figure>
+                <img src="https://static.igem.wiki/teams/5346/flip-1dfj-e-i.png" id="ramaflip" alt="" />
+                <figcaption>
+                        Ramachandran flip (PDB ID 1DFJ). Working with distance data results in mirrored structrues.
+                        Although mathematically valid, they are biologically invalid. Chain-I in (a) with its
+                        Ramachandran map shown in (d) is such a case. We reflect the same to result in (c). Ramachandran
+                        map is shown in (e). Chain-E in (a) or (c) require no such flip as seen from the plot in (b).
+                </figcaption>
+        </figure>
+        <p>
+                Since, we are working with distance data alone, it is impossible to distinguish mirror images from each
+                other. Consider the registration problem. Consider two $$3$$</span>D points $$y$$</span> and
+                $$x$$</span> such that they are related to each other by, <span class="math display">\[\label{2bodyreg}
+                        y = R x\]</span>
+        </p>
+        <p>
+                such that $$R \in \mathbb{SO}(3)$$</span>. Define $$I_{-1}$$</span> as the identity matrix with a single
+                diagonal entry replaced by $$-1$$</span>. Note that $$I_{-1} R$$</span> is also a solution of equation.
+        </p>
+        <p>
+                In context of registration problem, the may lead to the chain I in Fig. <a href="#ramaflip"
+                        data-reference-type="ref" data-reference="ramaflip">2.4</a>a. The corresponding Ramachandran map
+                for the chain I is shown in Fig. <a href="#ramaflip" data-reference-type="ref"
+                        data-reference="ramaflip">2.4</a>d. Hence chain E is reflected as correction. This can be done
+                by noting the rotation matrix, say $$R_{I}$$</span> which was obtained from the registration step, and
+                multiplying any diagol value by $$-1$$</span>. Thus determinant of $$R_{I}$$</span> will change sign,
+                indicating a reflection. The coordinates of chain I, acted upon the by the corrected $$R_{E}$$</span>
+                results in Fig. <a href="#ramaflip" data-reference-type="ref" data-reference="ramaflip">2.4</a>c. The
+                corresponding Ramachandran map is Fig. <a href="#ramaflip" data-reference-type="ref"
+                        data-reference="ramaflip">2.4</a>e. Note that no such corrections was required for chain E.
+        </p>
+        <h2 id="iterating-cycle-4">Iterating (Cycle-4)</h2>
+        <figure>
+                <img src="https://static.igem.wiki/teams/5346/iterations.png" id="flowchart" alt="" />
+                <figcaption>
+                        Simplified Flowchart for IMProv. The subunits are oriented in multiple interations. Each
+                        resulting from a subset of crosslinks, followed by and . The iterations proceed in parallel. The
+                        structrues without clashes while satisfying the crosslinks gives final results.
+                </figcaption>
+        </figure>
+        <p>
+                Protein is a dynamic molecule. Their conformations undergo changes due to even minor flexibility of the
+                side chains or the main chain. In order to model such a scenario, we generate multiple conformations as
+                described in and summarized in Fig. <a href="#flowchart" data-reference-type="ref"
+                        data-reference="flowchart">2.5</a>. The number of crosslinks are varied in each run. Their
+                number were taken to vary between $$6$$</span>-$$8$$</span> for each case. The localization step may
+                lead to multiple solutions. In order to explore the space of valid conformational spaces, the
+                localization step was computed multiple times varying the seed value. The structures are then
+                registered. Note that each iteration is computationaly fast. Morevers, the executations can progress
+                parallely. This further reduces the computation time.
+        </p>
+        <p>
+                In order to prune the exponential increase of solution space, the structrue are evaluated for crosslink
+                violations and clashes. The ones falling below a pre-determined thresshold are discarded. Also the whole
+                process terminates beyond a user defined number of iterations. The final structures obtaiend are ranked
+                on the basis of crosslink violation fraction and the energy score, using PyRosetta, computed for each of
+                them.
+        </p>
+        <h2 id="post-processing-cycle-4">Post-processing (Cycle-4)</h2>
+        <p>
+                The post processing steps include the energy minimisation steps in order to simulate a thermodynamically
+                stable protein conformations. We apply the XX forcefield and YY water model to perform an energy
+                minimisation step. The terminating condition was supplied to be $$10000$$</span> steps or if the
+                potencial energy of the system decreases below $$YY$$</span> KJ/MOL/K. PyRosetta package was used for
+                this purpose.
+        </p>
+        <figure>
+                <img src="https://static.igem.wiki/teams/5346/code11.png" id="code11" alt="" />
+                <figcaption>
+                        Simplified Flowchart for IMProv. The subunits are oriented in multiple interations. Each
+                        resulting from a subset of crosslinks, followed by and . The iterations proceed in parallel. The
+                        structrues without clashes while satisfying the crosslinks gives final results.
+                </figcaption>
+        </figure>
+        <p>
+                We perform only a short EM (Energy minimization) step for a crude orientation. The user may choose to
+                employ detailed steps such as
+        </p>
+        <ul>
+                <li>
+                        side chain EM
+                </li>
+                <li>
+                        main chain EM
+                </li>
+                <li>
+                        Simulated annealing
+                </li>
+        </ul>
+        <p>
+        <h1>Refrences</h1>
+        <ol>
+                <li>Daniel Russel, Keren Lasker, Ben Webb, Javier Vel´azquez-Muriel, Elina Tjioe, Dina
+                        Schneidman-Duhovny, Bret Peterson, and Andrej Sali. Putting the pieces together: in-
+                        tegrative modeling platform software for structure determination of macromolecular as-
+                        semblies. PLoS Biol., 10(1):e1001244, January 2012.</li>
+
+                <li>Cyril Dominguez, Rolf Boelens, and Alexandre MJJ Bonvin. Haddock: a protein- pro-
+                        tein docking approach based on biochemical or biophysical information. Journal of the
+                        American Chemical Society, 125(7):1731–1737, 2003.</li>
+                <li>Serge Lang. Differential manifolds, volume 2. Springer, 1972. </li>
+                <li>Nathan Jacobson. Lie algebras. Courier Corporation, 2013.</li>
+                <li>Arnaud de Mesmay, Yo’av Rieck, Eric Sedgwick, and Martin Tancer. imgdability in
+                        R3 is NP-hard. SODA ’18, pages 1316–1329, 2018 </li>
+                <li>Leo Liberti, Carlile Lavor, Nelson Maculan, and Antonio Mucherino. Euclidean distance
+                        geometry and applications. SIAM Review, 56(1):3–69, 2014.</li>
+                <li>Bamdev Mishra, Gilles Meyer, and Rodolphe Sepulchre. Low-rank optimization for distance matrix
+                        completion. In 2011 50th IEEE Conference on Decision and Control and
+                        European Control Conference, pages 4455–4460. IEEE, 2011.</li>
+                <li>Carl D. Meyer. Matrix Analysis and Applied Linear Algebra. SIAM, 2001.</li>
+                <li>K N Chaudhury, Y Khoo, and A Singer. Global registration of multiple point clouds using
+                        semidefinite programming. SIAM Journal on Optimization, 25(1):468–501, 2015.</li>
+                <li>Niladri R. Das, Kunal N. Chaudhury, and Debnath Pal. Improved nmr-data-compliant
+                        protein structure modeling captures context-dependent variations and expands the scope of
+                        functional inference. Proteins: Structure, Function, and Bioinformatics, 91(3):412–435,
+                        2023.</li>
+                <li>Niladri Ranajan Das, Kunal Narayan Chaudhury, and Debnath Pal. DREAMweb: An online tool for
+                        graph-based modeling of NMR protein structure. Proteomics, page e2300379,
+                        April 2024.</li>
+                <li>Zhang Yichi, Jindal Muskaan, Viswanath Shruthi, and Sitharam Meera. Integrative docking benchmark,
+                        2020</li>
+        </ol>
+        <p>
+
+        </p>
+
+        </p>
 </div>
 
 {% endblock %}
