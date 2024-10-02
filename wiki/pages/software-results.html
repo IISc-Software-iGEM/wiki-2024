@@ -28,16 +28,37 @@
     <figure>
         <img src="https://static.igem.wiki/teams/5346/code11.png" id="code11" alt="" />
         <figcaption>
+<<<<<<< Updated upstream
             Simplified Flowchart for IMPROViSeD. The subunits are oriented in multiple interations. Each results from a
             subset of crosslinks, followed by localiztion and registration. The iterations proceed in parallel. The
             structrues with low crosslink violations and those that do not have clashes make it to as final result.
+=======
+            Psedocode for IMPROViSeD. Modeling three dimensional structures for protein complexes using crosslinking is
+            broken down into two steps: Localization and Registration. The subunits are oriented in multiple
+            interations. Each results from a subset of crosslinks, followed by localiztion and registration. The
+            iterations proceed in parallel. The structrues with low crosslink violations and those that do not have
+            clashes make it to as final result.
+>>>>>>> Stashed changes
         </figcaption>
     </figure>
 
     <h1>Flip Correction Refinement</h1>
     <p>
-        We have discussed about flip correction in our <a href='https://2024.igem.wiki/iisc-software/engineering'>engineering section</a> in more details. Here is the visual
-        representation of the flip correction refinement for 1dfj when choosen 6 out of 12 crosslinks.
+        Recall from the "Engineering cycles", that although geometrically mirror images have similar inter-atomic
+        distances. They are valid solutions to the registration problem. However, one of the instances do not occur in
+        nature. We therefore to verify the same and discard one of the choice of orientations.
+    </p>
+    <p>
+        This was achieved by the flip correction algorithm. The operation was encoded as a reflection across the origin
+        in the Ramachandran map, as can be seen in the "Engineering cycles" section. As a result we were successful in
+        obtaining the correct orientation for the subunits in the protein complex. Speaking in a general sence, the step
+        can be seen as an integral component for modeling protein strcutrues based on the distance constrained obtained
+        from experiments and the covalent geometry of the protein.
+
+        Below is the visual representation of the flip correction refinement for 1DFJ. IMPROViSeD was run starting with
+        just 6 out of 12 crosslinks. Note that after the flip correction, the three dimensional structure is computed
+        even starting with just half the available crosslinks. This also demonstrates the robustness of the IMPROViSeD
+        method.
     </p>
     <figure>
         <img src="https://static.igem.wiki/teams/5346/exp-images/1dfj-flip.png" id="noflip" alt="" />
@@ -53,32 +74,59 @@
     </figure>
 
     <h1>
-        Result for 1DFJ
+        Result for Ribonuclease Inhibitor Complexed With Ribonuclease A(PDB ID 1DFJ)
     </h1>
     <p>
-        We have done the flip correction in the required structures and here are the obtained results on 1DFJ structure.
+        We first present the result obtained for the complex with PDB ID 1DFJ. The experimental data was obtained from
+        <href>https://github.com/isblab/Integrative_docking_benchmark/tree/main</href>.
+
+        Following the localizaton, and having performed the flip correction, as required, the final results for the
+        complex with PDB ID 1DFJ, is shown below. The results of multiple iterations was displayed.
+
+        The backbone RMSD after aligning the obtained result with that availabe in PDB is shown underneath each of the
+        figure. The number beside represents the number of violated crosslinks out of the total number of crosslinks.
+    </p>
+    <p>
+        Note that we were able to achieve multiple orientations, which are distinct from the original structure in PDB,
+        but satisfy most of the crosslinks. This not only demonstrates the robustness of the IMPROViSeD method, but also
+        highlights its efficiently to model new interfaces.
     </p>
     <figure>
         <img src="https://static.igem.wiki/teams/5346/exp-images/whatsapp-image-2024-10-02-at-10-17-38.jpeg" id="1dfj"
             alt="" />
         <figcaption>
-            1DFJ structure modelled using a subset of crosslinks, backbone RMSD with respect to the structure in PDB,
+            Complex with PDB ID 1DFJ structure modelled using a subset of crosslinks, backbone RMSD with respect to the
+            structure in PDB,
             and crosslink violations (denoted as number of violations/total number of crosslinks) are shown.
         </figcaption>
     </figure>
     <figure>
         <img src="https://static.igem.wiki/teams/5346/exp-images/1dfj-movie.gif" id="1dfj" alt="" />
         <figcaption>
-            More new orientations that satisfy most of the crosslinks
+            More new orientations that satisfy most of the crosslinks. The top left image is the original structure in
+            PDB. The other are due to the IMPROViSeD method. All the structures are shown in similar orientation
         </figcaption>
     </figure>
 
     <h1>
-        Result for LCN2-MMP9
+        Result for Human Neutrophil Gelatinase-associated Lipocalin (HNGAL)(PDB ID LCN2)- Hydrolase/Hydrolase Inhibitor
+        Complex(PDB ID MMP9)
     </h1>
     <p>
-        We have done the flip correction in the required structures and here are the obtained results on lcn2-mmp9
-        structure.
+        Next we present the result obtained for the complex with LCN2-MMP9. The crosslinking data was obtained
+        artificially, as descibed in the "Experiment" section.
+
+        Similar to the previous case, we have performed the flip correction, as required, and the final results for the
+        complex with LCN2-MMP9, is shown below. The results of multiple iterations was displayed.
+
+    </p>
+    <p>
+        The backbone RMSD after aligning the obtained result with that availabe in PDB is shown underneath each of the
+        figure. The number beside represents the number of violated crosslinks out of the total number of crosslinks.
+
+        As before, multple results from IMPROViSeD demonstrates its efficiency to model oritations which differ from
+        those available in the public repository (PDB). This is a significant advantage as it allows us to model new
+        interfaces.
     </p>
     <figure>
         <img src="https://static.igem.wiki/teams/5346/exp-images/lcn2-drawing.png" id="lcn2-mmp9" alt="" />
@@ -90,9 +138,30 @@
     <figure>
         <img src="https://static.igem.wiki/teams/5346/exp-images/lcn-movie.gif" id="lcn2-mmp9" alt="" />
         <figcaption>
-            More new orientations that satisfy majority of the crosslinks.
+            Comparison of orientations for LCN2-MMP9 complex with PDB. The one downloaded from PDB is shown in top left.
+            The ones modeled by IMPROViSeD are shown in similar orientation.
         </figcaption>
     </figure>
-</div>
 
+
+<h1>
+    Analysis of Results
+</h1>
+<ul>
+    <li>
+        IMPROViSeD was able to model the structure of the protein complex, shown here for two instances, both from the
+        experimental and artificial data.
+    </li>
+    <li>
+        The time take for execution is less than 1.5 minutes. This is a significant improvement over the existing
+        methods which take hours. The user certainly has the choice of running molecular dynamics simulations to refine
+        the structure further.
+    </li>
+    <li>
+        The method is robust and can model multiple orientations. It is a unique advantage as it allows an enduser to
+        model new interfaces. This has the potencial to offer insights into the physiological functions of the protein
+        complexes.
+    </li>
+</ul>
+</div>
 {% endblock %}
