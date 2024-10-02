@@ -1,12 +1,12 @@
 // Find all h1, h2, and h3 in .content and add an id attribute to them
 // the id will be their name in lowercase with spaces replaced by dashes
 // also give them a class of 'anchor'
-// replace any brackets in the id with a dash
+// replace any special characters (non alphanumeric and non spaces) with a dash
 
 document
   .querySelectorAll(".content h1, .content h2, .content h3")
   .forEach((el) => {
-    el.id = el.textContent.toLowerCase().replace(/ /g, "-").replace(/\(|\)/g, "-");
+    el.id = el.textContent.toLowerCase().replace(/ /g, "_").replace(/[^a-z0-9_]/g, "");
     el.classList.add("anchor");
   });
 
