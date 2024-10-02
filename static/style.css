@@ -271,7 +271,7 @@ canvas.prevCanvas {
   list-style-type: none;
   font-family: "Fire Sans", sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   border-left: 2px solid #000;
   max-height: calc(100vh - 56px);
   overflow: auto;
@@ -287,11 +287,11 @@ canvas.prevCanvas {
 }
 .sidebar > ul > li > ul {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
 }
 .sidebar > ul > li > ul > li > ul {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
 }
 .sidebar > ul ul {
   margin-bottom: 15px;
