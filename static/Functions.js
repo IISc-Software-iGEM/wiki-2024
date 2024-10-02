@@ -499,6 +499,8 @@ document.addEventListener("DOMContentLoaded", function() {
 				} 
 			});
 
+
+
 			//dyslexia
 			const dyslexiaButton = document.getElementById('Dyslexia');
 			const toggleInput4 = document.querySelector('.toggle-input-4');
@@ -514,6 +516,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				if( toggleInput2.checked) {
 					toggleInput2.checked= false;
 					adhdButton.click();	
+					readFocusButton.click();
 				} 
 				if( toggleInput4.checked) {
 					let existingStyle = document.querySelector('#FontStyle');
@@ -556,6 +559,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				if( toggleInput2.checked) {
 					toggleInput2.checked = false;
 					adhdButton.click();	
+					readFocusButton.click();
 				} 
 				if( toggleInput3.checked) {
 					main.classList.toggle('grayscale');
@@ -580,6 +584,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				if( toggleInput2.checked) {
 					toggleInput2.checked = false;
 					adhdButton.click();	
+					readFocusButton.click();	
 				} 
 				if( toggleInput1.checked) {
 					increaseFontSizeButton.click();
