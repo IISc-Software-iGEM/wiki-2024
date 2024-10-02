@@ -109,15 +109,14 @@
 
         <figure>
                 <img src="https://static.igem.wiki/teams/5346/engineering-images/engineering-pic.jpg"/>
-                <figcaption>Problems similar to complex modelling. Multiview registration attempts to stitch images together (B) using different camera poses (A). LIDAR data is used in autonomous vehicles to simultaneously estimate their position with respect to its surroundings as shown in (C). DREAM uses the bottom-up strategy of modelling sub-structures before registering them into a single structure.</figcaption>
+                <figcaption>Problems similar to complex modeling. Multiview registration attempts to stitch images together (B) using different camera poses (A). LIDAR data is used in autonomous vehicles to simultaneously estimate their position with respect to its surroundings as shown in (C). DREAM uses the bottom-up strategy of modeling sub-structures before registering them into a single structure.</figcaption>
         </figure>
 
         <p>
-                It can be shown mathematically that only rigid body motion, composed of rotation/reflection and translation quality for distance preserving transformation. The space of the rigid body orientations is well known to
+                It can be shown mathematically that only rigid body motion, composed of rotation/reflection and translation quality for distance preserving transformation. The space of the rigid body orientations is well known to
                 form a special set in mathematics known as the in \(3\)</span>D, denoted by \(\mathbb{SE}(3)\)</span>.
-                The set belongs to a larger class known as differential manifold <span class="citation" data-cites="diffmanifold"></span>. A
-                differentiable manifold is a generalization to higher dimensions of the concept of a in
-                three-dimensional Euclidean space. Differentiation operation may be defined on such a set, and
+                The set belongs to a larger class known as differential manifold <span class="citation" data-cites="diffmanifold"></span>. This is a generalization of euclidean space in higher dimensions.
+                Differentiation operation may be defined on such a set, and
                 consequently, one may model mathematical algorithms to directly optimize on \(\mathbb{SE}(3)\)</span>.
                 In other words, the problem of deriving optimal rigid motion, can be directly defined on
                 \(\mathbb{SE}(3)\)</span>. Indeed, a large volume of literature exists in this regard<span
@@ -179,7 +178,7 @@
                 pair of atoms. Refer to fig provided below.
                 The matrix can be divided into two blocks. The lilac and green block contain the equality bounds between
                 the C\(^\alpha\)</span> atoms belonging to \(C_1\)</span> and \(C_2\)</span>. The white blocks are empty
-                except for the pairs, for which the lower bound can be found in the list of crosslinks
+                except for the pairs, for which the upper bound can be found in the list of crosslinks
                 \(\mathcal{L}_{12}\)</span>. The matrix there incomplete.
         </p>
         <p>
@@ -187,9 +186,9 @@
                 approaches to approximate a complete distance matrix, say \(\tilde{D}\)</span>, which best approximates
                 the entries defined in \(D\)</span>. We found it <span class="citation"
                         data-cites="bamdevlowrank"></span> prone to errors for sparse data, i.e., for a smaller
-                number of C\(^\alpha\)</span> atoms, whereas CITE performed significantly better. Interestingly, the
+                number of C\(^\alpha\)</span> atoms, whereas Sci-py performed significantly better. Interestingly, the
                 trend was found to be the opposite if more atoms were involved. Since the number of crosslinks was in
-                the order of \(10\)</span>-\(12\)</span>, CITE was found to work best empirically.
+                the order of \(10\)</span>-\(12\)</span>, Sci-py was found to work best empirically.
         </p>
         <p>
                 We can then derive the coordinates \(X = \left\{x_i \right\}_{i \in C_1 \cup \, C_2}\)</span> from
@@ -340,7 +339,7 @@
         </p>
         <h2 id="post-processing-cycle-4">Post-processing (Cycle-4)</h2>
         <p>
-                Psedocode for IMPROViSeD. modelling three dimensional structures for protein complexes using crosslinking is broken down into two steps: Localization and Registration. The subunits are oriented in multiple interations. Each results from a subset of crosslinks, followed by localiztion and registration. The iterations proceed in parallel. The structrues with low crosslink violations and those that do not have clashes make it to as final result.
+                Psedocode for IMPROViSeD. Modeling three dimensional structures for protein complexes using crosslinking is broken down into two steps: Localization and Registration. The subunits are oriented in multiple interations. Each results from a subset of crosslinks, followed by localiztion and registration. The iterations proceed in parallel. The structrues with low crosslink violations and those that do not have clashes make it to as final result.
 
         </p>
         <figure>
