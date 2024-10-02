@@ -1,14 +1,16 @@
-{% extends "layout.html" %} {% block title %}Human Practices{% endblock %}
-{% block lead %}{% endblock %} {% block page_content %}
+{% extends "layout.html" %} {% block title %}Human Practices{% endblock %} {%
+block lead %}{% endblock %} {% block page_content %}
 
 <style>
   body {
-    background-image: linear-gradient(to bottom,
-        #f9dbbd 0%,
-        #ffa5ab 20%,
-        #da627d 40%,
-        #a53860 60%,
-        #450920 100%);
+    background-image: linear-gradient(
+      to bottom,
+      #f9dbbd 0%,
+      #ffa5ab 20%,
+      #da627d 40%,
+      #a53860 60%,
+      #450920 100%
+    );
   }
 
   #float1 {
@@ -20,35 +22,42 @@
   }
 </style>
 
-<div class="col-md-3 sidebar">
-</div>
+<div class="col-md-3 sidebar"></div>
 <div class="col-md-9 content">
-
   <h1>Human Practices</h1>
   <p>
-    Our iGEM project, <b>IMPROViSeD (Integrated Modelling of Protein Complexes
-      using Distance-Restraints and
-      Energy-Assisted Modelling)</b>, has been shaped through an iterative
-    process of ideation, expert feedback, and
-    practical applications. This section outlines our engagement with
-    stakeholders, detailing how their insights shaped
-    the direction of our project. Our work not only aligns with scientific goals
-    but also addresses broader societal
-    challenges, particularly in therapeutic development.
+    Our iGEM project,
+    <b
+      >IMPROViSeD (Integrated Modelling of Protein Complexes using
+      Distance-Restraints and Energy-Assisted Modelling)</b
+    >, has been shaped through an iterative process of ideation, expert
+    feedback, and practical applications. This section outlines our engagement
+    with stakeholders, detailing how their insights shaped the direction of our
+    project. Our work not only aligns with scientific goals but also addresses
+    broader societal challenges, particularly in therapeutic development.
   </p>
-  <hr>
+  <hr />
   <figure>
-    <img src="https://static.igem.wiki/teams/5346/hp/oneplustwo.png"
-      alt="Figure not downloaded">
-    <figcaption>Announcement of a Software and AI iGEM team at IISc.| Initial
-      team meetings : Brainstorming </figcaption>
+    <img
+      src="https://static.igem.wiki/teams/5346/hp/oneplustwo.png"
+      alt="Figure not downloaded"
+    />
+    <figcaption>
+      Announcement of a Software and AI iGEM team at IISc.| Initial team
+      meetings : Brainstorming
+    </figcaption>
   </figure>
 
   <p>
     <figure>
-    <iframe src="https://static.igem.wiki/teams/5346/hp/ideation-hp.pdf"
-      class="presentation"></iframe>
-    <figcaption>Talk on computational biology by team members in collaboration with Naturalist(UG Biology club) followed by team recruitment discussions.</figcaption>
+      <iframe
+        src="https://static.igem.wiki/teams/5346/hp/ideation-hp.pdf"
+        class="presentation"
+      ></iframe>
+      <figcaption>
+        Talk on computational biology by team members in collaboration with
+        Naturalist(UG Biology club) followed by team recruitment discussions.
+      </figcaption>
     </figure>
   </p>
 
@@ -56,171 +65,171 @@
 
   <p>
     In the initial stages, we explored multiple ideas, collaborating with
-    experts and stakeholders from various
-    scientific fields. These brainstorming sessions were crucial for
-    understanding the scope and limitations of
+    experts and stakeholders from various scientific fields. These brainstorming
+    sessions were crucial for understanding the scope and limitations of
     different approaches. Although we didn’t pursue these ideas for iGEM, they
-    helped us refine our thinking and
-    ultimately led us to the development of <b>IMPROViSeD</b>.
+    helped us refine our thinking and ultimately led us to the development of
+    <b>IMPROViSeD</b>.
   </p>
 
-  <ol>
-    <li>
-      <h3>Prediction of Metal Binding Proteins</h3>
-      <p>This idea stemmed from our discussions with <a
-          href="https://biochem.iisc.ac.in/nagasuma-chandra.php"><b> Prof.
-            Nagasuma Chandra</b></a> from the Department of Biochemistry at
-        IISc, who specializes in computational
-        biology and the study of genome-wide perturbations in diseases. Our goal
-        was to leverage computational models to
-        predict peptide sequences that could bind metals, with potential
-        applications in bioremediation or metal-ion
-        detection.</p>
-      <p>Following <b>Prof. Chandra’s</b> suggestion, we engaged with <a
-          href="https://www.msruas.ac.in/faculty-staff/deepesh-nagarajan"> <b>
-            Dr. Deepesh Nagarajan </b> </a> from M.S.
-        Ramaiah University of Applied Sciences. Dr. Nagarajan encouraged us to
-        develop short peptides that could quench
-        specific metals of interest. We focused on understanding metal-binding
-        regions within proteins and explored the
-        possibility of engineering these peptides for environmental or
-        diagnostic applications. </p>
-      <p>However, after further analysis, we realized that this approach lacked
-        novelty. Several similar projects had
-        been developed in the past, and the practical impact seemed limited.
-        Additionally, while computationally
-        interesting, this idea did not fully align with iGEM’s emphasis on
-        innovation and societal relevance. Therefore,
-        we decided to move forward in a more promising direction. </p>
-    </li>
-    <li>
-      <h3>Genome-wide Prediction of miRNA</h3>
-      <p> Another concept involved predicting microRNAs (miRNAs) at a
-        genome-wide level, a task inspired by discussions
-        with stakeholders such as <a
-          href="https://dbg.iisc.ac.in/people/arun-kumar/"> <b>Sakshi and Mukund
-            from Prof.
-            Arun Kumar’s lab </b></a> and <a
-          href="https://srimontasd.wixsite.com/gayen-lab"> <b>Hemant from
-            Srimonta
-            Gayen's Lab</b></a>, from Developmental Biology and Genetics, IISc,
-        as well as input from <a
-          href="https://cbr-iisc.ac.in/people/shweta_ramdas/"><b>Prof.
-            Swetha</b></a> at Center for Brain Research,
-        IISc. miRNAs regulate gene expression post-transcriptionally and play
-        crucial roles in various diseases,
-        including cancer, making them attractive candidates for therapeutic
-        targeting. </p>
-      <p> Our idea was to use computational models to predict miRNA sequences
-        that could potentially target
-        disease-related genes, providing a platform for personalized medicine or
-        biomarker discovery. This would have
-        required extensive computational analysis of genomic data, as well as
-        experimental validation. However, during
-        the brainstorming phase, we encountered several challenges, including
-        the difficulty of validating miRNA targets
-        without significant experimental infrastructure. Furthermore, we
-        recognized that while miRNA prediction is an
-        exciting area of research, our approach lacked the experimental novelty
-        and broader integration required for a
-        successful iGEM project. </p>
-    </li>
-    <li>
-      <h3>Ion Channels</h3>
-      <p>In our initial brainstorming, we also explored the role of ion
-        channels, specifically focusing on the
-        sodium-chloride co-transporter (NCC) located in the distal convoluted
-        tubule (DCT) of kidneys. This protein is
-        essential for sodium ion reabsorption, and mutations in the SLC12A3 gene
-        lead to Gitelman syndrome, which
-        results in renal loss of sodium and potassium, causing various health
-        issues such as hypokalaemia and metabolic
-        alkalosis. </p>
-      <p>To address this, we aimed to design a synthetic ion channel simulation
-        to better understand NCC’s electrostatic
-        potential and how SLC12A3 mutations affect its function. For this
-        project, we received significant guidance from
-        <a href="https://cds.iisc.ac.in/faculty/dpal/"><b>Prof. Debnath
-            Pal</b></a> from Center for Data Sciences,
-        IISc and his student, <a href="https://www.djmaity.com/"><b>Dibyajyoti
-            Maity</b></a>. Prof. Debnath helped us
-        grasp the foundational concepts and provided practical insights through
-        discussions and visualizations using
-        PyMol. He guided us through the calculation of electrostatic potentials
-        during protein conformational changes,
-        teaching us to interpret results using Delphi software. Additionally, he
-        assisted in preparing PDB files for
-        molecular dynamics simulations with Gromacs, which were vital for our
-        analysis.
-      </p>
-      <p>Dibyajyoti, who made the software <a
-          href="https://github.com/djmaity/md-davis">MD-Davis</a>, which is used
-        for calculating the electrostatic potential of the protein, energy
-        values, profiles, etc. His experience and knowledge was very helpful for
-        us to perform the necessary calculations for the project. Despite living in
-        the USA, offered support through Google Meet sessions, teaching us how
-        to use Delphi and MD-Davis effectively. His guidance allowed us to
-        streamline our workflow and analyze the electrostatic potential of the
-        NCC protein efficiently. This collaborative effort laid the groundwork
-        for understanding the role of ion channels in our project. </p>
-      <p>Professor Arvind Penmatsa is a professor in the Molecular Biophysics
-        Unit (MBU) in IISc.
-        We met Prof. Penmatsa in the initial stages of ideation. He briefed us
-        about the general mechanisms of working of ion transporters and the 
-        energetics of the process. Our protein shows 2 conformations, one facing
-        inwards (cytoplasm) and the other facing outwards (lumen). A
-        conformational change happens as the ion binds to the outward facing
-        conformation, making it inward facing and leading to the subsequent release
-        of the ions inwards.
-        He gave us advice on whether we should continue a simulational study on
-        the NCC protein and its mutations or not, and asked us also to look into
-        the functionomics of different mutations that give rise to the Gitelman
-        syndrome so that we have a coherent idea on how to proceed.</p>
-    </li>
-  </ol>
+  <h3>Prediction of Metal Binding Proteins</h3>
+  <p>
+    This idea stemmed from our discussions with
+    <a href="https://biochem.iisc.ac.in/nagasuma-chandra.php"
+      ><b> Prof. Nagasuma Chandra</b></a
+    >
+    from the Department of Biochemistry at IISc, who specializes in
+    computational biology and the study of genome-wide perturbations in
+    diseases. Our goal was to leverage computational models to predict peptide
+    sequences that could bind metals, with potential applications in
+    bioremediation or metal-ion detection.
+  </p>
+  <p>
+    Following <b>Prof. Chandra’s</b> suggestion, we engaged with
+    <a href="https://www.msruas.ac.in/faculty-staff/deepesh-nagarajan">
+      <b> Dr. Deepesh Nagarajan </b>
+    </a>
+    from M.S. Ramaiah University of Applied Sciences. Dr. Nagarajan encouraged
+    us to develop short peptides that could quench specific metals of interest.
+    We focused on understanding metal-binding regions within proteins and
+    explored the possibility of engineering these peptides for environmental or
+    diagnostic applications.
+  </p>
+  <p>
+    However, after further analysis, we realized that this approach lacked
+    novelty. Several similar projects had been developed in the past, and the
+    practical impact seemed limited. Additionally, while computationally
+    interesting, this idea did not fully align with iGEM’s emphasis on
+    innovation and societal relevance. Therefore, we decided to move forward in
+    a more promising direction.
+  </p>
+
+  <h3>Genome-wide Prediction of miRNA</h3>
+  <p>
+    Another concept involved predicting microRNAs (miRNAs) at a genome-wide
+    level, a task inspired by discussions with stakeholders such as
+    <a href="https://dbg.iisc.ac.in/people/arun-kumar/">
+      <b>Sakshi and Mukund from Prof. Arun Kumar’s lab </b></a
+    >
+    and
+    <a href="https://srimontasd.wixsite.com/gayen-lab">
+      <b>Hemant from Srimonta Gayen's Lab</b></a
+    >, from Developmental Biology and Genetics, IISc, as well as input from
+    <a href="https://cbr-iisc.ac.in/people/shweta_ramdas/"
+      ><b>Prof. Swetha</b></a
+    >
+    at Center for Brain Research, IISc. miRNAs regulate gene expression
+    post-transcriptionally and play crucial roles in various diseases, including
+    cancer, making them attractive candidates for therapeutic targeting.
+  </p>
+  <p>
+    Our idea was to use computational models to predict miRNA sequences that
+    could potentially target disease-related genes, providing a platform for
+    personalized medicine or biomarker discovery. This would have required
+    extensive computational analysis of genomic data, as well as experimental
+    validation. However, during the brainstorming phase, we encountered several
+    challenges, including the difficulty of validating miRNA targets without
+    significant experimental infrastructure. Furthermore, we recognized that
+    while miRNA prediction is an exciting area of research, our approach lacked
+    the experimental novelty and broader integration required for a successful
+    iGEM project.
+  </p>
+
+  <h3>Ion Channels</h3>
+  <p>
+    In our initial brainstorming, we also explored the role of ion channels,
+    specifically focusing on the sodium-chloride co-transporter (NCC) located in
+    the distal convoluted tubule (DCT) of kidneys. This protein is essential for
+    sodium ion reabsorption, and mutations in the SLC12A3 gene lead to Gitelman
+    syndrome, which results in renal loss of sodium and potassium, causing
+    various health issues such as hypokalaemia and metabolic alkalosis.
+  </p>
+  <p>
+    To address this, we aimed to design a synthetic ion channel simulation to
+    better understand NCC’s electrostatic potential and how SLC12A3 mutations
+    affect its function. For this project, we received significant guidance from
+    <a href="https://cds.iisc.ac.in/faculty/dpal/"><b>Prof. Debnath Pal</b></a>
+    from Center for Data Sciences, IISc and his student,
+    <a href="https://www.djmaity.com/"><b>Dibyajyoti Maity</b></a
+    >. Prof. Debnath helped us grasp the foundational concepts and provided
+    practical insights through discussions and visualizations using PyMol. He
+    guided us through the calculation of electrostatic potentials during protein
+    conformational changes, teaching us to interpret results using Delphi
+    software. Additionally, he assisted in preparing PDB files for molecular
+    dynamics simulations with Gromacs, which were vital for our analysis.
+  </p>
+  <p>
+    Dibyajyoti, who made the software
+    <a href="https://github.com/djmaity/md-davis">MD-Davis</a>, which is used
+    for calculating the electrostatic potential of the protein, energy values,
+    profiles, etc. His experience and knowledge was very helpful for us to
+    perform the necessary calculations for the project. Despite living in the
+    USA, offered support through Google Meet sessions, teaching us how to use
+    Delphi and MD-Davis effectively. His guidance allowed us to streamline our
+    workflow and analyze the electrostatic potential of the NCC protein
+    efficiently. This collaborative effort laid the groundwork for understanding
+    the role of ion channels in our project.
+  </p>
+  <p>
+    Professor Arvind Penmatsa is a professor in the Molecular Biophysics Unit
+    (MBU) in IISc. We met Prof. Penmatsa in the initial stages of ideation. He
+    briefed us about the general mechanisms of working of ion transporters and
+    the energetics of the process. Our protein shows 2 conformations, one facing
+    inwards (cytoplasm) and the other facing outwards (lumen). A conformational
+    change happens as the ion binds to the outward facing conformation, making
+    it inward facing and leading to the subsequent release of the ions inwards.
+    He gave us advice on whether we should continue a simulational study on the
+    NCC protein and its mutations or not, and asked us also to look into the
+    functionomics of different mutations that give rise to the Gitelman syndrome
+    so that we have a coherent idea on how to proceed.
+  </p>
 
   <h1>Experimental Design and Approach</h1>
-  <hr>
+  <hr />
   <h2>Pivot to IMPROViSeD: A Focus on Protein Complexes</h2>
-  <p>With the realization that our early ideas weren’t feasible within the
-    constraints of the iGEM competition, we
-    shifted our focus. Guided by our PI, <b>Prof. Debnath Pal</b>, and our
-    instructor, <b>Niladri Ranjan Das</b>, we
-    began developing a project centered around the <b>structural modelling of
-      protein complexes</b>. This pivot was
-    heavily influenced by ongoing discussions with <a
-      href="https://www.ncbs.res.in/faculty/shruthi"><b>Dr. Shruthi
-        Viswanath</b></a>, who has extensive experience working with integrated
-    modelling platforms.</p>
-  <p>As we moved forward, our weekly meetings began to focus on how to integrate
-    <b>DREAM (Distance Restraints and
-      Energy-Assisted Modelling)</b> into an <b>Integrated Modelling Platform
-      (IMP)</b> for protein complexes. This led
+  <p>
+    With the realization that our early ideas weren’t feasible within the
+    constraints of the iGEM competition, we shifted our focus. Guided by our PI,
+    <b>Prof. Debnath Pal</b>, and our instructor, <b>Niladri Ranjan Das</b>, we
+    began developing a project centered around the
+    <b>structural modelling of protein complexes</b>. This pivot was heavily
+    influenced by ongoing discussions with
+    <a href="https://www.ncbs.res.in/faculty/shruthi"
+      ><b>Dr. Shruthi Viswanath</b></a
+    >, who has extensive experience working with integrated modelling platforms.
+  </p>
+  <p>
+    As we moved forward, our weekly meetings began to focus on how to integrate
+    <b>DREAM (Distance Restraints and Energy-Assisted Modelling)</b> into an
+    <b>Integrated Modelling Platform (IMP)</b> for protein complexes. This led
     us to the development of <b>IMPROViSeD</b>, a platform designed to model
-    protein structures using experimental
-    distance restraints derived from techniques such as <b>cross-linking mass
-      spectrometry (XLMS)</b>.</p>
+    protein structures using experimental distance restraints derived from
+    techniques such as <b>cross-linking mass spectrometry (XLMS)</b>.
+  </p>
 
   <figure>
-    <img src="https://static.igem.wiki/teams/5346/hp/threeplusfour.png"
-      alt="Figure not downloaded">
-    <figcaption>Hybrid/online meetings during summer to finalise the project
-      idea</figcaption>
+    <img
+      src="https://static.igem.wiki/teams/5346/hp/threeplusfour.png"
+      alt="Figure not downloaded"
+    />
+    <figcaption>
+      Hybrid/online meetings during summer to finalise the project idea
+    </figcaption>
   </figure>
-  <hr>
-  <p>Around this time, we also sought input from <a
-      href="https://www.msctr.org/2016/06/08/dr-manjula-das/"><b>Dr.
-        Manjula Das</b></a>, an expert in antibody-based therapeutics. She
-    highlighted the therapeutic potential of
-    understanding protein-protein interactions, especially in the context of
-    cancer metastasis. This interaction led us
-    to focus on the <b>LCN2-MMP9 complex</b>, a pair of proteins known to play a
-    significant role in the spread of
-    cancer. With Dr. Das’ input, we decided to demonstrate the power of our
-    platform by applying it to the structural
-    modelling of this complex. This decision provided a clear use case that
-    aligned with both societal needs and the
-    goals of iGEM.</p>
+  <hr />
+  <p>
+    Around this time, we also sought input from
+    <a href="https://www.msctr.org/2016/06/08/dr-manjula-das/"
+      ><b>Dr. Manjula Das</b></a
+    >, an expert in antibody-based therapeutics. She highlighted the therapeutic
+    potential of understanding protein-protein interactions, especially in the
+    context of cancer metastasis. This interaction led us to focus on the
+    <b>LCN2-MMP9 complex</b>, a pair of proteins known to play a significant
+    role in the spread of cancer. With Dr. Das’ input, we decided to demonstrate
+    the power of our platform by applying it to the structural modelling of this
+    complex. This decision provided a clear use case that aligned with both
+    societal needs and the goals of iGEM.
+  </p>
 
   <h1>Identification of Stake Holders</h1>
   <p>
@@ -228,321 +237,342 @@
     project’s relevance and broader impact.
   </p>
   <figure>
-    <img src="https://static.igem.wiki/teams/5346/aiim/stakeholders-mindmap.png"
-      alt="stakeholders-mindmap">
+    <img
+      src="https://static.igem.wiki/teams/5346/aiim/stakeholders-mindmap.png"
+      alt="stakeholders-mindmap"
+    />
   </figure>
+  <p></p>
+  <h2>AIIM-Interaction with iGEM ambassadors, iGEM judges and other iGEMers</h2>
+  <figure>
+    <img
+      src="https://static.igem.wiki/teams/5346/aiim/aiim-poster-presentation.jpg"
+      alt="AIIM Poster Presentation"
+    />
+    <figcaption>AIIM Poster Presentation</figcaption>
+  </figure>
+  <figure>
+    <img
+      src="https://static.igem.wiki/teams/5346/aiim/poster-1.png"
+      alt="AIIM Poster"
+    />
+    <figcaption>AIIM Poster of IISc-Software Team</figcaption>
+  </figure>
+
+  <h3>Judges After the Mock Presentation</h3>
   <p>
-    <h2>AIIM-Interaction with iGEM ambassadors, iGEM judges and other
-      iGEMers</h2>
-    <figure>
-      <img
-        src="https://static.igem.wiki/teams/5346/aiim/aiim-poster-presentation.jpg"
-        alt="AIIM Poster Presentation">
-      <figcaption>AIIM Poster Presentation</figcaption>
-    </figure>
-    <figure>
-      <img src="https://static.igem.wiki/teams/5346/aiim/poster-1.png"
-        alt="AIIM Poster">
-      <figcaption>AIIM Poster of IISc-Software Team</figcaption>
-    </figure>
+    The feedback we received for our iGEM project was both constructive and
+    encouraging. Judges commended the <b>clarity</b> of our presentation and saw
+    significant <b>potential</b> in our platform for the
+    <b>structural computational biology</b> field. They recommended expanding
+    our <b>outreach efforts</b>, and example use cases to our wiki. There were
+    calls to present more results to demonstrate project progress, consider the
+    microenvironment's effects on distance predictions, and include other data
+    types beyond distances. Additionally, the importance of developing a
+    <b>user-friendly interface</b> for non-computational biologists was
+    highlighted, as well as providing a demo video for easier understanding by a
+    broader audience. Expanding <b>industrial human practices</b> was also
+    encouraged to ensure the platform’s applicability to real-world use.
+  </p>
+  <p>
+    We took the feedback seriously and expanded our outreach efforts, engaging
+    with additional industrial experts as key <b>stakeholders</b>. We added
+    example use cases to our
+    <a href="https://2024.igem.wiki/iisc-software/proof-of-concept"
+      >Proof of Concept page (IISc-Software - iGEM 2024)</a
+    >
+    to illustrate the platform's capabilities. Our platform can now model using
+    <b
+      >limited crosslinks, incorporating both experimental and synthetic
+      results</b
+    >, and we've accounted for various molecular orientations. Additionally,
+    we've ensured thorough documentation to make the platform
+    <b>user-friendly</b> and accessible to a <b>broader</b> audience.
+  </p>
 
-    <h3>Judges after the mock presentation:</h3>
-    <p>
-      The feedback we received for our iGEM project was both constructive and
-      encouraging. Judges commended the <b>clarity</b> of our presentation and
-      saw
-      significant <b>potential</b> in our platform for the <b>structural
-        computational
-        biology</b> field. They recommended expanding our <b>outreach
-        efforts</b>, and
-      example use cases to our wiki. There were calls to present more results to
-      demonstrate project progress, consider the microenvironment's effects on
-      distance predictions, and include other data types beyond distances.
-      Additionally, the importance of developing a <b>user-friendly
-        interface</b> for
-      non-computational biologists was highlighted, as well as providing a demo
-      video for easier understanding by a broader audience. Expanding
-      <b>industrial
-        human practices</b> was also encouraged to ensure the platform’s
-      applicability
-      to real-world use.
-    </p>
-    <p>
-      We took the feedback seriously and expanded our outreach efforts, engaging
-      with additional industrial experts as key <b>stakeholders</b>. We added
-      example
-      use cases to our <a
-        href="https://2024.igem.wiki/iisc-software/proof-of-concept">Proof of
-        Concept page (IISc-Software - iGEM 2024)</a> to
-      illustrate the platform's capabilities. Our platform can now model using
-      <b>limited crosslinks, incorporating both experimental and synthetic results</b>,
-      and we've accounted for various molecular orientations. Additionally,
-      we've ensured thorough documentation to make the platform <b>user-friendly</b>
-      and accessible to a <b>broader</b> audience.</p>
+  <h3>Ambassadors and other iGEMers During the Poster Presentation</h3>
+  <p>
+    This year’s iGEM Ambassadors,
+    <b>Ms. Srimathi Lakshminarayan, Ms. Hana Lukman, and Mr. Sara Thomas</b>,
+    encouraged us to broaden our stakeholder engagement and strengthen our
+    outreach efforts, particularly for the Education special prize. They also
+    recommended, we specify the cyber safety aspects to consider while making
+    our project. Following their advice, we expanded our initiatives,
+    <b>reaching students and communities</b> across the country to
+    <b>raise awareness</b> about synthetic biology. We made a concerted effort
+    to consult with all relevant stakeholders and
+    <b>incorporate their feedback</b> into our project. We also incorporated a
+    <b>cyber safety</b> section in our
+    <a href="https://2024.igem.wiki/iisc-software/safety">safety page </a> to
+    ensure that our platform is secure.
+  </p>
+  <p>
+    During our poster presentation, we showcased our work to other iGEM teams
+    and ambassadors. We received valuable constructive feedback, among which one
+    of the suggestions was to create a
+    <b>narrative</b> with engaging characters to make our project
+    <b>more accessible</b> to a wider audience. We took this advice seriously,
+    and our
+    <a href="https://2024.igem.wiki/iisc-software/index.html">Home</a> page now
+    reflects this approach.
+  </p>
 
-    <h3>Ambassadors and other iGEMers during the poster presentation:</h3>
-    <p>
-      This year’s iGEM Ambassadors, <b>Ms. Srimathi Lakshminarayan, Ms. Hana
-        Lukman, and Mr. Sara Thomas</b>, encouraged us to broaden our
-      stakeholder
-      engagement and strengthen our outreach efforts, particularly for the
-      Education special prize. They also recommended, we specify the cyber safety aspects to consider while making our project. Following their advice, we expanded our
-      initiatives, <b>reaching students and communities</b> across the country
-      to <b>raise
-        awareness</b> about synthetic biology. We made a concerted effort to
-      consult
-      with all relevant stakeholders and <b>incorporate their feedback</b> into
-      our
-      project. We also incorporated a <b>cyber safety</b> section in our <a href="https://2024.igem.wiki/iisc-software/safety">safety page </a> to ensure that our platform is secure.
-    </p><p>
-      During our poster presentation, we showcased our work to
-      other iGEM teams and ambassadors. We received valuable constructive
-      feedback, among which one of the suggestions was to create a
-      <b>narrative</b> with engaging
-      characters to make our project <b>more accessible</b> to a wider audience.
-      We
-      took this advice seriously, and our <a
-        href="https://2024.igem.wiki/iisc-software/index.html">Home</a> page now
-      reflects this
-      approach.</p>
+  <h2>Interactions with PhD students</h2>
+  <p>
+    As part of our Human Practices outreach, we engaged with PhD students
+    specializing in structural biology to gain insights that were pivotal to our
+    project. <b>Roohani Basavaraj</b> from <b>Prof. Utpal Tatu’s Lab</b> in the
+    Biochemistry Department provided crucial guidance on the in-gel digestion
+    protocol and advised us on proper protein handling during our XLMS
+    (Cross-Linking Mass Spectrometry) workflow. We incorporated all of her
+    advice into our wet lab protocol. Additionally, we consulted
+    <b>Muskaan</b> from <b>Dr. Shruthi Viswanath’s Lab</b> at the National
+    Centre for Biological Sciences, who offered valuable assistance in
+    navigating cross-link databases, helping us refine our approach to data
+    analysis. These interactions significantly enriched our understanding of key
+    experimental processes.
+  </p>
 
-    <h2>Interactions with PhD students</h2>
-    <p>
-      As part of our Human Practices outreach, we engaged with PhD students specializing in structural biology to gain insights that were pivotal to our project. <b>Roohani Basavaraj</b> from <b>Prof. Utpal Tatu’s Lab</b> in the Biochemistry Department provided crucial guidance on the in-gel digestion protocol and advised us on proper protein handling during our XLMS (Cross-Linking Mass Spectrometry) workflow. We incorporated all of her advice into our wet lab protocol. Additionally, we consulted <b>Muskaan</b> from <b>Dr. Shruthi Viswanath’s Lab</b> at the National Centre for Biological Sciences, who offered valuable assistance in navigating cross-link databases, helping us refine our approach to data analysis. These interactions significantly enriched our understanding of key experimental processes.
-    </p>
+  <h2>Refining Our Approach: Meetings with Experts</h2>
+  <p>
+    As we refined our project, we engaged with various experts who helped us
+    address technical challenges and optimize our methodology.
+  </p>
 
-    <h2>Refining Our Approach: Meetings with Experts</h2>
-    <p>As we refined our project, we engaged with various experts who helped us
-      address technical challenges and optimize
-      our methodology.</p>
-    <ul>
-      <li>
-        <a href="https://www.uu.nl/staff/AMJJBonvin">
-          <h3>Dr. Alexandre Bonvin:</h3>
-        </a>
-        <p>
-        A key figure in the development of the <b>HADDOCK</b> platform for
-        modelling biomolecular complexes, Dr. Bonvin
-        provided invaluable feedback on improving the accuracy of our structural
-        models. His recommendations included:
-        </p>
-        <ol>
-          <li><b>Inclusion of Surface Atoms:</b>
-            <p>Dr. Bonvin highlighted the potential for clashes when only using
-              C-alpha atoms for localization and
-              suggested including surface atoms with lower bounds between them.
-              While we initially had concerns about the
-              large number of lower bounds this might introduce, we adapted his
-              advice by first localizing C-alpha atoms
-              and then refining the model by focusing on surface atoms from the
-              protein interface.</p>
-          </li>
-          <li><b>Handling Protein Flexibility:</b>
-            <p> He also recommended breaking down flexible regions of the
-              protein and performing multi-registration, a
-              suggestion that we incorporated into our approach.</p>
-          </li>
-          <li><b>Crosslink Ambiguities:</b>
-            <p>Assigning experimental crosslink data to specific residue pairs
-              can be challenging due to ambiguities. Dr.
-              Bonvin reassured us that as long as the C-alpha distances were
-              comparable, the proposed method would be
-              tolerant to these ambiguities.</p>
-          </li>
-          <li><b>Iterative Pruning:</b>
-            <p>Finally, he advised iterating multiple times to generate
-              different localization solutions and then pruning
-              based on crosslink violations. This iterative process became a
-              core aspect of our modelling workflow.</p>
-          </li>
-        </ol>
-      </li>
-      <figure>
-        <img src="https://static.igem.wiki/teams/5346/hp/bonvin-interaction.png"
-          alt="interaction with Dr. Bonvin">
-        <figcaption>Our interaction with Dr. Alexandre Bonvin</figcaption>
-      </figure>
-      <li>
-        <a href="https://imsb.ethz.ch/research/beltrao.html#:~:text=Prof.%20Pedro%20Beltrao.%20chevron_right%20Contact">
-        <h3>Dr. Pedro Beltrao</h3></a>
-        <p>
-          The professor provided critical feedback on improving our integrative protein modelling platform. Their recommendations were:
-        </p>
-          <ol>
-            <li>
-              <b>Time Efficiency of Guided Docking:</b>
-              <p>
-                The professor questioned whether our platform could outperform others in terms of speed. We explained that our approach uses automated guided docking, where localization takes less than a second, and registration completes in 3-4 seconds. This allows each iteration to finish in under 10 seconds, significantly faster than existing platforms.
-              </p>
-            </li>
-            <li>
-              <b>Handling Crosslink Ambiguities:</b>
-              <p>
-                They inquired about the accuracy of our algorithm in distinguishing between crosslinks, such as residue A to B versus A to C. We confirmed that our platform has been rigorously tested to resolve such ambiguities and has consistently delivered successful results.
-              </p>
-            </li>
-            <li>
-              <b>Comparison with Other Platforms:</b>
-              <p>
-                The professor emphasized the need to demonstrate how our platform compares with others in terms of processing time. They noted that by speeding up the initial conformation formulation using crosslink data, our platform could perform more detailed energy calculations earlier in the process.
-              </p>
-            </li>
-            <li>
-              <b>Avoiding Energy Minimization Artifacts:</b>
-              <p>
-                We discussed how our team’s computational expertise allows us to minimize the chances of introducing artifacts. By using experimental evidence as a starting point rather than random structures, we reduce the risk of inaccuracies in energy minimization.
-              </p>
-            </li>
-            <li>
-              <b>Escaping Local Minimums:</b>
-              <p>
-                The professor highlighted the importance of avoiding local minimum traps, particularly in cases involving NMR data. They agreed that our method could help resolve this issue by improving the process of escaping incorrect structural interfaces.
-              </p>
-            </li>
-          </ol>
-      </li>
-      <figure>
-        <img src="https://static.igem.wiki/teams/5346/hp/pedro-interaction.png"
-          alt="interaction with Dr. Beltrao">
-        <figcaption>Our interaction with Dr. Pedro Beltrao</figcaption>
-      </figure>
-      <li>
-        <a href="https://ganjilab.org/#:~:text=We%20are%20a%20part%20of%20the%20Department%20of%20Biochemistry%20at">
-        <h3>Dr. Mahipal Ganji</h3>
-        </a>
-        <p>
-          The professor provided valuable guidance in securing resources within our university for the UV crosslinking experiments we initially planned.
-        </p>
-        <ol>
-          <li>
-            <b>Selection of Crosslinkers:</b>
-            <p>
-              They recommended broadening our range of chemical crosslinkers to enhance accuracy, advising us to consider different crosslinkers based on the experimental context. By targeting specific amino acid residues or chemical groups, we could significantly improve the precision of our protein models.
-            </p>
-          </li>
-          <li>
-            <b>Crosslinkers Like DSG:</b>
-            <p>
-              The professor emphasized the potential of using DSG (Disuccinimidyl Glutarate), a crosslinker known for its effectiveness in capturing interactions between protein subunits. Incorporating DSG into our protocol would not only increase the accuracy of our integrative models but also strengthen their overall robustness. They encouraged us to experiment with a variety of crosslinkers to further refine the platform, potentially expanding its capabilities in future iterations.
-            </p>
-          </li>
-        </ol>
-      </li>
-    </ul>
-
-    <hr>
-    <h2>Industry and Medical Foundation Engagement</h2>
-    <p>As part of our efforts to ensure that our project had real-world
-      applications, we reached out to both industry
-      professionals and medical experts for their input.</p>
-    <ul>
-      <li>
-        <h3>ThermoFisher Scientific:</h3>
-        <p>We had the opportunity to present our work to a panel of experts at
-          <b>ThermoFisher Scientific</b>, a leading
-          company in scientific instrumentation and research solutions. During
-          this meeting, the panel provided
-          constructive feedback on how our platform could be applied to
-          large-scale datasets, emphasizing the potential
-          for <b>IMPROViSeD</b> to be used in drug discovery and other protein
-          interaction studies. The discussions
-          encouraged us to think about scalability and real-world applications,
-          further refining our approach to ensure
-          that our project could have a tangible impact beyond the academic
-          sphere.</p>
-      </li>
-
-      <figure>
-        <img src="https://static.igem.wiki/teams/5346/hp/five.png"
-          alt="Figure not downloaded">
-        <figcaption>ThermoFisher Scientific visit</figcaption>
-      </figure>
-      <li>
-        <h3>Majumdar Shaw Medical Foundation:</h3>
-        <p>We also presented our work at the <b>Majumdar Shaw Medical
-            Foundation</b>, a prominent institution in cancer
-          research and treatment. Here, we received specific feedback on the
-          potential applications of <b>IMPROViSeD</b>
-          in modelling cancer-related protein complexes. The experts we
-          interacted with underscored the importance of
-          accurate structural data for the development of antibody-based
-          therapies. By focusing on the <b>LCN2-MMP9
-            complex</b>, we positioned our project to directly contribute to
-          cancer metastasis research, with potential
-          long-term benefits in therapeutic development.</p>
-
-        <figure>
-          <img src="https://static.igem.wiki/teams/5346/hp/sixplusseven.png"
-            alt="Figure not downloaded">
-          <figcaption>MSMF visit</figcaption>
-        </figure>
-      </ul>
-      <hr>
-      <h2>Conclusion: A Collaborative and Impactful Project </h2>
-      <p>Our project, <b>IMPROViSeD</b>, has been shaped by continuous
-        stakeholder engagement, expert feedback, and
-        real-world considerations. Through our early explorations of ideas such
-        as <b>metal-binding peptides</b> and
-        <b>miRNA prediction</b>, we gained a deeper understanding of
-        computational biology and its limitations. This process
-        led us to focus on a project with clear societal relevance—the
-        structural modelling of protein complexes involved in
-        cancer metastasis.
+  <a href="https://www.uu.nl/staff/AMJJBonvin">
+    <h3>Dr. Alexandre Bonvin</h3>
+  </a>
+  <p>
+    A key figure in the development of the <b>HADDOCK</b> platform for modelling
+    biomolecular complexes, Dr. Bonvin provided invaluable feedback on improving
+    the accuracy of our structural models. His recommendations included:
+  </p>
+  <ol>
+    <li>
+      <b>Inclusion of Surface Atoms:</b>
+      <p>
+        Dr. Bonvin highlighted the potential for clashes when only using C-alpha
+        atoms for localization and suggested including surface atoms with lower
+        bounds between them. While we initially had concerns about the large
+        number of lower bounds this might introduce, we adapted his advice by
+        first localizing C-alpha atoms and then refining the model by focusing
+        on surface atoms from the protein interface.
       </p>
-      <p>By combining <b>DREAM</b> with experimental data from <b>XLMS</b>, and
-        working with experts such as <b>Dr.
-          Alexandre Bonvin</b> and <b>Dr. Manjula Das</b>, we have built a
-        platform that not only addresses fundamental
-        questions in structural biology but also has the potential to improve
-        therapeutic development for cancer treatment.
+    </li>
+    <li>
+      <b>Handling Protein Flexibility:</b>
+      <p>
+        He also recommended breaking down flexible regions of the protein and
+        performing multi-registration, a suggestion that we incorporated into
+        our approach.
       </p>
-      <p>Our interactions with industry professionals at <b>ThermoFisher
-          Scientific</b> and medical experts at the
-        <b>Majumdar Shaw Medical Foundation</b> have further broadened the scope
-        of our project, ensuring that
-        <b>IMPROViSeD</b> can be applied to real-world problems in drug
-        discovery and cancer therapeutics. Through this
-        collaborative and iterative process, we believe <b>IMPROViSeD</b> has
-        the potential to make a lasting impact on the
-        scientific and medical communities.
+    </li>
+    <li>
+      <b>Crosslink Ambiguities:</b>
+      <p>
+        Assigning experimental crosslink data to specific residue pairs can be
+        challenging due to ambiguities. Dr. Bonvin reassured us that as long as
+        the C-alpha distances were comparable, the proposed method would be
+        tolerant to these ambiguities.
       </p>
+    </li>
+    <li>
+      <b>Iterative Pruning:</b>
+      <p>
+        Finally, he advised iterating multiple times to generate different
+        localization solutions and then pruning based on crosslink violations.
+        This iterative process became a core aspect of our modelling workflow.
+      </p>
+    </li>
+  </ol>
 
-      <!-- <p>For photos, go to the following link and upload the photo there.</p>
-<a href="https://tools.igem.org/uploads/teams">iGEM Tools (this is also an example for how to add links)</a>
-<ol>
-    <li>You may have to log in.</li>
-    <li>Press "upload wiki files".</li>
-    <li>You may make a new folder with the name of your page or section. Now upload the file.</li>
-    <li>Press "Open" next to the uploaded file and copy the URL of the photo. Suppose that the link is: https://static.igem.wiki/teams/5346/curverd-prof-dp.png</li>
-    <li>Look below to see how to insert the image.</li>
-</ol>
+  <figure>
+    <img
+      src="https://static.igem.wiki/teams/5346/hp/bonvin-interaction.png"
+      alt="interaction with Dr. Bonvin"
+    />
+    <figcaption>Our interaction with Dr. Alexandre Bonvin</figcaption>
+  </figure>
 
-<figure>
-    <img src="https://static.igem.wiki/teams/5346/curverd-prof-dp.png" alt="Alternative text for image... this is displayed if the image somehow fails to load.">
-    <figcaption>Give a caption to your image</figcaption>
-</figure>
-<p>The image may be too big but don't worry... it will be taken care of automatically on the actual page.</p>
-<ul>
-    <li>Item 1 of unordered list</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-</ul>
+  <a
+    href="https://imsb.ethz.ch/research/beltrao.html#:~:text=Prof.%20Pedro%20Beltrao.%20chevron_right%20Contact"
+  >
+    <h3>Dr. Pedro Beltrao</h3></a
+  >
+  <p>
+    The professor provided critical feedback on improving our integrative
+    protein modelling platform. Their recommendations were:
+  </p>
+  <ol>
+    <li>
+      <b>Time Efficiency of Guided Docking:</b>
+      <p>
+        The professor questioned whether our platform could outperform others in
+        terms of speed. We explained that our approach uses automated guided
+        docking, where localization takes less than a second, and registration
+        completes in 3-4 seconds. This allows each iteration to finish in under
+        10 seconds, significantly faster than existing platforms.
+      </p>
+    </li>
+    <li>
+      <b>Handling Crosslink Ambiguities:</b>
+      <p>
+        They inquired about the accuracy of our algorithm in distinguishing
+        between crosslinks, such as residue A to B versus A to C. We confirmed
+        that our platform has been rigorously tested to resolve such ambiguities
+        and has consistently delivered successful results.
+      </p>
+    </li>
+    <li>
+      <b>Comparison with Other Platforms:</b>
+      <p>
+        The professor emphasized the need to demonstrate how our platform
+        compares with others in terms of processing time. They noted that by
+        speeding up the initial conformation formulation using crosslink data,
+        our platform could perform more detailed energy calculations earlier in
+        the process.
+      </p>
+    </li>
+    <li>
+      <b>Avoiding Energy Minimization Artifacts:</b>
+      <p>
+        We discussed how our team’s computational expertise allows us to
+        minimize the chances of introducing artifacts. By using experimental
+        evidence as a starting point rather than random structures, we reduce
+        the risk of inaccuracies in energy minimization.
+      </p>
+    </li>
+    <li>
+      <b>Escaping Local Minimums:</b>
+      <p>
+        The professor highlighted the importance of avoiding local minimum
+        traps, particularly in cases involving NMR data. They agreed that our
+        method could help resolve this issue by improving the process of
+        escaping incorrect structural interfaces.
+      </p>
+    </li>
+  </ol>
 
-<p>
-    To add presentations, first convert them to a PDF :)
-    Then upload it to the PDF to the same link as above (for photos).
-    Suppose the link is: https://static.igem.wiki/teams/5346/blah.pdf
-    Do the following.
-</p>
-<iframe src="https://static.igem.wiki/teams/5346/blah.pdf" class="presentation"></iframe>
+  <figure>
+    <img
+      src="https://static.igem.wiki/teams/5346/hp/pedro-interaction.png"
+      alt="interaction with Dr. Beltrao"
+    />
+    <figcaption>Our interaction with Dr. Pedro Beltrao</figcaption>
+  </figure>
 
-<p>
-    For math (LaTeX), either put inline like $$x^2 + y^2 = z^2$$ or put in a block like below.
-    \[
-        x^2 + y^2 = z^2
-    \]
-</p> -->
+  <a
+    href="https://ganjilab.org/#:~:text=We%20are%20a%20part%20of%20the%20Department%20of%20Biochemistry%20at"
+  >
+    <h3>Dr. Mahipal Ganji</h3>
+  </a>
+  <p>
+    The professor provided valuable guidance in securing resources within our
+    university for the UV crosslinking experiments we initially planned.
+  </p>
+  <ol>
+    <li>
+      <b>Selection of Crosslinkers:</b>
+      <p>
+        They recommended broadening our range of chemical crosslinkers to
+        enhance accuracy, advising us to consider different crosslinkers based
+        on the experimental context. By targeting specific amino acid residues
+        or chemical groups, we could significantly improve the precision of our
+        protein models.
+      </p>
+    </li>
+    <li>
+      <b>Crosslinkers Like DSG:</b>
+      <p>
+        The professor emphasized the potential of using DSG (Disuccinimidyl
+        Glutarate), a crosslinker known for its effectiveness in capturing
+        interactions between protein subunits. Incorporating DSG into our
+        protocol would not only increase the accuracy of our integrative models
+        but also strengthen their overall robustness. They encouraged us to
+        experiment with a variety of crosslinkers to further refine the
+        platform, potentially expanding its capabilities in future iterations.
+      </p>
+    </li>
+  </ol>
 
-    </div>
+  <hr />
+  <h2>Industry and Medical Foundation Engagement</h2>
+  <p>
+    As part of our efforts to ensure that our project had real-world
+    applications, we reached out to both industry professionals and medical
+    experts for their input.
+  </p>
 
-    {% endblock %}
+  <h3>ThermoFisher Scientific</h3>
+  <p>
+    We had the opportunity to present our work to a panel of experts at
+    <b>ThermoFisher Scientific</b>, a leading company in scientific
+    instrumentation and research solutions. During this meeting, the panel
+    provided constructive feedback on how our platform could be applied to
+    large-scale datasets, emphasizing the potential for <b>IMPROViSeD</b> to be
+    used in drug discovery and other protein interaction studies. The
+    discussions encouraged us to think about scalability and real-world
+    applications, further refining our approach to ensure that our project could
+    have a tangible impact beyond the academic sphere.
+  </p>
+
+  <figure>
+    <img
+      src="https://static.igem.wiki/teams/5346/hp/five.png"
+      alt="Figure not downloaded"
+    />
+    <figcaption>ThermoFisher Scientific visit</figcaption>
+  </figure>
+
+  <h3>Majumdar Shaw Medical Foundation</h3>
+  <p>
+    We also presented our work at the
+    <b>Majumdar Shaw Medical Foundation</b>, a prominent institution in cancer
+    research and treatment. Here, we received specific feedback on the potential
+    applications of <b>IMPROViSeD</b> in modelling cancer-related protein
+    complexes. The experts we interacted with underscored the importance of
+    accurate structural data for the development of antibody-based therapies. By
+    focusing on the <b>LCN2-MMP9 complex</b>, we positioned our project to
+    directly contribute to cancer metastasis research, with potential long-term
+    benefits in therapeutic development.
+  </p>
+
+  <figure>
+    <img
+      src="https://static.igem.wiki/teams/5346/hp/sixplusseven.png"
+      alt="Figure not downloaded"
+    />
+    <figcaption>MSMF visit</figcaption>
+  </figure>
+
+  <hr />
+  <h2>Conclusion: A Collaborative and Impactful Project</h2>
+  <p>
+    Our project, <b>IMPROViSeD</b>, has been shaped by continuous stakeholder
+    engagement, expert feedback, and real-world considerations. Through our
+    early explorations of ideas such as <b>metal-binding peptides</b> and
+    <b>miRNA prediction</b>, we gained a deeper understanding of computational
+    biology and its limitations. This process led us to focus on a project with
+    clear societal relevance—the structural modelling of protein complexes
+    involved in cancer metastasis.
+  </p>
+  <p>
+    By combining <b>DREAM</b> with experimental data from <b>XLMS</b>, and
+    learning from experts such as <b>Dr. Alexandre Bonvin</b> and
+    <b>Dr. Pedro Beltrao</b>, we have built a platform that not only addresses
+    fundamental questions in structural biology but also has the potential to
+    improve therapeutic development for cancer treatment.
+  </p>
+  <p>
+    Our interactions with industry professionals at
+    <b>ThermoFisher Scientific</b> and medical experts at the
+    <b>Majumdar Shaw Medical Foundation</b> have further broadened the scope of
+    our project, ensuring that <b>IMPROViSeD</b> can be applied to real-world
+    problems in drug discovery and cancer therapeutics. Through this
+    collaborative and iterative process, we believe <b>IMPROViSeD</b> has the
+    potential to make a lasting impact on the scientific and medical
+    communities.
+  </p>
+</div>
+
+{% endblock %}

@@ -274,8 +274,13 @@ canvas.prevCanvas {
   font-size: 18px;
   border-left: 2px solid #000;
   max-height: calc(100vh - 56px);
+  padding-left: 7.5px;
+}
+.sidebar > ul {
   overflow: auto;
-  padding-left: 15px;
+}
+.sidebar a:hover {
+  opacity: 0.6;
 }
 .sidebar > ul {
   padding-top: 20px;
@@ -284,6 +289,7 @@ canvas.prevCanvas {
 .sidebar ul a {
   color: #000;
   text-decoration: none;
+  display: block;
 }
 .sidebar > ul > li > ul {
   font-weight: 400;
