@@ -162,7 +162,7 @@
                         \mathrm{Find} &amp;\left\{x_i \right\}_{i \in C_1 \cup \, C_2}\\
                         \text{subject to} &amp;\quad \|x_i - x_j \|_2^2 = d^2_{ij} \quad &amp; (i,j) \in \mathcal{E}_1
                         \cup \mathcal{E}_2\\
-                        &amp;\quad \|x_i - x_j \|_2^2 \geqslant \underline{c}^2 \pm \sigma \quad &amp; (i,j) \in
+                        &amp;\quad \|x_i - x_j \|_2^2 \leqslant \underline{c}^2 \pm \sigma \quad &amp; (i,j) \in
                         \mathcal{L}_{12}
                         \end{aligned}\]</span>
         </p>
@@ -243,7 +243,7 @@
         <figure>
                 <img src="https://static.igem.wiki/teams/5346/1dfj-registration.png" id="reg1dfj" alt="" />
                 <figcaption>One shot Registration of protein with PDB ID 1DFJ. A hypothetical structure, shown with
-                        coloured spheres correspoinding to the C\(^\alpha\)</span> atoms in the two structrue in similar
+                        coloured spheres correspoinding to the C\(^\alpha\)</span> atoms in the two structure in similar
                         colour. Both the structures and the hypothetical structure aligns in a single step resulting in
                         the final structure.</figcaption>
         </figure>
@@ -268,22 +268,22 @@
                         - \left(R_k x^k_i + t_k\right)\|_2^2.\]</span>
         </p>
         <p>
-                In general directly computing solutoin over the set of rotation matrices is computationaly intractable
+                In general, directly computing solution over a set of rotation matrices is computationaly intractable
                 since it is a non-smooth non-convex set. However, <span class="citation" data-cites="gretsdp"></span>
                 describes a global alignment approach following a non-linear optimization formulation known as
                 Semidefinite programmimng <span class="citation" data-cites="boyd"></span>, to estimate a solution to
                 the following problem. The variables of equation are separated into \(\mathbb{R}^3\)</span> and
-                \(\mathbb{O}(3)\)</span>. In oder to circumvent the non-convexity of \(\mathbb{O}(3)\)</span>, a convex
+                \(\mathbb{O}(3)\)</span>. In order to circumvent the non-convexity of \(\mathbb{O}(3)\)</span>, a convex
                 progam is designed over a new variable \(G\)</span> defined as \(G = R^\top R\)</span>, i.e, inner
                 product of rotation matrices. This has been employed in <span class="citation"
-                        data-cites="dream dreamweb"></span> as well to derive protein structrue from NMR. We apply
-                similar approach to align the coordinates of the subunits and the supporting structrue together.
+                        data-cites="dream dreamweb"></span> as well to derive protein structure from NMR. We apply
+                similar approach to align the coordinates of the subunits and the supporting structure together.
         </p>
         <h2 id="flip-refinement-cycle-3">Flip Refinement (Cycle-3)</h2>
         <figure>
                 <img src="https://static.igem.wiki/teams/5346/eng-images/flip-1dfj-e-i.png" id="ramaflip" alt="" />
                 <figcaption>
-                        Ramachandran flip (PDB ID 1DFJ). Working with distance data results in mirrored structrues.
+                        Ramachandran flip (PDB ID 1DFJ). Working with distance data results in mirrored structures.
                         Although mathematically valid, they are biologically invalid. Chain-I in (a) with its
                         Ramachandran map shown in (d) is such a case. We reflect the same to result in (c). Ramachandran
                         map is shown in (e). Chain-E in (a) or (c) require no such flip as seen from the plot in (b).
@@ -317,7 +317,7 @@
                 <figcaption>
                         Simplified Flowchart for IMProv. The subunits are oriented in multiple interations. Each
                         resulting from a subset of crosslinks, followed by and . The iterations proceed in parallel. The
-                        structrues without clashes while satisfying the crosslinks gives final results.
+                        structures without clashes while satisfying the crosslinks gives final results.
                 </figcaption>
         </figure>
         <p>
@@ -332,7 +332,7 @@
                 parallely. This further reduces the computation time.
         </p>
         <p>
-                In order to prune the exponential increase of solution space, the structrue are evaluated for crosslink
+                In order to prune the exponential increase of solution space, the structure are evaluated for crosslink
                 violations and clashes. The ones falling below a pre-determined thresshold are discarded. Also the whole
                 process terminates beyond a user defined number of iterations. The final structures obtaiend are ranked
                 on the basis of crosslink violation fraction and the energy score, using PyRosetta, computed for each of
@@ -351,7 +351,7 @@
                 <figcaption>
                         Simplified Flowchart for IMProv. The subunits are oriented in multiple interations. Each
                         resulting from a subset of crosslinks, followed by and . The iterations proceed in parallel. The
-                        structrues without clashes while satisfying the crosslinks gives final results.
+                        structures without clashes while satisfying the crosslinks gives final results.
                 </figcaption>
         </figure>
         <p>
