@@ -1,3 +1,52 @@
+{% extends "layout.html" %} {% block title %}Medals{% endblock %}
+{% block lead %}{% endblock %} {% block page_content %}
+
+<style>
+  body {
+    background-image: linear-gradient(
+      to bottom,
+      #5cfdde 0%,
+      #aefeee 20%,
+      #f9537b 40%,
+      #fba4b9 60%,
+      #ffe4eb 100%
+    );
+  }
+  #float1 {
+    background-image: url("https://static.igem.wiki/teams/5346/doodle/medal-1-removebg-preview.png");
+  }
+  #float2 {
+    background-image: url("https://static.igem.wiki/teams/5346/doodle/medal-2-removebg-preview.png");
+  }
+</style>
+
+<div class="col-md-3 sidebar">
+  <ul>
+    <li><a href="#background" class="button">Background</a></li>
+    <li><a href="#approach" class="button">Approach</a></li>
+    <li><a href="#inspiration" class="button">Motivation</a></li>
+    <li>
+      Blah and Oof
+      <ul>
+        <li><a href="#background" class="button">Background</a>
+        
+      <ul>
+        <li><a href="#background" class="button">Background</a></li>
+        <li><a href="#approach" class="button">Approach</a></li>
+        <li><a href="#inspiration" class="button">Motivation</a></li>
+        <li><a href="#references" class="button">References</a></li>
+      </ul>
+    </li>
+        <li><a href="#approach" class="button">Approach</a></li>
+        <li><a href="#inspiration" class="button">Motivation</a></li>
+        <li><a href="#references" class="button">References</a></li>
+      </ul>
+    </li>
+    <li><a href="#references" class="button">References</a></li>
+  </ul>
+</div>
+<div class="col-md-9 content">
+
 <h1>Medals</h1>
 <h2>Bronze</h2>
 <figure>
@@ -162,3 +211,7 @@
       >Inclusivity | IISc-Software - iGEM 2024</a>
 
 <h3>Best Model:</h3>
+
+</div>
+
+{% endblock %}
