@@ -215,23 +215,42 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 
 			//readmode
+			// const readModeButton = document.querySelector('#readmode');
+			// let isReadModeEnabled = false; 
+
+			// readModeButton.addEventListener('click', function() {
+			// isReadModeEnabled = !isReadModeEnabled; 
+
+			// if (isReadModeEnabled) {
+			// 	document.body.style.backgroundColor = 'black';
+			// 	document.body.style.color = 'white';
+			// 	readModeButton.style.backgroundColor = 'lightblue';
+			// 	document.querySelector(.col-md-9 content)
+			// } else {
+			// 	document.body.style.backgroundColor = '';
+			// 	document.body.style.color = '';
+			// 	readModeButton.style.backgroundColor = '';
+			// }
+			// });
+			
 			const readModeButton = document.querySelector('#readmode');
+			const contentDiv = document.querySelector('.col-md-9');  // Target the specific div
 			let isReadModeEnabled = false; 
 
 			readModeButton.addEventListener('click', function() {
-			isReadModeEnabled = !isReadModeEnabled; 
+    		isReadModeEnabled = !isReadModeEnabled; 
 
-			if (isReadModeEnabled) {
-				document.body.style.backgroundColor = 'black';
-				document.body.style.color = 'white';
-				readModeButton.style.backgroundColor = 'lightblue';
-			} else {
-				document.body.style.backgroundColor = '';
-				document.body.style.color = '';
-				readModeButton.style.backgroundColor = '';
-			}
+    		if (isReadModeEnabled) {
+        	contentDiv.style.backgroundColor = 'black';  // Change the div background color
+        	contentDiv.style.color = 'white';  // Change the div text color
+        	readModeButton.style.backgroundColor = 'lightblue';
+        
+    		} else {
+        	contentDiv.style.backgroundColor = '';  // Revert to original background color
+        	contentDiv.style.color = '';  // Revert to original text color
+        	readModeButton.style.backgroundColor = '';
+    		}
 			});
-
 			
 			//whitecursor
 			const whiteCursorButton = document.querySelector('#whitecursor');
@@ -638,6 +657,13 @@ document.addEventListener("DOMContentLoaded", function() {
 				document.body.style.backgroundColor = '';
 				document.body.style.color = '';
 				main.style.zoom = '100%';
+
+				// const contentDiv = document.querySelector('.col-md-9');
+				// contentDiv.style.backgroundColor = '';  // Revert to original background color
+				// contentDiv.style.color = '';  // Revert to original text color
+
+				readModeButton.click();
+
 				const links = document.querySelectorAll('a');
 				links.forEach(link => link.style.backgroundColor = '');
 				const buttons = document.querySelectorAll('button');
